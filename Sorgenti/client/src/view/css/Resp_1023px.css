@@ -1,0 +1,14 @@
+@media screen and (max-width:1023px) {  
+  .visualization {
+    grid-template-columns: auto;
+  }
+
+  #impostazioni {
+    grid-gap: 1.3em;
+  }
+  
+  #datasets-container {
+  grid-template-columns: auto auto;
+  }
+
+}
