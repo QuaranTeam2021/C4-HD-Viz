@@ -3,7 +3,7 @@
 Gruppo 5 - Ingegneria del Software 2020/2021
 E-mail: quaranteam2021@gmail.com
 
-Repository contenente tutta la documentazione e il codice sorgente del progetto di Ingegneria del Software HD-Viz.
+Repository contenente tutta la documentazione e il codice sorgente del progetto di Ingegneria del Software HD-Viz, per la consegna del materiale in ingresso alla RA.
 
 ## Manuali
 
