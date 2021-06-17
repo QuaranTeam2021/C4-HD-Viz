@@ -1,0 +1,83 @@
+\newcommand{\Data}{2020-12-17}
+\newcommand{\TitoloDoc}{V.E. del \Data}
+\newcommand{\Redattori}{\CHF}
+\newcommand{\Verificatori}{\GIA}
+\newcommand{\Approvatore}{\VEL}
+\newcommand{\Distribuzione}{\Committente{} \\& \Proponente{} \\& \Gruppo{}}
+\newcommand{\Uso}{Esterno}
+\newcommand{\Stato}{Approvato}
+\newcommand{\DescrizioneDoc}{Riassunto della riunione tra il gruppo \textit{QuaranTeam} ed il \glo{proponente} tenutosi il 2020-12-17.}
+\newcommand{\pathimg}{../../immagini}
+\newcommand{\VersioneDoc}{1.0.0}
+
+\input{../../Utility/general_commands.tex}
+\documentclass{../../Utility/stdDocument}
+
+\begin{document}
+\verbaleFronte
+		
+\section*{Registro delle modifiche}
+\begin{RegistroModifiche}
+ 1.0.0 & 2021-01-08 & Approvazione del documento. & \VEL & Responsabile \\
+\hline
+ 0.1.1 & 2020-12-20 & Verifica del documento. & \GIA &  Verificatore \\
+\hline
+ 0.1.0 & 2020-12-19 & Stesura del documento. & \CHF &  Analista \\
+\end{RegistroModifiche}
+
+\verbaleIndice
+
+\section{Informazioni generali}
+A causa delle circostanze poco favorevoli dovute alla pandemia \glo{COVID-19} le riunioni esterne verranno esclusivamente svolte online via \glo{Skype}.
+\begin{itemize}
+	\item[•] \textbf{Luogo:} \glo{Skype};
+	\item[•] \textbf{Data:} 2020-12-17;
+	\item[•] \textbf{Ora di inizio:} 10:15;
+	\item[•] \textbf{Ora di fine:} 11:30;
+	\item[•] \textbf{Partecipanti del gruppo:}
+	\begin{enumerate}
+		\item [-] Alice Gibellato;
+		\item [-] Federico Consalvo; 
+		\item [-] Federico Chiarello; 
+		\item [-] Matteo Sinigaglia;
+		\item [-] Luca Veronese;
+		\item [-] Damiano Mason.
+	\end{enumerate} 
+	\item[•] \textbf{Assenti:}
+	\begin{enumerate}
+		\item [-] Elia Rech.
+	\end{enumerate}
+	\item[•] \textbf{Segretario:} Federico Chiarello.
+\end{itemize}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item [•] Modalità di comunicazione con il \glo{proponente};
+	\item [•] Chiarimenti sugli obiettivi del \glo{capitolato}, sull'utilizzo dell'applicazione e sulle tecnologie utilizzate.
+\end{itemize}
+
+\section{Resoconto}
+L'incontro è stato richiesto da tutti i gruppi che concorrono al \glo{capitolato} C4, \textit{HD Viz}, proposto dall'azienda \textit{\Proponente}. Il \glo{proponente}, rappresentato dalla figura del Dott. \PG, si è mostrato subito disponibile organizzando un incontro a distanza su \glo{Skype}. In questo incontro un referente per gruppo ha esposto le domande che aveva precedentemente preparato. Il primo punto chiarito è stato il canale di comunicazione: \glo{Skype} sarà la piattaforma principale in cui si potrà comunicare con il \glo{proponente}. Gli incontri possono essere richiesti da un singolo gruppo oppure da tutti i gruppi interessati. Il Dott. \PG{} ha voluto metterci al corrente che si aspetta una certa costanza nella comunicazione \glo{fornitore}-\glo{proponente} soprattutto a ridosso delle revisioni di avanzamento del progetto. 
+\subsection{Obiettivi del \glo{capitolato}}
+In merito agli obiettivi del \glo{capitolato} sono emerse nuove informazioni che non erano state chiarite prima. I filtri dei grafici da visualizzare non sono indispensabili e non è richiesta un'eccessiva cura della parte grafica, in quanto la cosa più importante è che i grafici siano informativi e diano la possibilità di fare osservazioni sui dati riportati. L'obiettivo finale è quindi la ricerca di algoritmi di visualizzazione che permettano di estrapolare informazioni interessanti su dati multi-dimensionali. Il Dott. \PG{} ha mostrato un esempio di utilizzo tipico del prodotto e ha chiarito che i dati forniti saranno anonimizzati, ma è possibile partire anche da data set già esistenti.
+\subsection{Utilizzo dell'applicazione ed esperienza utente}
+Per quanto riguarda lo sviluppo dell'applicazione viene lasciata la libertà al \glo{fornitore} di gestire la parte \glo{front-end} dell'applicazione e la gestione dell'utente, ovvero la registrazione e/o autenticazione dell'utente è facoltativa. Importante è, però, creare per l'utente un apposito manuale di utilizzo e un \glo{wizard} introduttivo che possa aiutare l'utente a conoscere meglio il sistema. È necessario dare all'utente la possibilità di riprendere il lavoro una volta terminato, a tal fine è stato suggerito il salvataggio di un file \glo{JSON} nel terminale dell'utente, che l'utente può ricaricare in un secondo momento.\\
+L'attenzione deve quindi essere rivolta sui grafici da visualizzare, infatti è stato chiarito che la visualizzazione di più grafici contemporaneamente sarebbe molto gradita. L'esperienza dell'utente deve quindi essere esplorativa e deve esserci la possibilità di cambiare la rappresentazione dei dati per cercare di evidenziare informazioni utili.\\
+L'applicazione deve essere visualizzata correttamente da browser basati su \glo{WebKit} (es. Chrome e Edge) e su Mozilla Firefox. Facoltativa è la visualizzazione corretta nel browser Safari per iPad, così come è facoltativa la validazione del codice \glo{HTML} da parte del validatore \glo{W3C}.
+\subsection{Tecnologie da utilizzare}
+Sulle tecnologie da utilizzare il Dott. \PG{} ha consigliato ai gruppi di preferire \glo{JavaScript} a \glo{TypeScript}. Per quanto riguarda i dati in input, il dato deve essere portato nell'ambiente client e disponibile nel browser per fare le operazioni. Questo può avvenire tramite file \glo{CSV} oppure da una \glo{query}. Non è fondamentale utilizzare un preciso \glo{database} in quanto l'obiettivo dell'oggetto di sviluppo è la costruzione della visualizzazione. Per quanto riguarda i grafici la \glo{libreria} principale consigliata è \glo{D3.js} in quanto permette una buona visualizzazione dei grafici. Inoltre sono state consigliate altre \glo{librerie} come \glo{ml.js} che raccoglie i calcoli per le distanze, \glo{ConvNet.js} per le reti neurali, \glo{t-SNE}, \glo{uMap.js} e \glo{DBscan}.
+
+\section{Riepilogo delle decisioni}
+\begin{RiepilogoDecisioni}
+	VE\_2020-12-17.1 & Il canale di comunicazione con il \glo{proponente} è \glo{Skype}. \\
+	\hline
+	VE\_2020-12-17.2 & I grafici devono essere informativi e devono permettere di estrapolare informazioni interessanti su dati multi-dimensionali. \\
+	\hline
+	VE\_2020-12-17.3 & Creazione di una linea guida per l'utente. \\
+	\hline
+	VE\_2020-12-17.4 & Permettere all'utente di riprendere il lavoro in un secondo momento. \\
+	\hline
+	VE\_2020-12-17.5 & L'applicazione dev'essere visualizzata correttamente su Google Chrome, Microsoft Edge e Mozilla Firefox. \\
+	\hline
+\end{RiepilogoDecisioni}
+\end{document}

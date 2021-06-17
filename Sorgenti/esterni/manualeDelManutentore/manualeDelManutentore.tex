@@ -1,0 +1,47 @@
+\input{../../Utility/general_commands.tex}
+\input{res/commands.tex}
+\documentclass{../../Utility/stdDocument}
+\usepackage{soul}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+% \definecolor{eclipsePurple}{red}
+\lstdefinelanguage{flatfile}{
+  morekeywords={},
+  otherkeywords={{,},:},
+  morekeywords=[2]{HDVIZ_USER,HDVIZ_PASSWORD,HDVIZ_HOST,HDVIZ_PORT,HDVIZ_DATABASE},
+  morekeywords=[3]{wget,unzip,cd,npm,git,clone,node,serve},
+  sensitive=false,
+}
+
+\lstset{
+	frame=tb,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+    language={flatfile},
+    keywordstyle=\color{red},
+    keywordstyle=[2]\color{blue}\bfseries,
+    keywordstyle=[3]\color{blue},
+    breaklines
+}
+\usepackage{color}
+
+\begin{document}
+% deve essere presente res/registro.tex per compilare
+\fullDocConfigImg{}
+% inserire per ogni sezione il nome della cartella dedicata
+
+\sectionInFolder{1_Intro}
+\sectionInFolder{2_Installazione}
+\sectionInFolder{3_Tecnologie}
+\sectionInFolder{4_Architettura}
+\sectionInFolder{7_Server}
+% \sectionInFolder{5_InterazioneComponenti}
+\sectionInFolder{6_EstendereApplicazione}
+\appendix
+\sectionInFolder{A_Glossario}
+
+\end{document}

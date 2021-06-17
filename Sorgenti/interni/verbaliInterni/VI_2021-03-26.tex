@@ -1,0 +1,69 @@
+\newcommand{\Data}{2021-03-26}
+\newcommand{\TitoloDoc}{V.I. del \Data}
+\newcommand{\Redattori}{\CHF}
+\newcommand{\Verificatori}{\VEL}
+\newcommand{\Approvatore}{\GIA}
+\newcommand{\Distribuzione}{\Committente{} \\& \Gruppo{}}
+\newcommand{\Uso}{Interno}
+\newcommand{\Stato}{Approvato}
+\newcommand{\DescrizioneDoc}{Riassunto della riunione del gruppo \textit{\Gruppo} tenutasi il \Data.}
+\newcommand{\pathimg}{../../immagini}
+\newcommand{\VersioneDoc}{1.0.0}
+
+\input{../../Utility/general_commands.tex}
+\documentclass{../../Utility/stdDocument}
+
+\begin{document}
+\verbaleFronte
+\section*{Registro delle modifiche} 
+\begin{RegistroModifiche}
+	1.0.0 & 2021-04-01 & Approvazione del documento. & \GIA & \\
+	\hline
+	0.1.0 & 2021-03-27 & Stesura del documento. & \CHF & \VEL \\
+\end{RegistroModifiche}
+
+\verbaleIndice
+
+\section{Informazioni generali}
+\begin{itemize}
+	\item[•] \textbf{Luogo:} \glo{Zoom};
+	\item[•] \textbf{Data:} 2021-03-26;
+	\item[•] \textbf{Ora di inizio:} 18:00;
+	\item[•] \textbf{Ora di fine:} 19:15;
+	\item[•] \textbf{Partecipanti del gruppo:}
+	\begin{enumerate}
+		\item [-] Alice Gibellato;
+		\item [-] Elia Rech;
+		\item [-] Federico Consalvo; 
+		\item [-] Federico Chiarello; 
+		\item [-] Matteo Sinigaglia;
+		\item [-] Luca Veronese;
+		\item [-] Damiano Mason.
+	\end{enumerate}
+	\item[•] \textbf{Segretario:} Federico Chiarello. 
+\end{itemize}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Confronto con il \glo{proponente};
+	\item Aggiornamento lavori della fase di progettazione di dettaglio e codifica;
+	\item Discussione sulla \glo{Product Baseline}.
+\end{itemize}
+
+\section{Resoconto}
+\subsection{Confronto con il \glo{proponente}}
+Alcuni membri del gruppo vogliono richiedere un incontro con il \glo{proponente} per chiedergli delucidazioni sull'esplorazione e il confronto dei grafici. È stata quindi inviata una e-mail al dott. \PG{} per fissare un incontro su \glo{Skype}.
+
+\subsection{Aggiornamento lavori della fase di progettazione di dettaglio e codifica}
+Il gruppo si è confrontato e aggiornato sullo sviluppo dell'applicazione. Per quanto riguarda la progettazione si è svolto un confronto con gli altri membri sui possibili \glo{design pattern} da utilizzare per l'architettura dell'applicazione. Per quanto riguarda la \glo{codifica}, i membri che si stanno occupando del \glo{back-end} hanno posto delle questioni riguardo l'esplorazione dei grafici, le quali risposte potrebbero arrivare durante il confronto con il \glo{proponente}. Anche i membri del \glo{front-end} hanno posto delle questioni riguardo l'interfaccia grafica e riguardo il confronto tra grafici. I dubbi riguardanti le esigenze di un utente verranno esposti nell'incontro con il \glo{proponente}. 
+\subsection{Discussione sulla \glo{Product Baseline}}
+Il gruppo ha discusso della \glo{Product Baseline} e dell'allegato tecnico. Insieme al responsabile di progetto si è pensata un'ipotetica data per prenotarsi al colloquio con il \glo{committente}. Tale data si colloca tra la seconda e la terza settimana di aprile. Sono stati definiti gli obiettivi per la presentazione della \glo{Product Baseline} integrando il raggiungimento degli incrementi previsti per la fase corrente.
+
+\section{Riepilogo delle decisioni}
+\begin{RiepilogoDecisioni}
+	VI\_2021-03-26.1 & Richiesta incontro con il \glo{proponente}. \\
+	\hline
+	VI\_2021-03-26.2 & Data approssimativa per prenotarsi alla \glo{Product Baseline}. \\
+	\hline
+\end{RiepilogoDecisioni}
+\end{document}

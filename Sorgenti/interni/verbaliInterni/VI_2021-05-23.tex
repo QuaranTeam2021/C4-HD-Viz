@@ -1,0 +1,88 @@
+\newcommand{\Data}{2021-05-23}
+\newcommand{\TitoloDoc}{V.I. del \Data}
+\newcommand{\Redattori}{\SIM}
+\newcommand{\Verificatori}{\GIA}
+\newcommand{\Approvatore}{\COF}
+\newcommand{\Distribuzione}{\Committente{} \\& \Gruppo{}}
+\newcommand{\Uso}{Interno}
+\newcommand{\Stato}{Approvato}
+\newcommand{\DescrizioneDoc}{Riassunto della riunione del gruppo \textit{\Gruppo} tenutasi il \Data.}
+\newcommand{\pathimg}{../../immagini}
+\newcommand{\VersioneDoc}{1.0.0}
+
+\input{../../Utility/general_commands.tex}
+\documentclass{../../Utility/stdDocument}
+
+\begin{document}
+\verbaleFronte
+\section*{Registro delle modifiche} 
+\begin{RegistroModifiche}
+	1.0.0 & 2021-05-24 & Approvazione del documento. & \COF & \\
+	\hline
+	0.1.0 & 2021-05-23 & Stesura del documento. & \SIM & \GIA \\
+\end{RegistroModifiche}
+
+\verbaleIndice
+
+\section{Informazioni generali}
+\begin{itemize}
+	\item[•] \textbf{Luogo:} \glo{Zoom};
+	\item[•] \textbf{Data:} 2021-05-23;
+	\item[•] \textbf{Ora di inizio:} 18:30;
+	\item[•] \textbf{Ora di fine:} 19:30;
+	\item[•] \textbf{Partecipanti del gruppo:}
+	\begin{enumerate}
+		\item [-] Alice Gibellato;
+		\item [-] Elia Rech;
+		\item [-] Federico Consalvo; 
+		\item [-] Federico Chiarello; 
+		\item [-] Matteo Sinigaglia;
+		\item [-] Luca Veronese;
+		\item [-] Damiano Mason.
+	\end{enumerate}
+	\item[•] \textbf{Segretario:} \COF. 
+\end{itemize}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Suddivisione del lavoro in seguito alla Revisione di Qualifica;
+	\item Segnalazione errori nel calcolo delle metriche;
+	\item Richiesta di un colloquio con il \glo{proponente};
+	\item Organizzazione delle attività in vista del collaudo.
+\end{itemize}
+
+\section{Resoconto}
+\subsection{Suddivisione del lavoro in seguito alla Revisione di Qualifica}
+In seguito alla ricezione dell'esito della Revisione di Qualifica, accolto dal \glo{team} con entusiasmo ma anche come spunto di miglioramento, il gruppo si è riunito per fare il punto della situazione e per discutere delle segnalazioni effettuate dal \glo{committente}. Sono state assegnate le seguenti attività:
+\begin{itemize}
+	\item \SIM{} si occuperà di descrivere più compiutamente il diagramma delle classi;
+	\item \REL{} provvederà ad aggiornare il Consuntivo nel documento \textit{Piano di Progetto} - §6;
+	\item \MAD{} si occuperà di aggiornare i diagrammi di \glo{Gantt} in caso di un eventuale posticipo della consegna dei documenti in ingresso per la Revisione di Accettazione;
+	\item \VEL{} si occuperà di sostituire opportunamente \glo{snapshot} di stralci di UI con \glo{snapshot} dell'interfaccia nella sua interezza nel \textit{Manuale Utente};
+	\item \SIM{} si occuperà di redigere il Verbale Interno del 2021-05-23 e \GIA{} si occuperà di verificarlo.
+\end{itemize}
+
+\subsection{Segnalazione errori nel calcolo delle metriche}
+Un membro del gruppo si è accorto che nel calcolare le metriche QM-PROC-5 e QM-PROC-6 non si è tenuto conto di una parte del codice prodotto. Per questo, i risultati indicati negli ultimi incrementi della fase di progettazione di dettaglio e codifica non coprono tutto il codice. È stato quindi proposto di abbassare la soglia delle due metriche, in quanto il codice relativo alla vista occupa tante righe e conseguentemente fa abbassare la percentuale della metrica QM-PROC-5 e condiziona anche la metrica QM-PROC-6. Inoltre, è stato incaricato un membro di riportare il risultato effettivo delle due metriche di riferimento nei grafici della fase di validazione e collaudo. 
+
+\subsection{Richiesta di un colloquio con il \glo{proponente}}
+Si è ritenuto opportuno richiedere un incontro con il \glo{proponente}, al fine di chiarire alcuni punti e mostrare il prodotto prima del collaudo, possibilmente in data antecedente alla festività del 2021-06-02.
+
+\subsection{Organizzazione delle attività in vista del collaudo}
+Il gruppo si prepara ad affrontare il collaudo. I \glo{requisiti} obbligatori, desiderabili e facoltativi sono quasi tutti soddisfatti. Ad ogni componente sono stati assegnati degli specifici compiti:
+\begin{itemize}
+	\item \SIM{} e \CHF{} si occuperanno di eseguire test del modello e dei controller;
+	\item \MAD{} e \GIA{} si occuperanno di eseguire test con \glo{React};
+	\item \VEL{} e \REL{} proseguiranno ad implementare i requisiti opzionali dei grafici;
+	\item \COF{} proseguirà a scrivere il \glo{CSS} necessario per la presentazione dell'applicazione.
+\end{itemize} 
+
+
+\section{Riepilogo delle decisioni}
+\begin{RiepilogoDecisioni}
+	VI\_2021-05-23.1 & Assegnazione attività della documentazione per la Revisione di Accettazione secondo quanto indicato in §3.1 e §3.3. \\ \hline
+	VI\_2021-05-23.2 & \GIA{} Aggiorna la soglia accettabile delle metriche QM-PROC-4 e QM-PROC-5 e ricalcola il risultato finale della fase di progettazione di dettaglio e codifica. \\ \hline
+	VI\_2021-05-23.3 & Richiesta di un colloquio con il \glo{proponente}. \\ \hline
+	VI\_2021-05-23.4 & Suddivisione dei compiti per il collaudo. \\
+\end{RiepilogoDecisioni}
+\end{document}

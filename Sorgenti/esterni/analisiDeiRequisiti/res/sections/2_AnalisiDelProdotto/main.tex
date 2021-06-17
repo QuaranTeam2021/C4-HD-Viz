@@ -1,0 +1,48 @@
+\section{Analisi del prodotto}
+
+% inserire tutte il codice della sezione in questo file ed eliminare cartella subsections
+% OPPURE inserire più file nella sottocartella subsections e includere i file 
+% come mostrato sotto:
+
+% es: per includere 2 files chiamati 
+% nomefile1.tex, nomefile2.tex
+% \subimport{subsections/}{nomefile1.tex}
+% \subimport{subsections/}{nomefile2.tex}
+
+% oppure
+% \subsectionInFile{nomefile1.tex}
+% \subsectionInFile{nomefile2.tex}
+
+\subsection{Scopo del prodotto}
+Il \glo{capitolato} C4 ha per oggetto lo sviluppo di un'applicazione di visualizzazione di dati con molte dimensioni. Tale applicazione, chiamata \textit{HD Viz}, deve permettere di visualizzare e analizzare grafici di dati multi-dimensionali. 
+
+\subsection{Caratteristiche del prodotto}
+La \glo{piattaforma} presenta diversi tipi di visualizzazione tra cui \glo{Heat Map}, \glo{Scatter Plot Matrix}, \glo{Proiezione Lineare Multiasse} e \glo{Force Field}. L'applicazione web deve fornire la possibilità di visualizzare dati multi-dimensionali caricando file in formato \glo{CSV} o altri formati supportati, oppure interrogando il \glo{database} esterno collegato attraverso delle \glo{query}. Il \glo{database} è un'entità esterna alla web app, la cui gestione viene garantita tramite un'apposita interfaccia. L'elemento principale è l'interfaccia utente, tramite la quale è possibile interagire con l'applicazione. 
+In particolare l'utente può:
+\begin{itemize}
+	\item [•] accedere all'applicazione web tramite l'utilizzo di un browser;
+	\item [•] leggere e consultare la guida all'utilizzo dell'applicazione;
+	\item [•] fornire i dati da ridurre tramite caricamento file oppure tramite accesso al \glo{database};
+	\item [•] applicare un algoritmo di riduzione dimensionale ai dati forniti;
+	\item [•] calcolare la matrice delle distanze dei dati forniti;
+	\item [•] scegliere il grafico da visualizzare con i dati forniti o ridotti, o con la matrice delle distanze calcolata;
+	\item [•] visualizzare uno o più grafici nella pagina principale;
+	\item [•] modificare il grafico selezionando delle funzioni o applicando dei filtri.
+\end{itemize}  
+\subsection{\glo{Attori}}
+Il numero di \glo{attori} individuati è limitato dal fatto che il prodotto \glo{software} da sviluppare è un'applicazione web che non richiede la registrazione degli utenti. È importante quindi sottolineare che il sistema di registrazione e autenticazione dell'utente non viene implementato in quanto è stato ritenuto poco utile ai fini del prodotto finale. 
+\subsubsection{\glo{Attori} primari}
+\begin{itemize}
+	\item [•] \textbf{Utente:} l'\glo{attore} principale è un generico utente che eseguendo l'applicazione web ha accesso alle funzionalità che l'applicazione mette a disposizione.
+\end{itemize}
+\subsubsection{\glo{Attori} secondari}
+\begin{itemize}
+	\item [•] \textbf{\glo{Database}:} l'utente interagisce con il \glo{database} che permette di inserire, importare e rimuovere dati. Inoltre è possibile interrogare il \glo{database} tramite delle \glo{query} preimpostate i cui risultati sono i set di dati che interessano all'utente. 
+\end{itemize}
+\subsubsection{Supporto browser}
+In seguito all'incontro esterno tenutosi con il \glo{committente} (V.E. 2020-12-17) è stato chiarito il disinteresse per la retro-compatibilità con vecchi browser.
+L'applicazione web verrà sviluppata concentrandosi sul supporto per i browser più utilizzati e diffusi, in particolare si farà rifermento alle seguenti versioni:
+\begin{itemize}
+	\item [•] browser Google Chrome v87.0.0;
+	\item [•] browser Mozilla Firefox v85.0.0.
+\end{itemize}

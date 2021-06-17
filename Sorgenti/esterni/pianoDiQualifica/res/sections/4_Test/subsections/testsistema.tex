@@ -1,0 +1,68 @@
+\subsection{Test di sistema}
+\begin{tabtest}{Riepilogo dei test di sistema}
+TSF-F-3	& Verificare che l'utente possa visualizzare il manuale utente all'interno dell'applicazione. & S \\ \hline
+TSF-O-4.1 & Verificare che l'utente possa fornire dei dati da visualizzare scegliendoli da file locali. & S \\ \hline
+TSF-O-4.2 & Verificare che l'utente possa fornire dei dati da visualizzare in formato \glo{CSV}. & S \\ \hline
+TSF-D-4.3 & Verificare che l'utente possa fornire dei dati da visualizzare in formato \glo{JSON}. & S \\ \hline
+TSF-D-4.4 & Verificare che l'utente possa fornire dei dati da visualizzare in formato \glo{TSV}. & S \\ \hline
+TSF-O-4.5 & Verificare che l'utente possa fornire dei dati da visualizzare dal \glo{database} esterno. & S \\ \hline
+TSF-F-5 & Verificare che l'utente possa popolare il \glo{database} a partire da un file di dati. & S \\ \hline
+TSF-F-5.1 & Verificare che l'utente possa rimuovere un dataset dal \glo{database}. & S \\ \hline
+TSF-O-7 & Verificare che il sistema mostri un messaggio di errore quando l'utente prova a importare un file vuoto. & S \\ \hline
+TSF-O-8 & Verificare che l'utente possa visualizzare un grafico. & S \\ \hline
+TSF-O-8.2 & Verificare che l'utente possa visualizzare il grafico \glo{Scatter plot Matrix}. & S \\ \hline
+TSF-O-8.2.1 & Verificare che l'utente possa evidenziare una selezione di punti nel grafico \glo{Scatter plot Matrix}. & S \\ \hline
+TSF-O-8.3 & Verificare che l'utente possa visualizzare il grafico \glo{Force Field}. & S \\ \hline
+TSF-D-8.3.1 & Verificare che l'utente possa modificare l'intensità della forza nel grafico \glo{Force Field}. & S \\ \hline
+TSF-D-8.3.2 & Verificare che l'utente possa selezionare la distanza minima tra coppie di nodi a cui applicare la forza nel grafico \glo{Force Field}. & S \\ \hline
+TSF-F-8.3.3 & Verificare che l'utente possa selezionare la distanza massima tra coppie di nodi a cui applicare la forza nel grafico \glo{Force Field}. & S \\ \hline
+
+TSF-O-8.4 & Verificare che l'utente possa visualizzare il grafico \glo{Heat Map}. & S \\ \hline
+TSF-F-8.4.1 & Verificare che l'utente possa selezionare la distanza minima tra coppie di nodi sotto la quale nascondere gli archi che collegano i nodi, nel grafico \glo{Heatmap}. & S \\ \hline
+TSF-F-8.4.2 & Verificare che l'utente possa selezionare la distanza massima tra coppie di nodi sotto la quale nascondere gli archi che collegano i nodi, nel grafico \glo{Heatmap}. & S \\ \hline
+TSF-O-8.4.2 & Verificare che l'utente possa riordinare i dati per cluster, nel grafico \glo{Heatmap}. & S \\ \hline
+TSF-D-8.4.3 & Verificare che l'utente possa riordinare i dati secondo l'ordinamento originale. & S \\ \hline
+TSF-O-8.5 & Verificare che l'utente possa visualizzare il grafico \glo{Proiezione Lineare Multi Asse}. & S \\ \hline
+TSF-O-8.5.1 & Verificare che l'utente possa ruotare gli assi nel grafico \glo{Proiezione Lineare Multi Asse}. & S \\ \hline
+TSF-F-8.5.2 & Verificare che l'utente possa aggiungere un asse nel grafico \glo{Proiezione Lineare Multi Asse}. &  S \\ \hline
+TSF-F-8.5.3 & Verificare che l'utente possa rimuovere un asse nel grafico \glo{Proiezione Lineare Multi Asse}. & S \\ \hline
+TSF-D-9 & Verificare che l'utente possa visualizzazione più grafici nella stessa pagina. & S \\ \hline	
+TSF-O-10.2 & Verificare che l'utente possa rimuovere un grafico visualizzato dalla pagina. & S \\ \hline
+TSF-F-10.3 & Verificare che l'utente possa utilizzare una delle seguenti funzioni per il calcolo della distanza nei grafici che mostrano le distanze:
+\begin{itemize}
+	\item[•] distanza Euclidea;
+	\item[•] distanza di Manhattan;
+	\item[•] distanza Cosine;
+	\item[•] distanza di Canberra;
+	\item[•] distanza di Chebyshev.
+\end{itemize}
+ & S \\ \hline
+TSF-O-12 & Verificare che l'utente possa visualizzare una riduzione dimensionale. & S \\ \hline
+TSF-D-12.1 & Verificare che l'utente possa selezionare uno dei seguenti algoritmi di riduzione dimensionale:
+\begin{itemize}
+	\item[•] \glo{UMAP};
+	\item[•] \glo{t-SNE};
+	\item[•] \glo{FASTMAP};
+	\item[•] \glo{LLE};
+	\item[•] \glo{ISOMAP}.
+\end{itemize}
+
+ & S \\ \hline
+TSF-O-14 & Verificare che l'utente possa scegliere quali colonne utilizzare per la visualizzazione. & S \\ \hline
+TSF-O-15 & Verificare che l'utente possa scegliere quale colonna utilizzare per il raggruppamento. & S \\ \hline
+TSP-O-1	& Verificare il supporto di data set diversi da quelli forniti. & S \\ \hline
+TSP-O-2	& Verificare che sia possibile visualizzare un grafico a partire da un set di dati con 15 dimensioni. & S \\ \hline
+TSQ-O-1 & Verificare che sia presente un manuale utente. & S \\ \hline
+TSQ-O-2 & Verificare che sia presente un manuale per chi intende estendere l'applicazione. & S \\ \hline
+TSQ-O-3 & Verificare che il progetto sia presente sul sito \href{https://github.com/}{github.com} o in altri \glo{repository} pubblici. & S \\ \hline
+TSQ-O-5 & Verificare che lo sviluppo rispetti le metriche definite nel \PdQv{\versionPdQ{}}. & S \\ \hline
+TSQ-O-6 & Verificare che sia fornita la documentazione prevista dal corso di Ingegneria del Software. & S \\ \hline
+TSV-O-1 & Verificare che la web app sia accessibile da browser a tutte le sue funzionalità. & S \\ \hline
+TSV-D-6 & Verificare che la parte server di supporto sia realizzata in Java con Tomcat o in JavaScript con Node.js. & S \\ \hline
+TSV-O-8	& Verificare il supporto al browser Google Chrome 87.0 & S \\ \hline
+TSV-O-9	& Verificare il supporto al browser Mozilla Firefox 85.0 & S \\ \hline
+%TSV-O-3 & Verificare che sia possibile visualizzare dati fino a 15 dimensioni. & NS \\ \hline
+%RV-O-4 & Le visualizzazioni dei grafici devono essere realizzate in \glo{JavaScript} con la libreria \glo{D3.js}. & Capitolato \\ \hline
+%TSV-D-6 & Verificare che la parte \glo{server} di supporto alla presentazione sia realizzata in \glo{Java} con \glo{server} \glo{Tomcat} o in \glo{JavaScript} con \glo{Node.js}. & S \\ \hline
+%RV-O-7 & La visualizzazione dei grafici deve supportare la riduzione delle dimensioni. & Capitolato \\ \hline
+\end{tabtest}

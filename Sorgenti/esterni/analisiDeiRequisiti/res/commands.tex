@@ -1,0 +1,46 @@
+\newcommand{\TitoloDoc}{\AdR}
+
+\newcommand{\Redattori}{\VEL \\ & \MAD }
+
+\newcommand{\Verificatori}{\REL \\ & \COF }
+
+\newcommand{\Approvatore}{\GIA}
+
+\newcommand{\Distribuzione}{\Committente{} \\& \Proponente{} \\& \Gruppo{}}
+
+\newcommand{\Uso}{Esterno}
+
+\newcommand{\Stato}{Approvato}
+
+\newcommand{\DescrizioneDoc}{Questo documento contiene la classificazione, il tracciamento e la descrizione dettagliata dei \glo{requisiti} presenti nel \glo{capitolato} C4.} 
+
+\newcommand{\pathimg}{../../immagini}
+
+\newcommand{\VersioneDoc}{3.0.0}
+
+
+
+
+\newenvironment{TabRequisiti}[1]
+{
+  \begin{center}
+  \begin{LongTable}{#1}{#1}{x{.15\hsize}|x{.16\hsize}|x{.43\hsize}|x{.18\hsize}}
+  \topline
+  \rowcolor{headercolour}
+  \lhdr{Codice}  &   \lhdr{Classificazione}  &   \lhdr{Requisito}  &
+  \ohdr{Fonte}   \\ \capsep
+  \endfirsthead
+  \continuedcaption
+  \topline
+  \rowcolor{headercolour}
+  \lhdr{Codice}       &   \lhdr{Classificazione}  &   \lhdr{Requisito}  &
+  \ohdr{Fonte}   \\ \capsep
+  \endhead
+  \rowsep
+  \defaultfooter{4}
+  }
+{
+  \bottomline
+  \end{LongTable}
+	\end{center}
+}

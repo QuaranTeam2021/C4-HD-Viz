@@ -1,0 +1,84 @@
+\newcommand{\Data}{2021-02-01}
+\newcommand{\TitoloDoc}{V.I. del \Data}
+\newcommand{\Redattori}{\COF}
+\newcommand{\Verificatori}{\CHF}
+\newcommand{\Approvatore}{\REL}
+\newcommand{\Distribuzione}{\Committente{} \\& \Gruppo{}}
+\newcommand{\Uso}{Interno}
+\newcommand{\Stato}{Approvato}
+\newcommand{\DescrizioneDoc}{Riassunto della riunione del gruppo \textit{\Gruppo} tenutasi il \Data.}
+\newcommand{\pathimg}{../../immagini}
+\newcommand{\VersioneDoc}{1.0.0}
+
+\input{../../Utility/general_commands.tex}
+\documentclass{../../Utility/stdDocument}
+
+\begin{document}
+\verbaleFronte
+\section*{Registro delle modifiche} 
+\begin{RegistroModifiche}
+	1.0.0 & 2021-02-05 & Approvazione del documento. & \REL &  Responsabile \\
+	\hline
+	0.1.0 & 2021-02-02 & Stesura del documento. \newline 
+	 Verificatore: \CHF & \COF &  Analista \\
+\end{RegistroModifiche}
+
+\verbaleIndice
+
+\section{Informazioni generali}
+\begin{itemize}
+	\item[•] \textbf{Luogo:} \glo{Zoom};
+	\item[•] \textbf{Data:} 2021-02-01;
+	\item[•] \textbf{Ora di inizio:} 17:30;
+	\item[•] \textbf{Ora di fine:} 20:15;
+	\item[•] \textbf{Partecipanti del gruppo:}
+	\begin{enumerate}
+		\item [-] Alice Gibellato;
+		\item [-] Elia Rech;
+		\item [-] Federico Consalvo; 
+		\item [-] Federico Chiarello; 
+		\item [-] Matteo Sinigaglia;
+		\item [-] Luca Veronese;
+		\item [-] Damiano Mason.
+	\end{enumerate}
+	\item[•] \textbf{Segretario:} Federico Consalvo. 
+\end{itemize}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Discussione delle segnalazioni esterne; 
+	\item Suddivisione del lavoro;
+	\item Utilizzo di nuovi canali di comunicazione;
+	\item Prossimo incontro. 
+\end{itemize}
+
+\section{Resoconto}
+\subsection{Discussione critiche esito RR}
+Tutto il gruppo ha letto e compreso le segnalazioni del \glo{committente} a seguito della consegna della documentazione per la Revisione dei Requisiti. È stata effettuata una discussione riguardo le segnalazioni esterne e i miglioramenti da apportare al materiale consegnato.  Sono stati proposti e approvati i cambiamenti C-x-y-1:10. Verranno inseriti nell'appendice B del \PdQv{v\versionPdQ{}}.
+\subsection{Suddivisione del lavoro}
+Dopo la revisione del materiale prodotto per la RR, si è deciso di effettuare una suddivisione in gruppi per la continuazione dei lavori, tenendo in considerazione la pianificazione vigente. Questa suddivisione non è fissa e potrà variare nel tempo. I gruppi e le persone che finiscono in anticipo i loro compiti saranno di supporto e aiuto per chi ne avrà bisogno per completare i relativi compiti. 
+I gruppi saranno così suddivisi: 
+\begin{itemize}
+	\item Analisi dei requisiti e casi d'uso: \CHF{} e \MAD;
+	\item Stesura del codice: \GIA, \MAD, \SIM{} e \REL;
+	\item Stesura e sistemazione documenti: \CHF, \COF{} e \VEL.
+\end{itemize}
+
+\subsection{Utilizzo di nuovi canali di comunicazione}
+Per permettere una comunicazione interna ai gruppi di lavoro più efficace e veloce si è deciso di utilizzare dei canali \glo{Discord} dedicati a temi specifici. Le comunicazioni di carattere generale rivolte a tutto il gruppo sono mantenute nel gruppo \glo{Telegram}.
+
+\subsection{Prossimo incontro}
+La data per il prossimo incontro è stata fissata per il 2021-02-10. Il gruppo si terrà aggiornato attraverso il canale \glo{Telegram} sull'andamento del lavoro e per il coordinamento. Nel prossimo incontro si discuteranno possibili miglioramenti nella gestione del lavoro e si effettuerà un resoconto sull'andamento dei lavori. 
+
+\section{Riepilogo delle decisioni}
+\begin{RiepilogoDecisioni}
+	 VI\_2021-02-01.1 & Suddivisioni gruppi di lavoro. \\
+	\hline
+	VI\_2021-02-01.2 & Adozione di \glo{Discord} come strumento di comunicazione interna ai gruppi di lavoro. \\
+	\hline 
+	 VI\_2021-02-01.3 & Nel prossimo meeting si discuterà di problemi riscontrati e miglioramenti. \\
+	\hline 
+	 VI\_2021-02-01.4 & Approvazione dei cambiamenti proposti (C-x-y-1:10). \\	\hline
+	
+\end{RiepilogoDecisioni}
+\end{document}

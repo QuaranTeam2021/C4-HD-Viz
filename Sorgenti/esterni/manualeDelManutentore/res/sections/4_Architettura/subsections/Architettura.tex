@@ -1,0 +1,76 @@
+\newpage
+\subsection{Diagramma dei package}
+Segue il diagramma dei package:
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/package_client.jpg} \\
+		\caption{Diagramma dei package}
+	\end{center}
+\end{figure}
+Il diagramma dei package (Figura 1) evidenzia le dipendenze esterne della componente Client e la sua suddivisione interna in package. In particolare i package principali sono:
+\begin{itemize}
+	\item \textbf{Store}: contenente le classi di business logic;
+	\item \textbf{Controller}: contenente i controller, che fungono da mediatori tra la view e lo store garantendo la \textit{Separation of Concerns};
+	\item \textbf{View}: contenente le componenti React e le classi per la generazione dei grafici;
+\end{itemize}
+
+\newpage
+\subsection{Diagramma delle classi}
+Segue il diagramma della classi:
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/classDiagram.jpg} \\
+		\caption{Diagramma delle classi}
+	\end{center}
+\end{figure}
+Il diagramma delle classi è composto principalmente dalla classe \textbf{Store}. Quest'ultima ha lo scopo di archiviare i dati caricati dall'utente e contiene tutti i dati relativi ai grafici visualizzati sulla vista, fornendo i metodi per aggiornare e recuperare i dati.
+Le altre classi sviluppate sono:
+\begin{itemize}
+	\item \textbf{Data}: definisce una struttura dati per contenere i dati caricati e fornisce i metodi per recuperare i dati e modificarli;
+	\item \textbf{DistanceBasedGraph, StandardGraph}: contengono tutte le informazioni selezionate dall'utente per la creazione di ogni grafico, nonché i dati nel formato richiesto. Implementano la classe astratta \textbf{Graph};
+	\item \textbf{DistanceData}: è una struttura dati che contiene dati basati sulle distanze in due array \textit{nodes, links};
+	\item \textbf{UmapParameters, FastmapParameters, IsomapLleParameters, TsneParameters}: contengono i parametri per lo specifico algoritmo cui sono dedicate. Estendono la classe astratta \textbf{Parameters};
+	\item \textbf{DatabaseLoaderController, DatabaseManagerController, DatabaseTablesController, LocalLoaderController, DistanceBasedGraphController, StandardController, UmapController, IsomapController, LleController, TsneController, FastmapController}: catturano gli input degli utenti e utilizzano i metodi implementati per modificare lo \textbf{Store};
+	\item \textbf{Distance}: enumerazione che contiene le possibili metriche di distanza della libreria DruidJS.
+\end{itemize}
+
+\subsubsection{Design pattern notevoli}
+\paragraph{Observer pattern}
+È stata utilizzata la libreria \glo{MobX} per marcare la componente \textbf{Store} come \textit{observable} e specifiche componenti React come \textit{observer}. Questo ha permesso di definire degli hook \textit{useEffect} che reagiscono a precisi cambiamenti dello \textbf{Store}. La realizzazione dell'\textit{observer pattern} è possibile marcando la classe da osservare con \textit{makeAutoObservable()} mentre le componenti React possono essere inglobate all'interno di \textit{observer()}.
+\paragraph{Strategy pattern}
+Per l'implementazione degli algoritmi di riduzione è stato utilizzato lo \textit{\glo{Strategy} pattern}. La classe \textbf{AlgorithmStrategy} è un'interfaccia che viene implementata dalle classi \textbf{UMAP}, \textbf{LLE}, \textbf{TSNE}, \textbf{ISOMAP}, \textbf{FASTMAP}. Ognuna di queste classi implementa il metodo astratto \textit{compute()} per calcolare la riduzione dimensionale sui dati. Ciascuna di queste classi è un template tipizzato su una specifica classe di tipo \textbf{Parameters}.
+
+\newpage
+\subsection{Diagrammi di sequenza}
+Seguono i diagrammi di sequenza per le funzionalità principali:
+\subsubsection{Caricamento file da locale}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/loadFile.png} \\
+		\caption{Diagramma di sequenza per il caricamento di un file da locale}
+	\end{center}
+\end{figure}
+Al verificarsi dell'evento \textit{onChangeInsert} la componente \textit{BuildGraph} della \glo{UI} invoca il metodo \textit{parse()} del controller \textit{LocalLoaderController} del quale possiede un'istanza. \\
+Il file caricato viene controllato in dimensione, subisce il parsing e viene memorizzato all'interno di un array. Le features individuate nei dati vengono salvare in una struttura dati \textit{mappa <String, String>} per memorizzare la tipologia di ogni dimensione. \\
+Successivamente il controller invoca \textit{loadData()} della componente \textit{Store}. Lo \textit{Store} notifica tutti i sui osservatori grazie all'implementazione del pattern \glo{observer} realizzata con la libreria \glo{MobX}.
+
+\subsubsection{Creazione di un grafico con riduzione dimensionale}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/createGraph.png} \\
+		\caption{Diagramma di sequenza per la creazione di un grafico per il quale è richiesta riduzione dimensionale}
+	\end{center}
+\end{figure}
+Al verificarsi dell'evento \textit{onClickConfirm}, la componente \textit{BuildGraph} della \glo{UI} invoca il metodo \textit{buildGraph()} del controller \textit{TsneController} del quale possiede un'istanza. In questo caso i controller derivano tutti da un'unica classe astratta \textit{ReductionController}, e sfruttano così il polimorfismo per l'invocazione dei metodi. \\
+Il controller crea l'istanza \textit{TsneParameters} che viene passata come parametro per calcolare l'algoritmo. Successivamente viene chiamato \textit{calculateReduction()} della classe \textit{Store} per ottenere i dati ridotti da inserire nel grafico. Viene creata l'istanza per contenere un grafico \textit{StandardGraph()} e successivamente si passa questa istanza come parametro del metodo \textit{addGraph()} della classe \textit{Store}.\\
+Il procedimento rimane invariato per la creazione di un qualunque altro grafico o algoritmo di riduzione.
+La componente \textit{Visualization} è un observer dello \textit{Store}, e verrà quindi notificata all'inserimento di un nuovo grafico.
+
+\subsection{View}
+La view si occupa di fornire una \glo{UI}. L'interfaccia è stata implementata attraverso l'utilizzo delle librerie React e Material UI. È stato utilizzato il modulo \texttt{npm React-router-dom} per il rendering di pagine diverse senza ricaricare l'intero sito. Il router viene, infatti, implementato in un file \glo{JavaScript} chiamato \textbf{App.js}, il quale è responsabile della gestione dei componenti che devono essere renderizzati. La view è organizzata in quattro macro-componenti, le quali raccolgono più componenti. 
+Seguono le componenti principali:
+\begin{itemize}
+	\item \textbf{App}: essa permette di creare un'istanza dello \textbf{Store} e dei \textbf{Controller} e di passarne il contesto a tutte le sotto componenti. App.js include le seguenti sotto componenti: \textbf{Header}, \textbf{Help}, \textbf{BuildGraph}, \textbf{ManageDataset}, \textbf{Visualization}, \textbf{FeaturesGraph};
+	\item \textbf{BuildGraph}: la componente BuildGraph contiene tutte le funzionalità utili all'inserimento dei dati per poter visualizzare un grafico di \textit{HD Viz}. Essa racchiude i seguenti componenti: \textbf{Insert}, \textbf{SelectGraph}, \textbf{SelectAlgorithm}, \textbf{SelectColumns}, \textbf{ButtonConfirm};
+	\item \textbf{Visualization}: contiene tutti i grafici generati l'utente, ognuno dei quali è contenuto in una componente \textbf{GraphContainer} dedicata;
+\end{itemize}

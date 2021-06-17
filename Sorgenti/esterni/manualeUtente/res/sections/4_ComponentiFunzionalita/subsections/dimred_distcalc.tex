@@ -1,0 +1,72 @@
+\subsection{Scelta di una \glo{riduzione dimensionale}}
+\label{subsec:dimred}
+Dopo aver scelto una visualizzazione Scatter plot Matrix o Proiezione Lineare Multi Asse, è possibile selezionare \textbf{una sola o nessuna} delle seguenti \glo{riduzioni dimensionali} e le relative opzioni:
+\begin{itemize}
+	\item FASTMAP, con opzioni:
+	\begin{itemize}
+		\item numero di dimensioni in output;
+		\item funzione di calcolo della \glo{distanza} associata;
+	\end{itemize}
+	\item ISOMAP, con opzioni:
+	\begin{itemize}
+		\item numero di dimensioni in output;
+		\item funzione di calcolo della \glo{distanza} associata;
+		\item parametro \textit{neighbors};
+	\end{itemize}
+	\item t-SNE, con opzioni:
+	\begin{itemize}
+		\item numero di dimensioni in output;
+		\item funzione di calcolo della \glo{distanza} associata;
+		\item parametro \textit{neighbors};
+		\item parametro \textit{perlexity};
+		\item parametro \textit{epsilon};
+	\end{itemize}
+	\item LLE, con opzioni:
+	\begin{itemize}
+		\item numero di dimensioni in output;
+		\item funzione di calcolo della \glo{distanza} associata;
+		\item parametro \textit{neighbors};
+	\end{itemize}
+	\item UMAP, con opzioni:
+	\begin{itemize}
+		\item numero di dimensioni in output;
+		\item parametro \textit{neighbors}.
+	\end{itemize}
+\end{itemize}
+Le opzioni possibili sono riassunte nella tabella in seguito:
+\begin{floattable}{Opzioni disponibili per ogni riduzione dimensionale}{Opzioni disponibili per ogni riduzione dimensionale}{R{5.8cm}|c|c|c|c|c}
+\topline
+ & \textbf{FASTMAP} & \textbf{ISOMAP} & \textbf{t-SNE} & \textbf{LLE} & \textbf{UMAP} \\ \capsep
+Numero di dimensioni in output & Sì & Sì & Sì & Sì & Sì \\ \rowsep
+Funzione di calcolo della distanza & Sì & Sì & Sì & Sì & No \\ \rowsep
+Parametro \textit{neighbors} & No & Sì & Sì & Sì & Sì \\ \rowsep
+Parametro \textit{perplexity} & No & No & Sì & No & No \\ \rowsep
+Parametro \textit{epsilon} & No & No & Sì & No & No \\ 
+\end{floattable}
+Le varie opzioni appaiono e scompaiono a video dinamicamente in seguito alla selezione della \glo{riduzione dimensionale}. Tutte le opzioni sono selezionabili tramite \glo{slider} numerico, ad eccezione della scelta della funzione di calcolo della \glo{distanza} associata, selezionabile tramite lo stesso widget utilizzato per la scelta di una funzione per il calcolo delle \glo{distanze} utilizzato per il calcolo della \glo{matrice delle distanze}. \\
+È consentito selezionare un numero di dimensioni in output minore, uguale o maggiore del numero di dimensioni in input. Alcune riduzioni dimensionali possono generare dei valori nulli in presenza di particolari configurazioni del dataset.\\
+Per una trattazione approfondita dei vari algoritmi di \glo{riduzione dimensionale} si rimanda a §\ref{sub:riferimenti} - Riferimenti.
+
+\subsection{Scelta di una funzione per il calcolo delle distanze}
+\label{subsec:distcalc}
+Dopo aver selezionato una visualizzazione Force Field o Heat Map è necessario scegliere \textbf{una e una sola} tra le funzioni disponibili per il calcolo delle \glo{distanze}. \\
+Le opzioni possibili sono le seguenti:
+\begin{itemize}
+	\item \glo{distanza} Euclidea;
+	\item \glo{distanza} di Manhattan;
+	\item \glo{distanza} Cosine;
+	\item \glo{distanza} di Chebyshev;
+	\item \glo{distanza} Euclidea quadrata;
+	\item \glo{distanza} di Canberra.
+\end{itemize}
+Sono selezionabili tramite menu a tendina. \\
+Il calcolo della distanza può produrre valori non numerici in presenza di alcune configurazioni del dataset (es. il calcolo della distanza di Canberra comporta una divisione con denominatore potenzialmente uguale a 0). In caso vengano prodotti valori non validi questi non vengono mostrati nella visualizzazione, e viene mostrato un avviso nella legenda del grafico contenente il numero di valori non numerici individuati. \\
+Per una trattazione approfondita delle varie funzioni di calcolo della \glo{distanza} si rimanda a §\ref{sub:riferimenti} - Riferimenti
+%TODO aggiornare
+% in figura
+
+\subsection{Selezione della normalizzazione}
+\label{subsec:nrml}
+HD Viz permette di scegliere se applicare o meno l'operazione di \textit{normalizzazione} sui dati, prima di applicare un'eventuale manipolazione su questi. L'operazione di \textit{normalizzazione} individua e applica una funzione per ogni colonna del dataset, avente come dominio l'insieme dei valori della colonna del dataset e come codominio l'intervallo chiuso $[0,1]$. Il valore più alto del dominio (che chiamiamo $m$) viene associato a 1, l'immagine ($x_i$) di ogni altro valore ($x_d$) del dominio assume il valore ($\frac{x_d}{m}$).
+
+Tale operazione serve ad equiparare il contributo delle colonne del dataset nella visualizzazione, a prescindere dall'ampiezza del dominio in cui i valori sono distribuiti. La \textit{normalizzazione} può essere desiderabile o meno.

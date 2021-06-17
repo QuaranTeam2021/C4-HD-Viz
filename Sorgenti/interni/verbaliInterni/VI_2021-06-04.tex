@@ -1,0 +1,79 @@
+\newcommand{\Data}{2021-06-04}
+\newcommand{\TitoloDoc}{V.I. del \Data}
+\newcommand{\Redattori}{\REL}
+\newcommand{\Verificatori}{\SIM}
+\newcommand{\Approvatore}{\CHF}
+\newcommand{\Distribuzione}{\Committente{} \\& \Gruppo{}}
+\newcommand{\Uso}{Interno}
+\newcommand{\Stato}{Approvato}
+\newcommand{\DescrizioneDoc}{Riassunto della riunione del gruppo \textit{\Gruppo} tenutasi il \Data.}
+\newcommand{\pathimg}{../../immagini}
+\newcommand{\VersioneDoc}{1.0.0}
+
+\input{../../Utility/general_commands.tex}
+\documentclass{../../Utility/stdDocument}
+
+\begin{document}
+\verbaleFronte
+\section*{Registro delle modifiche} 
+\begin{RegistroModifiche}
+	1.0.0 & 2021-06-05 & Approvazione del documento. & \CHF & \\
+	\hline
+	0.1.0 & 2021-06-04 & Stesura del documento. & \REL & \SIM \\
+\end{RegistroModifiche}
+
+\verbaleIndice
+
+\section{Informazioni generali}
+\begin{itemize}
+	\item[•] \textbf{Luogo:} \glo{Zoom};
+	\item[•] \textbf{Data:} 2021-06-04;
+	\item[•] \textbf{Ora di inizio:} 18:30;
+	\item[•] \textbf{Ora di fine:} 19:30;
+	\item[•] \textbf{Partecipanti del gruppo:}
+	\begin{enumerate}
+		\item [-] Alice Gibellato;
+		\item [-] Elia Rech;
+		\item [-] Federico Consalvo; 
+		\item [-] Federico Chiarello; 
+		\item [-] Matteo Sinigaglia;
+		\item [-] Luca Veronese;
+		\item [-] Damiano Mason.
+	\end{enumerate}
+	\item[•] \textbf{Segretario:} \REL. 
+\end{itemize}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Suddivisione del lavoro in vista della Revisione di Accettazione;
+	\item Decisione data di consegna.
+
+\end{itemize}
+
+\section{Resoconto}
+\subsection{Suddivisione del lavoro in vista della Revisione di Accettazione}
+Il gruppo si è riunito per fare il punto della situazione in vista della consegna del prodotto, per fare il punto sullo stato delle attività assegnate durante il precedente incontro e per assegnare i compiti necessari ad applicare le osservazioni del proponente raccolte nel V.E. 2021-06-01.\\
+Sono state elencate le attività riguardanti lo sviluppo e il prodotto da portare a termine prima della consegna del materiale per la candidatura alla Revisione di Accettazione. Le attività sono state suddivise nel seguente modo:
+\begin{itemize}
+	\item  \SIM{} e \CHF{} si occuperanno di eseguire test sul modello e sui controller;
+	\item \MAD{}, \GIA{} e \COF{} si occuperanno di modificare l'interfaccia e di applicare le osservazioni poste dal \glo{proponente} a riguardo;
+	\item \VEL{} e \REL{} si occuperanno di implementare funzionalità mancanti sui grafici e di testare la correttezza delle funzionalità esistenti.	
+\end{itemize}
+Le verifiche citata nel primo punto verranno svolte con \glo{Jest}, quelle indicate nell'ultimo punto saranno prevalentemente manuali, data le difficoltà nell'individuazione di un ambiente adeguato allo svolgimento di test automatici con \glo{D3.js}. \\
+
+Sono state individuate e assegnate le attività di documentazione da terminare prima della consegna per il materiale in ingresso per la Revisione di Accettazione:
+\begin{itemize}
+	\item \SIM{}, \CHF{}, \GIA{} e \MAD{} si occuperanno di aggiornare i test effettuati nel \textit{Piano di Qualifica};
+	\item \REL{} si occuperà di redarre il verbale dell'incontro corrente e di preparare la \textit{Lettera di Presentazione};
+	\item \VEL{} si occuperà di verificare la correttezza dei registri delle modifiche, di aggiornare le date di consegna nel \textit{Piano di Progetto} e di aggiornare il \textit{Manuale Utente}.
+\end{itemize}
+
+\subsection{Decisione data di consegna}
+Il gruppo ha deciso di posticipare la consegna del prodotto ad una data successiva alla conclusione delle attività mancanti. Il \glo{team} è fiducioso sulla scadenza delle attività assegnate e ha posto come data di consegna del prodotto la seguente: 2021-06-11.
+\section{Riepilogo delle decisioni}
+\begin{RiepilogoDecisioni}
+	VI\_2021-06-04.1 & Assegnazione di attività per la Revisione di Accettazione secondo quanto elencato in §3.1. \\ \hline
+	% TODO aggiornare con data di candidatura RA
+	VI\_2021-06-04.2 & Fissata la data di candidatura per la Revisione di Accettazione al 2021-06-11. \\ \hline
+\end{RiepilogoDecisioni}
+\end{document}

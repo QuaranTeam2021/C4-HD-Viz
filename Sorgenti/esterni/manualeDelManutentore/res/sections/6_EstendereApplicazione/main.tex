@@ -1,0 +1,42 @@
+\section{Come estendere l'applicazione}
+\label{sec:estensione}
+
+% inserire tutte il codice della sezione in questo file ed eliminare cartella subsections
+% OPPURE inserire più file nella sottocartella subsections e includere i file 
+% come mostrato sotto:
+
+% es: per includere 2 files chiamati 
+% nomefile1.tex, nomefile2.tex
+% \subimport{subsections/}{nomefile1.tex}
+% \subimport{subsections/}{nomefile2.tex}
+
+% oppure
+% \subsectionInFile{nomefile1.tex}
+% \subsectionInFile{nomefile2.tex}
+
+
+%probabili sezioni:
+
+% * prerequisiti minimi di sistema, clonazione git o download zip, npm start o build... 
+
+Essendo \textit{HD Viz} un'applicazione progettata cercando di rispettare al meglio l'\textit{\glo{Open-closed principle}}, è possibile estenderla in modo semplice.
+
+\subsection{Aggiunta grafici}
+Vi è possibilità di aggiungere nuovi grafici per la visualizzazione dati senza limiti di alcun tipo. Per aggiungere un nuovo grafico i passi da seguire sono i seguenti:
+\begin{enumerate}
+	\item Inserire il codice D3.js per la creazione del grafico in un file con estensione \textit{.js}.
+	%TODO for RA
+	%, assicurandosi che sia presente la direttiva di esportazione del grafico \texttt{export const <nomeGrafico>}.
+	% ... e importare nel file ...
+	Inserire il suddetto file nella cartella \texttt{HD-Viz/client/src/view/chart};
+	\item Aggiungere le opzioni necessarie nel form della componente \textit{BuildGraph};
+	\item Passo opzionale. Se il grafico implementato richiede un dataset con un formato diverso da quelli attualmente integrati sarà necessario implementare la classe astratta \textit{Graph} con una nuova classe concreta in grado di archiviare i dati nel formato richiesto. In questo caso potrebbe essere necessario creare un nuovo controller che possa catturare gli input utenti e renderli utili all'archiviazione.
+\end{enumerate}
+
+\subsection{Aggiunta algoritmi di riduzione}
+Gli algoritmi di riduzione sono fondamentali per permettere la visualizzazione di dati con molte dimensioni. Si possono aggiungere algoritmi di riduzione che differiscono tra loro per risultati e performance. Per aggiungere un algoritmo di riduzione va eseguita la seguente procedura:
+\begin{enumerate}
+	\item Implementare la classe astratta \textit{Parameters} aggiungendo tutti i parametri necessari al nuovo algoritmo di riduzione;
+	\item Implementare l'interfaccia \textit{AlgorithmStrategy} implementando il metodo \textit{compute()}, tipizzata sulla classe precedentemente creata;
+	\item Creare un nuovo controller, implementando la classe astratta \textit{ReductionController}, che contiene un'istanza della classe rappresentante il nuovo algoritmo. Implementare il metodo \textit{createGraph()} per la creazione di un grafico al quale si passano i dati ridotti con il nuovo algoritmo. Questo controller deve possedere un attributo per ogni parametro necessario alla costruzione di un oggetto \textit{Parameters}.
+\end{enumerate}

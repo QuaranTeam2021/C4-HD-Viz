@@ -1,0 +1,148 @@
+\subsection{Validazione e collaudo}
+Durante questo incremento il gruppo si è concentrato principalmente sull'ampliare la suite di test e sul correggere diversi \glo{bug} nel prodotto, oltre a verificare ulteriormente tutto il materiale prodotto in visione del collaudo.\\
+\subsubsection{Divisione oraria}
+\begin{tabOrariRuolo}{Verifica e collaudo  - Consuntivo della divisione oraria}{Consuntivo della divisione oraria}
+	\SIM & 0 & 6 & 1 & 2 (-2) & 6 & 5 & 20 \\
+
+	\GIA & 1 & 5 & 0 & 3 (-2) & 7 & 4 & 20 \\	
+
+	\VEL & 0 & 0 & 0 & 8 (-2) & 8 & 4 & 20 \\
+
+	\MAD & 0 & 7 & 2 & 3 (-2) & 4 & 4 & 20 \\
+
+	\CHF & 7 & 7 & 0 & 0 & 1 (-2) & 5 & 20 \\
+
+	\COF & 8 & 0 & 3 & 3 (-1) & 3 (-1) & 3 & 20 \\	
+
+	\REL & 5 & 0 & 0 & 3 (-1) & 6 (-1) & 6 & 20 \\  
+	\textbf{Totale ore ruolo} & 21 & 25 & 6 & 22 & 35 & 31 & 140 \\ \hline            
+\end{tabOrariRuolo}
+I dati ottenuti possono essere riassunti dal seguente istogramma:
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=0.9\textwidth]{../images/ist_consuntivo_inc_7.pdf} \\
+	\caption{Istogramma della ripartizione ore/ruolo sostenute durante la verifica e collaudo }
+	\label{Collaudo e verifica - istogramma}
+\end{figure}
+\subsubsection{Costo risultante}
+Il costo per ogni ruolo, circoscritto a questo periodo, è il seguente:
+\begin{tabCostiRuolo}{Verifica e collaudo  - Consuntivo di periodo dei costi per ruolo}{Consuntivo dei costi per ruolo}
+	Responsabile   & 21 &   630,00 \\
+
+	Amministratore & 25 &   500,00 \\	
+
+	Analista       & 6  &   150,00 \\
+
+	Progettista    & 22 (-10) &   484,00 (-220,00)\\
+
+	Programmatore  & 35 (-4) &   525,00 (-60,00)\\
+
+	Verificatore   & 31 &   465,00  \\ \hline
+
+	\textbf{Totale}& 140 (-14) &   2754,00 (-282,00) \\
+\end{tabCostiRuolo}
+
+I dati ottenuti possono essere riassunti dal seguente areogramma:
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=0.9\textwidth]{../images/aereo_consuntivo_cost_inc_7.pdf} \\
+	\caption{Areogramma della ripartizione ore/ruolo sostenute durante la verifica e collaudo}
+	\label{Verifica e collaudo - areogramma}
+\end{figure}
+\subsubsection{Osservazioni}
+
+\begin{itemize}
+	\item \textbf{Progettisti:} in seguito all'esito negativo alla \glo{Product Baseline} l'architettura dell'applicazione è stata sviluppata adeguatamente e per questo motivo sono state necessarie meno ore di quanto preventivate;
+	\item \textbf{Programmatori:} Le ore sono servite per effettuare i test mancanti e per applicare le modifiche all'interfaccia in seguito all'incontro con il \glo{proponente}.
+\end{itemize}
+
+\subsubsection{Considerazioni rispetto al preventivo}
+Le ore impiegate in questo incremento, risultano minori rispetto a quanto preventivate. Il risultato, nonostante si discosti dalle ore del preventivo, è ottimo in quanto fa rientrare i costi dell'incremento precedente. Per questo motivo il gruppo si ritiene soddisfatto.
+\subsection{Riepilogo}
+Di seguito viene riportata la tabella con il riepilogo dei preventivi e consuntivi riferiti agli incrementi sostenuti fino a questo momento, con relativo impatto sull'importo complessivo.
+\begin{center}
+	\newcommand{\continuedcaption}{\caption[]{Riepilogo degli scostamenti verificati (segue da pagina precedente)}\\}
+	
+	\begin{TableBase}
+		\begin{longtable}{|x{.19\hsize}|p{.20\hsize}|p{.20\hsize}|c|p{.21\hsize}|}
+			\caption{Riepilogo degli scostamenti verificati}\\
+			\topline
+			\rowcolor{headercolour}
+			\lhdr{Fase}       &  \lhdr{Preventivo (in €)}  &  \lhdr{Consuntivo (in €)}  & \lhdr{ Sostenuto} &
+			\ohdr{Scostamento (in €)}   \\ \capsep
+			\endfirsthead
+			\continuedcaption
+			\topline
+			\rowcolor{headercolour}
+			\lhdr{Fase}       &  \lhdr{Preventivo (in €)}  &  \lhdr{Consuntivo (in €)}  &  \lhdr{ Sostenuto} &
+			\ohdr{Scostamento (in €)}   \\ \capsep
+			\endhead
+			\rowsep
+			\defaultfooter{5}
+			Analisi & 5280,00 & 5195,00 & Verificato & -85,00 \\ \hline
+			\rowcolor{gray!20!white}
+			\textbf{Totale Non Rendicontato} & \textbf{5280,00} & \textbf{5195,00} & Verificato  & \textbf{-85,00} \\ \hline
+			
+			\multicolumn{5}{|l|}{Progettazione e codifica della Technology Baseline} \\ \hline
+			\qquad \textit{Incremento I} & 2080,00 & 2358,00 & Verificato & +278,00\\ \hline
+			\qquad \textit{Incremento II} & 2017,00 & 1742,00 & Verificato & -275,00 \\ \hline
+			\multicolumn{5}{|l|}{Progettazione di dettaglio e codifica} \\ \hline
+			\qquad \textit{Incremento III} & 3820,00 & 3785,00 & Verificato & -35,00\\ \hline
+			\qquad \textit{Incremento IV} & 1342,00 & 1633,00 & Verificato & +291,00 \\ \hline
+			\qquad \textit{Incremento V} & 1236,00 & 850,00 & Verificato & -386,00\\ \hline
+			\qquad \textit{Incremento VI} & 381,00 & 619,00 & Verificato & +238,00\\ \hline
+			\multicolumn{5}{|l|}{Validazione e collaudo} \\ \hline
+			\qquad \textit{Verifica e collaudo} & 3034,00 & 2754,00 & Verificato & -282,00\\ \hline
+			\rowcolor{gray!20!white}
+			\textbf{Totale Rendicontato} & \textbf{13.910,00} & \textbf{13.741,00}& & \textbf{-196,00} \\ \hline
+		\end{longtable}
+	\end{TableBase}
+\end{center}
+
+\subsection{Consuntivo finale}
+A seguire è riportata la tabella con il totale delle ore e del costo del lavoro effettivamente svolto dai singoli membri del gruppo durante il progetto, incluso il periodo di analisi dei requisiti. Tutte le azioni di ridistribuzione delle ore durante i vari periodi sono state fatte cercando di mantenere la divisione dei compiti equa tra tutti i componenti del gruppo.
+\begin{tabOrariRuolo}{Verifica e collaudo  - Consuntivo della divisione oraria}{Consuntivo della divisione oraria}
+	\SIM & 11 & 15 & 19 & 26 & 39 & 39 & 140 \\
+	
+	\GIA & 10 & 17 & 14 & 24 & 26 & 26 & 140 \\	
+	
+	\VEL & 12 & 14 & 15 & 22 & 35 & 35 & 140 \\
+	
+	\MAD & 9 & 19 &  18 & 22 & 28 & 28 & 140 \\
+	
+	\CHF & 15 & 21 & 19 & 24 & 25 & 25 & 140 \\
+	
+	\COF & 17 & 14 & 21 & 23 & 26 & 26 & 140 \\	
+	
+	\REL & 15 & 16 & 13 & 24 & 21 & 21 & 140 \\ \hline
+	\textbf{Totale ore ruolo} & 89 & 116 & 119 & 165 & 200 & 291 & 940 \\ \hline
+	\textbf{Costo ruolo €} & 2670,00  & 2320,00   & 2975,00   &  3630,00 & 3000,00    &  4365,00  & 18960,00 \\ \hline 
+\end{tabOrariRuolo}
+
+\subsection{Consuntivo finale rendicontato}
+La tabella seguente riporta il totale delle ore di lavoro rendicontate svolte dai singoli membri del gruppo durante il progetto, dalla fase di progettazione e codifica della \glo{Technology Baseline} inclusa.Tutte le azioni di ridistribuzione delle ore durante le varie fasi sono state fatte puntando a mantenere la divisione dei compiti equa tra tutti i componenti del gruppo; i membri hanno quindi tutti lo stesso monte ore lavorativo finale.
+\begin{tabOrariRuolo}{Verifica e collaudo  - Consuntivo della divisione oraria}{Consuntivo della divisione oraria}
+	\SIM & 2 & 13 & 4 & 26 & 39 & 21 & 105 \\
+	
+	\GIA & 8 & 8 & 0 & 24 & 26 & 39 & 105 \\	
+	
+	\VEL & 1 & 12 & 8 & 22 & 35 & 27 & 105 \\
+	
+	\MAD & 0 & 16 & 8 & 22 & 28 & 31 & 105 \\
+	
+	\CHF & 13 & 9 & 11 & 24 & 25 & 23 & 105 \\
+	
+	\COF & 17 & 4 & 9 & 23 & 26 & 26 & 105 \\	
+	
+	\REL & 15 & 5 & 0 & 22 & 26 & 37 & 105 \\ \hline
+	\textbf{Totale ore ruolo} & 56 & 67 & 40 & 165 & 205 & 202 & 735 \\ \hline
+	\textbf{Costo ruolo €} & 1680,00  & 1340,00   & 1000,00   &  3586,00 & 3075,00    &  3060,00  & 13741,00 \\ \hline 
+\end{tabOrariRuolo}
+
+\subsection{Conclusioni}
+Il gruppo conclude il progetto con un bilancio positivo. Il costo dell'applicazione in totale è di 13.741,00 € rispetto ad un preventivo di 13.910,00 €. Il \glo{team} si ritiene soddisfatto sulle attività di pianificazione del prodotto e del preventivo nonostante il gruppo avesse poche conoscenze relativamente alla gestione di un progetto così ampio. \\
+Le difficoltà iniziali principali sono state quelle di organizzare le attività da suddividere e di portare a termine, entro il giorno prestabilito, i compiti assegnati.
+Durante lo sviluppo del progetto ci sono stati alcuni disallineamenti rispetto a quanto preventivato, per questo motivo sono state ridistribuite le ore e risorse durante gli incrementi. Questo ha permesso di rispettare il preventivo e ha fatto capire al gruppo l'importanza di rilevare e preventivare i rischi che si possono verificare durante lo sviluppo del progetto. Per questo motivo, la ridistribuzione delle ore è stata adeguata e necessaria per il corretto sviluppo dell'applicazione. \\
+Il risultato della corretta ridistribuzione è possibile notarlo nel consuntivo. Nonostante una posticipazione della consegna della Revisione di Qualifica a causa dell'esito negativo della \textit{Product Baseline}, le ore, seppur fossero maggiori rispetto al preventivo sono state adeguate e hanno fatto si che l'impegno per il collaudo e verifica fosse minore. Nonostante l'esperienza accumulata il gruppo a posteriori avrebbe dovuto pianificare in maniera più accurata lo sviluppo della fase di progettazione di dettaglio e codifica. Questo avrebbe potuto evitare l'allungamento dello sviluppo del prodotto, ottenendo un ritmo adeguato per la consegna dell'applicazione.\\
+\\
+Infine, il \glo{team} si ritiene soddisfatto rispetto a quanto richiesto dal \glo{proponente}, sviluppando un prodotto di qualità dimostrando di avere buone capacità di lavorare in gruppo.

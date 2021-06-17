@@ -1,0 +1,57 @@
+\section{Introduzione}
+
+\subsection{Scopo del documento}
+Il presente documento espone le scelte architetturali intraprese dal gruppo \textit{QuaranTeam} per lo sviluppo del progetto \textit{HD Viz}. A tal fine le varie sezioni sono corredate di diagrammi di classe, di package e di sequenza in formato standard UML 2.x, allo scopo di illustrare rispettivamente i vari design pattern adottati, la struttura del prodotto e i suoi scenari di esecuzione.
+
+\subsection{Scopo del prodotto}
+Il \glo{capitolato} C4 ha per obiettivo lo sviluppo di un'applicazione web chiamata \textit{HD Viz}, il cui scopo è fornire uno strumento per la visualizzazione di dati con molte dimensioni a supporto della fase esplorativa dell'analisi dei dati.
+\textit{HD Viz} dovrà essere in grado di rappresentare dati che potranno avere almeno 15 dimensioni e fornire minimo 4 diversi tipi di visualizzazione.
+
+\subsection{Glossario}
+Viene fornito il \Glossariov{v\versionGlossario{}}, una raccolta di tutti i termini con un significato particolare, che vengono definiti e descritti al fine di evitare ambiguità. I termini definiti nel \Glossariov{v\versionGlossario{}} saranno identificati con una G a pedice. 
+
+\subsection{Riferimenti}
+
+	\subsubsection{Riferimenti normativi}
+	\begin{itemize}
+		\item \textbf{Norme di Progetto}: \NdPv{2.0.0};
+		\item \textbf{Slide del corso Ingegneria del Software - Regolamento del Progetto Didattico}: \\
+			\url{https://www.math.unipd.it/~tullio/IS-1/2020/Dispense/P1.pdf}.
+	\end{itemize}
+		
+	\subsubsection{Riferimenti informativi}
+	\begin{itemize}
+		\item \textbf{\glo{Capitolato} d'appalto C4 - \textit{HD Viz}}:	 \\
+			\url{https://www.math.unipd.it/~tullio/IS-1/2020/Progetto/C4.pdf};
+		\item \textbf{Slide del corso di Ingegneria del Software - T9, Progettazione Software};
+		\item \textbf{Slide del corso di Ingegneria del Software - E1, Diagrammi delle Classi e dei Package};
+		\item \textbf{Slide del corso di Ingegneria del Software - E2, Diagrammi di Attività e Sequenza};
+		\item \textbf{Slide del corso di Ingegneria del Software - E10, Design pattern comportamentali};
+		\item \textbf{Slide del corso di Ingegneria del Software - L2, Model-View-Controller e derivati};
+
+    \item \textbf{Libri di Testo}: 
+	    \begin{itemize}
+	    \item Software Engineering (10th edition) - Ian Sommerville - Pearson Education - Global Edition\\
+		    Sezioni:
+		    \begin{itemize}
+				\item §6 - Architectural Design
+			\end{itemize}
+	    \item UML Distilled (3rd edition) - Martin Fowler - Addison Wesley\\
+		    Sezioni:
+		    \begin{itemize}
+				\item §3 - Class Diagrams: The Essentials;
+				\item §4 - Sequence Diagrams;
+				\item §5 - Class Diagrams: Advanced Concepts;
+				\item §7 - Package Diagrams.
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	\subsubsection{Riferimenti tecnici}
+	\begin{itemize}
+		\item \textbf{JavaScript}: \url{https://tc39.es/ecma262/};
+		\item \textbf{React}: \url{https://reactjs.org/docs/react-api.html};
+		\item \textbf{node.js}: \url{https://nodejs.org/dist/latest-v14.x/docs/api/};
+		\item \textbf{d3.js}: \url{https://github.com/d3/d3/wiki};
+		\item \textbf{DruidJS}: \url{https://saehm.github.io/DruidJS/index.html};
+		\item \textbf{MobX}: \url{https://mobx.js.org/README.html}.
+	\end{itemize}

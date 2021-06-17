@@ -1,0 +1,60 @@
+\section{Descrizione dell'architettura}
+
+\subsection{Frontend}
+% inserire tutte il codice della sezione in questo file ed eliminare cartella subsections
+% OPPURE inserire più file nella sottocartella subsections e includere i file 
+% come mostrato sotto:
+
+% es: per includere 2 files chiamati 
+% nomefile1.tex, nomefile2.tex
+% \subimport{subsections/}{nomefile1.tex}
+% \subimport{subsections/}{nomefile2.tex}
+
+% oppure
+% \subsectionInFile{nomefile1.tex}
+% \subsectionInFile{nomefile2.tex}
+
+La base dell'architettura per l'applicazione web \textit{HD Viz} è rappresentata da MobX. Quest'ultima è una libreria indipendente che permette di rendere semplice, scalabile e trasparente la gestione dello stato di una applicazione tramite l'utilizzo della reactive programming. Il vantaggio offerto da MobX è la gestione automatica dello stato con un set minimale di istruzioni da implementare. MobX e React, che è stato utilizzato per lo sviluppo della UI, sono comunemente usati insieme, e per questo MobX supporta una specifica integrazione con React che mette a disposizione un framework minimale per l'implementazione di \textit{observer pattern}. \newline
+Le macro-componenti sono le seguenti:
+
+\begin{itemize}
+	\item \textbf{Domain store}: i domain stores sono degli archivi che contengono i dati dell'applicazione. Nel nostro caso lo \texttt{Store} principale contiene dati che vengono caricati da database o da file locale, in questo modo non è necessario caricare i dati più volte perché il loro stato è sempre mantenuto fino a quando non vengono inseriti nuovi dati su cui lavorare. La componente \texttt{Store} è poi composta di altri oggetti di dominio al suo interno, come l'array di \texttt{GraphState} che archivia lo stato di ogni diverso grafico richiesto sulla UI. Lo \texttt{Store} sarà quindi la componente di architettura che verrà resa \textit{observable} (ovvero \textit{subject}) da MobX; 
+	
+	\item \textbf{Components}: queste sono le componenti React che compongono la UI. Sono organizzate secondo una struttura gerarchica, che rappresenta in quale punto vengono inserite nell'interfaccia. Il livello immediatamente sottostante alla componente radice, \texttt{App}, permette inoltre di individuare le diverse funzioni che l'applicazione fornisce (esplorazione di dati, gestione dei dataset salvati e manuale utente). La parte di esplorazione di dati, la funzionalità principale dell'applicazione, contiene il maggior numero di sotto-componenti.
+	È proprio in queste che avviene l'integrazione tra le due librerie. Con il modulo \textit{observer} è possibile inglobare specifiche componenti che necessitano di osservare lo stato dello \texttt{Store}. Non è quindi necessario rendere observer l'intera vista, ma solo le componenti necessarie;
+	
+	\item \textbf{Controllers}: diversamente da quanto previsto dall'utilizzo standard di MobX con React abbiamo introdotto delle componenti controller che servono per trasformare gli input utente che arrivano dalle componenti React in dati che possano essere archiviati nello \texttt{Store}. Le componenti controller sono state divise per ruolo in modo da renderle più semplici e minimali senza includere funzionalità superflue. 
+\end{itemize}
+
+Per rendere il tutto funzionante si fa utilizzo dei \textit{React context}. È possibile vedere l'organizzazione delle componenti React come una struttura ad albero. Un contesto è visibile da tutte le componenti dell'applicazione una volta che viene passato grazie ad un \textit{Provider} alla componente radice, che la rende disponibile a tutte le componenti discendenti da quest'ultima. Per utilizzare un contesto, che rimane quindi disponibile per tutta l'esecuzione, si utilizza \texttt{useContext()} offerta da React, che serve per utilizzare un particolare contesto. 
+React mette a disposizione anche l'hook \texttt{useEffect} che può essere utilizzato per impostare dei \textit{side effect} che devono verificarsi e che sono legati al ciclo di vita del componente React. L'utilizzo di \texttt{useEffect} richiede la specifica delle dipendenze, che possono essere lo \textit{store context} o un suo particolare attributo, in modo tale che la componente reagisca al loro cambiamento di stato. La possibilità di definire come dipendenze gli attributi è fondamentale perché permette alle componenti di ri-renderizzarsi solo in seguito a specifici cambiamenti. 
+In sintesi nell'architettura descritta è stato implementato un \textit{observer pattern} nel quale lo \texttt{Store} è un \textit{subject} e diverse componenti di React sono \textit{observers} che reagiscono al cambiamento di stato dello \texttt{Store}. 
+
+\subsection{Backend}
+
+\subsubsection{Server}
+La parte server gestisce le query verso il database PostgreSQL ed il caricamento o la rimozione di dataset da esso, sfruttando la libreria node-postgres. Il framework Express.js gestisce le richieste HTTP inviate dalla web app.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{img/server1.jpg} \\
+		\caption{Schema di interazione con la parte server}
+	\end{center}
+\end{figure}
+
+Vengono utilizzati i seguenti percorsi di route:
+\begin{itemize}
+		\item \textbf{(GET)  /tables/list}: ritorna la lista dei dataset memorizzati;
+		\item \textbf{(GET)  /tables/:table}: ritorna il dataset memorizzato nella tabella table;
+		\item \textbf{(GET)  /tables/:table/columnsnames}: ritorna i nomi delle dimensioni del dataset table;
+		\item \textbf{(GET)  /tables/:table/selectedcolumns}: ritorna le dimensioni selezionate del dataset table;
+		\item \textbf{(POST)  /tables/:table/insertdataset}: carica nel database il dataset table;
+		\item \textbf{(DELETE)  /tables/:table}: elimina dal database il dataset table.
+\end{itemize}
+
+
+
+
+
+
+

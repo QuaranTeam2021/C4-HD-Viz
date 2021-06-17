@@ -1,0 +1,128 @@
+\section{Installazione}
+\label{sec:installazione}
+
+% inserire tutte il codice della sezione in questo file ed eliminare cartella subsections
+% OPPURE inserire più file nella sottocartella subsections e includere i file 
+% come mostrato sotto:
+
+% es: per includere 2 files chiamati 
+% nomefile1.tex, nomefile2.tex
+% \subimport{subsections/}{nomefile1.tex}
+% \subimport{subsections/}{nomefile2.tex}
+
+% oppure
+% \subsectionInFile{nomefile1.tex}
+% \subsectionInFile{nomefile2.tex}
+
+
+%probabili sezioni:
+
+% * prerequisiti minimi di sistema, clonazione git o download zip, npm start o build... 
+
+\subsection{Requisiti}
+\paragraph*{Sistema operativo}
+\begin{itemize}
+	\item Windows 10;
+	\item Ubuntu 20.04 o superiore, o distribuzioni Linux derivate.
+\end{itemize}
+
+\paragraph*{Browser}
+\begin{itemize}
+	\item \textbf{Mozilla Firefox} v85.0 o superiore;
+	\item \textbf{Google Chrome} v87.0 o superiore. 
+\end{itemize}
+È consigliabile avere impostato uno dei due \glo{browser} elencati come \glo{browser} predefinito, perché la procedura indicata in §\ref{subsubsec:avvio_client} (Installazione - Avvio del client) apre in automatico una pagina del \glo{browser} predefinito. 
+È comunque possibile aprire l'applicazione da un \glo{browser} non predefinito in seguito, al seguente URL:
+\begin{center}
+	\texttt{http:localhost/\textit{<numero\_porta>}}
+\end{center}
+Non è garantita la piena compatibilità per \glo{browser} derivati dai suddetti o per versioni precedenti dei suddetti.
+
+\paragraph*{Requisiti software}
+\begin{itemize}
+	\item \glo{\textbf{Node.js}} 14.16.0 o superiore;
+	\item \glo{\textbf{npm}} 7.6.3 o superiore;
+	\item \glo{\textbf{PostgreSQL}} 13.2 o superiore (opzionale\footnote{necessario solo per il collegamento con il \glo{database}}). 
+\end{itemize}
+
+\paragraph*{Requisiti hardware}
+
+\begin{itemize}
+	\item \textbf{RAM}: necessari almeno 4 GB, consigliati almeno 8 GB;
+	\item \textbf{connessione a Internet}. 
+\end{itemize}
+
+\subsection{Installazione e avvio}
+\subsubsection{Preliminari}
+\begin{enumerate}
+\item Aprire la pagina del \glo{repository} \glo{GitHub} di \textit{HD Viz} al seguente link:
+\begin{center}
+	\url{https://github.com/QuaranTeam2021/HD-Viz}
+\end{center} 
+\item Selezionare \textbf{Code > Download Zip};
+\item Salvare l'archivio \textit{.zip} ed estrarre i file nella locazione desiderata;
+\item Aprire la cartella \texttt{HD-Viz-main}.
+\end{enumerate}
+In alternativa, in un sistema con \texttt{wget} e \texttt{unzip} installati\footnote{installati di default in ogni distribuzione Linux, necessaria installazione manuale per Windows} aprire il terminale\footnote{terminale per Linux o Windows PowerShell per Windows} e digitare le seguenti istruzioni:
+\begin{lstlisting}
+wget https://github.com/QuaranTeam2021/HD-Viz/archive/main.zip
+unzip main.zip
+cd HD-Viz-main
+\end{lstlisting}
+
+\subsubsection{Avvio del client}
+\label{subsubsec:avvio_client}
+Una volta posizionati all'interno della cartella \texttt{HD-Viz-main}:
+\begin{enumerate}
+	\item Aprire la cartella \texttt{client} e aprire un terminale posizionato nella cartella \texttt{client} (se non già aperto);
+	\item Se si cerca di avviare per la prima volta \textit{HD Viz}, digitare il comando:
+	\begin{lstlisting}
+npm install
+	\end{lstlisting}
+	\item Eseguire la \glo{build} dell'applicazione con il comando:
+	\begin{lstlisting}
+npm run build
+	\end{lstlisting}
+	\item Se si cerca di avviare per la prima volta \textit{HD Viz}, digitare il comando:
+	\begin{lstlisting}
+npm install -g serve
+	\end{lstlisting}
+	\item Digitare infine il comando:
+	\begin{lstlisting}
+serve -s build -l 3000
+	\end{lstlisting}
+	% sostituendo \texttt{<numero_porta>} con 3000
+	\item Attendere l'apertura automatica del \glo{browser} predefinito.
+\end{enumerate}
+
+\subsubsection{Configurazione ed avvio del server (opzionale)}
+Il \glo{server} viene sfruttato per interagire con un \glo{database} esterno, pertanto la sua installazione ed esecuzione è opzionale.
+Il \glo{database} utilizzato è \texttt{PostgreSQL}, scaricabile al seguente link:
+\begin{center}
+	\url{https://www.postgresql.org/download/}
+\end{center}
+\label{subsubsec:avvio_server}
+Una volta posizionati all'interno della cartella \texttt{HD-Viz-main}:
+\begin{enumerate}
+
+	\item Se si cerca di avviare per la prima volta la componente server, aprire un terminale nella cartella \texttt{HD-Viz-main} e digitare il comando:
+	\begin{lstlisting}
+npm install
+	\end{lstlisting}
+
+	\item Aprire la cartella \texttt{server} e creare un file \texttt{.env} rispettando la seguente notazione: 
+	\begin{lstlisting}
+HDVIZ_USER = postgres
+HDVIZ_PASSWORD = postgres
+HDVIZ_HOST = localhost
+HDVIZ_PORT = 5432
+HDVIZ_DATABASE = hdviz
+	\end{lstlisting}
+	Inserire come valore dei campi HDVIZ\_USER, HDVIZ\_PASSWORD e HDVIZ\_DATABASE rispettivamente il nome utente, la password e il nome del \glo{database} a cui ci si vuole connettere. \\
+
+	\item Spostarsi con il terminale nella cartella \texttt{server} e avviare il \glo{server} con il comando:
+	\begin{lstlisting}
+node server
+	\end{lstlisting}
+\end{enumerate}
+Il \glo{server} sarà in esecuzione alla porta \texttt{5000}.

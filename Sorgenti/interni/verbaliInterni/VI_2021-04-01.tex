@@ -1,0 +1,77 @@
+\newcommand{\Data}{2021-04-01}
+\newcommand{\TitoloDoc}{V.I. del \Data}
+\newcommand{\Redattori}{\CHF}
+\newcommand{\Verificatori}{\REL}
+\newcommand{\Approvatore}{\GIA}
+\newcommand{\Distribuzione}{\Committente{} \\& \Gruppo{}}
+\newcommand{\Uso}{Interno}
+\newcommand{\Stato}{Approvato}
+\newcommand{\DescrizioneDoc}{Riassunto della riunione del gruppo \textit{\Gruppo} tenutasi il \Data.}
+\newcommand{\pathimg}{../../immagini}
+\newcommand{\VersioneDoc}{1.0.0}
+
+\input{../../Utility/general_commands.tex}
+\documentclass{../../Utility/stdDocument}
+
+\begin{document}
+\verbaleFronte
+\section*{Registro delle modifiche} 
+\begin{RegistroModifiche}
+	1.0.0 & 2021-04-03 & Approvazione del documento. & \GIA & \\
+	\hline
+	0.1.0 & 2021-04-02 & Stesura del documento. & \CHF & \REL \\
+\end{RegistroModifiche}
+
+\verbaleIndice
+
+\section{Informazioni generali}
+\begin{itemize}
+	\item[•] \textbf{Luogo:} \glo{Zoom};
+	\item[•] \textbf{Data:} 2021-04-01;
+	\item[•] \textbf{Ora di inizio:} 18:00;
+	\item[•] \textbf{Ora di fine:} 19:00;
+	\item[•] \textbf{Partecipanti del gruppo:}
+	\begin{enumerate}
+		\item [-] Alice Gibellato;
+		\item [-] Elia Rech;
+		\item [-] Federico Consalvo; 
+		\item [-] Federico Chiarello; 
+		\item [-] Matteo Sinigaglia;
+		\item [-] Luca Veronese;
+		\item [-] Damiano Mason.
+	\end{enumerate}
+	\item[•] \textbf{Segretario:} Federico Chiarello. 
+\end{itemize}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Candidatura \glo{Product Baseline};
+	\item Aggiornamento \textit{Analisi dei Requisiti} e \textit{Piano di Progetto}.
+\end{itemize}
+
+\section{Resoconto}
+Il gruppo si è riunito in seguito all'apertura degli slot per candidarsi al colloquio della \glo{Product Baseline} e per stabilire una data per la quale prenotarsi. \\
+Inoltre sono state discusse le modifiche alla pianificazione e all'\textit{Analisi dei Requisiti} da apportare in seguito al colloquio con il \glo{proponente}.
+
+\subsection{Candidatura \glo{Product Baseline}}
+Dopo un breve confronto il gruppo ha confermato quanto accennato nella scorsa riunione, ovvero di candidarsi al colloquio della \glo{Product Baseline} per il 2021-04-14. Si è deciso di contattare il \glo{committente} tramite e-mail per prenotare il colloquio.
+
+\subsection{Aggiornamento \textit{Analisi dei Requisiti} e \textit{Piano di Progetto}}
+In seguito all'incontro con il \glo{proponente} si è discusso delle funzionalità che dovranno essere implementate. 
+In particolare il gruppo di analisti ha chiesto e ottenuto di poter inserire nell'\textit{\AdR{}} le seguenti modifiche:
+\begin{itemize}
+	\item dettaglio maggiore dei \glo{requisiti} relativi all'interazione dei grafici;
+	\item rimozione dei termini "salvataggio di sessione" dall'\textit{Analisi dei Requisiti}, fuorvianti rispetto alla reale natura dei \glo{requisiti} in questione (salvataggio della visualizzazione in un formato adeguato);
+	\item classificazione come "requisiti di vincolo" dei \glo{requisiti} riportanti i browser supportati e le relative versioni (su suggerimento del \glo{committente} in sede di Revisione di Progettazione).
+\end{itemize}
+Tali modifiche vanno a sistemare incomprensioni e approssimazioni presenti nell'\AdRv{2.0.0}. \\
+Si è discusso brevemente delle funzionalità da implementare entro la Revisione di Qualifica. Sono state quindi ridefinite alcune priorità di sviluppo, in particolare è stato posticipato lo sviluppo del \glo{dendrogramma} all'ultima revisione, in quanto \glo{requisito} opzionale.
+
+\section{Riepilogo delle decisioni}
+\begin{RiepilogoDecisioni}
+	VI\_2021-04-01.1 & Candidatura al colloquio della \glo{Product Baseline} per il 2021-04-14. \\ \hline  
+	VI\_2021-04-01.2 & Approvato l'inserimento di nuovi \glo{requisiti} relativi all'interazione con i grafici. \\ \hline
+	VI\_2021-04-01.3 & Approvata la correzione dei \glo{requisiti} relativi a salvataggio di un grafico e browser supportati. \\ \hline  
+	VI\_2021-04-01.4 & Posticipato lo sviluppo del \glo{dendrogramma}. \\ \hline
+\end{RiepilogoDecisioni}
+\end{document}

@@ -1,0 +1,236 @@
+\subsection{Documentazione}
+
+\subsubsection{Descrizione}
+Il processo di documentazione ha lo scopo di raccogliere e organizzare in documenti le informazioni prodotte all'interno di un processo o di un'attività. Deve prevedere un insieme di attività mirate a supportare la produzione, la verifica e la manutenzione della documentazione.
+Questa sezione contiene le decisioni e le norme scelte per la stesura, la verifica e l'approvazione della documentazione ufficiale.
+Si vogliono stabilire norme, linee guida e fasi del processo che consentano di produrre una documentazione che soddisfi le metriche per la qualità definite in questo documento.
+Tali norme sono tassative per ogni documento formale prodotto.
+
+\subsubsection{Attività}
+\paragraph{Implementazione del processo}
+\subparagraph{Ciclo di vita del documento}
+Ogni documento attraversa le fasi del seguente ciclo di vita:
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/ciclo_di_vita_documento_3.1.2.1.png} \\
+		\caption{Fasi del ciclo di vita del documento}
+	\end{center}
+\end{figure} 
+
+\paragraph{Documentazione richiesta}
+\subparagraph{Documenti interni}
+I documenti interni sono:
+\begin{itemize}
+	\item \textbf{Studio di Fattibilità - SdF};
+	\item \textbf{Norme di Progetto - NdP}.
+\end{itemize}
+
+\subparagraph{Documenti esterni}
+I documenti esterni sono:
+\begin{itemize}
+	\item \textbf{Analisi dei Requisiti - AdR};
+	\item \textbf{Piano di Progetto - PdP};
+	\item \textbf{Piano di Qualifica - PdQ};
+	\item \textbf{Glossario - G};
+	\item \textbf{Manuale Utente - MU}: manuale ad uso degli utilizzatori del \glo{software};
+	\item \textbf{Manuale del Manutentore - MM}: manuale rivolto agli sviluppatori e ai manutentori del \glo{software}.
+\end{itemize}
+
+\subparagraph{Verbali}
+I verbali riassumono gli argomenti discussi nelle riunioni e riepilogano le decisioni prese in esse. Non sono da confondere con i resoconti, i quali non vengono verbalizzati. Nei verbali viene indicata una tabella con le decisioni intraprese dal gruppo che abbiano impatto su azioni future.
+Seguono la medesima struttura degli altri documenti, e in aggiunta contengono obbligatoriamente le seguenti sezioni:
+\begin{itemize}
+	\item \textbf{Informazioni generali}: sezione composta dai seguenti punti:
+	\begin{itemize}
+		\item luogo della riunione, sia esso fisico o virtuale;
+		\item data della riunione;
+		\item ora di inizio della riunione;
+		\item ora di fine della riunione;
+		\item elenco dei membri del gruppo presenti.
+	\end{itemize}
+	Qualora fosse assente almeno un membro deve essere riportata in questa sezione anche la lista dei membri del gruppo assenti.
+	\item \textbf{Ordine del giorno}: lista degli argomenti che il gruppo intende discutere nel corso della riunione. 
+	\item \textbf{Resoconto}: sintesi della discussione svoltasi intorno ai punti dell'ordine del giorno;
+	\item \textbf{Riepilogo delle decisioni}: tabella contenente la lista delle decisioni e il relativo codice identificativo.
+\end{itemize}
+Anche i verbali si classificano in interni o esterni, in base alla loro destinazione.
+\subparagraph{Manuali}
+I manuali espongono in maniera esauriente le informazioni necessarie all'utente più o meno esperto dell'applicazione (Manuale Utente) o al manutentore (Manuale del Manutentore).
+
+Il Manuale Utente deve essere focalizzato sui casi d’uso di utilizzo dell'applicazione. Questi devono essere illustrati in un'apposita sezione, mediante elenchi numerati e corredati con immagini delle componenti dell'interfaccia utente, con didascalia. Il documento deve contenere inoltre una sezione che illustra nel dettaglio le componenti e le funzionalità messe a disposizione dall'applicazione, una guida all'installazione e le istruzioni per contattare il supporto tecnico.
+
+Il Manuale del Manutentore fornisce una guida agli sviluppatori interessati ad estendere o mantenere l'applicazione. Esso deve contenere: 
+\begin{itemize}
+	\item un'introduzione all'architettura realizzata, con focus sui \glo{design pattern} noti utilizzati;
+	\item una descrizione delle scelte progettuali e delle tecnologie adottate.
+\end{itemize}
+La descrizione dell'architettura e dei design pattern adottati deve fare uso di diagrammi UML 2.x, corredati da descrizione testuale.
+
+Ogni manuale deve contenere inoltre un glossario proprio.
+\paragraph{Sviluppo e design}
+\subparagraph{Convenzione sul formato}
+Il formato di esportazione è il PDF, non necessariamente autenticato (PDF/A). Ogni documento ha gli attributi \textit{autore} e \textit{creatore} valorizzati con il nome del gruppo e l'attributo \textit{nome} valorizzato con il titolo del documento. Se composto da più parole queste devono essere separate da un carattere "blank", e solo i sostantivi e la prima parola devono iniziare con la lettera maiuscola (\textit{es.} Norme di Progetto).
+
+\subparagraph{Convenzione sulla nomenclatura}
+\subparagraph{Documenti}
+I nomi dei file coincidono con la conversione in \glo{LowerCamelCase} del nome del documento, senza omissione delle preposizioni. Ad essi viene riportata anche la versione corrente preceduta dal simbolo '\_'.
+I seguenti sono esempi \textbf{corretti} sono:
+\begin{itemize}
+	\item pianoDiProgetto\_v1.0.0.pdf;
+	\item pianoDiQualifica\_v3.0.0.pdf.
+\end{itemize}
+Alcuni esempi \textbf{non corretti} sono:
+\begin{itemize}
+	\item piano\_Di\_Progetto.pdf (usa un carattere separatore);
+	\item PianoDiQualifica.pdf (inizia con lettera maiuscola);
+	\item normeProgetto.pdf (omette la preposizione);
+	\item analisiDeiRequisiti-v1.0.0.pdf(utilizza il simbolo '-' invece di '\_').
+\end{itemize}
+\subparagraph{Verbali}
+Per i nomi dei verbali è stata adottata una speciale nomenclatura. Tale scelta permette di identificare univocamente ogni verbale. Ciascun verbale presenta quindi la seguente forma:
+\begin{center}
+	\textbf{V.[X].[YYYY-MM-DD]}
+\end{center}
+Dove:
+\begin{itemize}
+	\item \textbf{V}: indica che si tratta di un verbale;
+	\item \textbf{X} può essere:
+	\begin{itemize}
+		\item [--] \textbf{I}: se l'incontro verbalizzato è un incontro interno;
+		\item [--] \textbf{E}: se l'incontro verbalizzato è un incontro esterno.
+	\end{itemize}
+	\item \textbf{YYYY-MM-DD}: indica la data in cui l'incontro verbalizzato si è svolto.  
+\end{itemize}
+Ogni decisione presa in una riunione riporta il codice \textbf{V[X]\_[YYYY-MM-DD].[decisione]}, dove \textit{decisione} è un numero intero unico per ogni decisione all'interno dello stesso verbale, e i rimanenti parametri assumono i significati descritti sopra. Il nome di un file .pdf relativo ad un verbale è della forma \textbf{V[X]\_[YYYY-MM-DD].pdf}.
+
+\subparagraph{Uniformità dei documenti}
+Il gruppo si impegna a mantenere una certa uniformità nella stesura dei documenti. Ogni qualvolta viene fatto riferimento a una sezione del documento stesso o di un altro documento, questo riferimento viene indicato con il simbolo '§' seguito dal numero della sezione e dal titolo della sezione scritto tra parentesi. I contenuti di ciascun documento vengono indicati nelle norme di progetto, dove viene seguita una struttura ben precisa. 
+\subparagraph{Norme di progetto}
+La struttura canonica del documento è:
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/Struttura_NdP_3.1.2.3.png} \\
+		\caption{Struttura canonica delle norme di progetto}
+	\end{center}
+\end{figure} 
+\subparagraph{Altri documenti}
+Per quanto riguarda gli altri documenti non si segue una struttura rigorosa a livello di organizzazione dei contenuti: i nomi delle sezioni, la presentazione e la disposizione dei contenuti vengono decisi durante gli incontri interni secondo necessità. L'inserimento di nuove sezioni viene proposto ai membri e approvato dal responsabile.
+\subparagraph{Parti comuni}
+Tra i diversi documenti che vengono richiesti vi sono delle parti comuni.
+\subparagraph{Frontespizio}
+Il frontespizio è la prima pagina comune a ogni documento ed è così strutturato:
+\begin{itemize}
+	\item \textbf{Logo del gruppo}: logo di \textit{QuaranTeam}, centrato e visibile come elemento più in alto;
+	\item \textbf{Titolo}: nome del documento, centrato e visibile appena sotto il logo;
+	\item \textbf{Gruppo e progetto}: nome del gruppo e del progetto \textit{HD Viz}, centrato e visibile appena sotto il titolo;
+	\item \textbf{E-mail del gruppo}: indirizzo e-mail del gruppo, centrato e visibile appena sotto i nomi del gruppo e del progetto;
+	\item \textbf{Tabella delle informazioni}: situata al centro della pagina, riporta l'intestazione \textsc{Informazioni sul documento}. Le righe riportano le seguenti informazioni:
+	\begin{itemize}
+		\item \textbf{Versione}: versione del documento;
+		\item \textbf{Approvatore}: nominativo del membro del gruppo incaricato all'approvazione del documento;
+		\item \textbf{Redattori}: nominativi dei membri del gruppo incaricati della redazione del documento;
+		\item \textbf{Verificatori}: nominativi dei membri del gruppo incaricati della verifica del documento;
+		\item \textbf{Stato}: stadio corrente del ciclo di vita del documento;
+		\item \textbf{Uso}: destinazione d'uso del documento, "interno" o "esterno";
+		\item \textbf{Destinatari}: destinatari del documento.
+	\end{itemize}
+	\item \textbf{Descrizione}: breve descrizione relativa al documento (massimo 4 righe), centrata e situata nella parte inferiore della pagina.
+	\end{itemize}
+\subparagraph{Registro delle modifiche}
+	Il registro delle modifiche inizia nella seconda pagina e può occupare una o più pagine. Consiste in una tabella le cui colonne contengono nell'ordine i seguenti valori:
+\begin{itemize}
+	\item versione del documento a seguito della modifica;
+	\item data della modifica;
+	\item descrizione della modifica che comprende il verificatore;
+	\item nominativo dei membri che hanno portato a termine la modifica;
+	\item ruoli dei membri che hanno portato a termine la modifica.
+\end{itemize}
+Le righe della tabella devono avere tutti i campi valorizzati e sono ordinate in ordine temporale dal più recente al meno recente.
+\subparagraph{Indice}
+L'indice ha il fine di fornire la visione macroscopica della struttura del documento. Esso inizia nella pagina che segue l'ultima pagina del registro delle modifiche.
+Se sono presenti tabelle o immagini all'interno del documento si può includere una sezione per indicizzare le tabelle e/o le immagini.
+
+\subparagraph{Contenuto principale}
+Il contenuto principale è suddiviso in sezioni, sottosezioni, sotto-sottosezioni, paragrafi e sottoparagrafi.
+La loro redazione deve seguire le norme tipografiche riportate nella sezione §3.1.3.5.
+
+\subparagraph{Impostazione della pagina}
+La struttura di ogni pagina ad eccezione della prima è la seguente:
+\begin{itemize}
+	\item in alto a sinistra è presente il nome del documento, seguito dalla versione;
+	\item in alto a destra è presente il logo del gruppo;
+	\item il contenuto è posto tra l'intestazione e il piè di pagina, ed è delimitato superiormente e inferiormente da linee orizzontali;
+	\item in basso a sinistra è riportato il numero dell'ultimo sottoparagrafo contenuto nella pagina (non presente nei verbali e nel glossario);
+	\item in basso a destra è riportato il numero di pagina corrente insieme al numero di pagine totali del documento.
+\end{itemize}
+
+\subparagraph{Template}
+Per garantire l'adesione del documento alle regole espresse in questa sezione sono stati definiti:
+\begin{itemize}
+	\item un template per i verbali;
+	\item un template per le lettere di presentazione;
+	\item un template per i documenti di altro tipo.
+\end{itemize}
+È stata definita all'interno della directory \texttt{Utility} la classe \texttt{stdDocument.cls}, che contiene comandi utili all'impostazione della pagina e alla generazione del frontespizio, del registro delle modifiche e dell'indice per le tre tipologie di documenti.
+Il codice sorgente di un documento deve iniziare con il comando \texttt{documentclass\{stdDocument\}}.
+Per inserire le informazioni corrette nella prima pagina di ogni documento è necessario inoltre generare per ogni documento una copia del file \texttt{command.tex} contenuto nella directory \texttt{Utility} e ridefinirne gli opportuni comandi.
+L'applicazione del template permette altresì di ridurre il tempo necessario alla stesura dei documento e di svincolare i redattori da un lavoro di tipografia avanzata.
+
+\subparagraph{Norme tipografiche e redazionali}
+\subparagraph{Riferimenti}
+Tutti i riferimenti normativi ed informativi devono essere inseriti in un elenco puntato al termine della sezione di introduzione, qualora fossero necessari. 
+Il nome di un documento deve essere riportato per intero. Ogni riferimento a un documento richiesto dal regolamento del progetto di Ingegneria del Software deve riportare il titolo del documento, la versione, il numero e il nome del paragrafo a cui si fa riferimento.\\
+Qualora un libro debba essere inserito tra i rifermenti ne deve essere riportata l'edizione e i capitoli di riferimento.
+\subparagraph{Glossario}
+Ogni termine la cui definizione è presente nel \textit{\Glossario} viene contrassegnato da un carattere "G" in pedice e in corsivo al termine della parola.
+
+\subparagraph{Date e orari}
+La rappresentazione delle date deve seguire il formato \textbf{YYYY-MM-DD} previsto dallo standard ISO 8601:2000, dove:
+\begin{itemize}
+	\item ogni carattere Y si riferisce a una e una sola cifra dell'anno;
+	\item ogni carattere M si riferisce a una e una sola cifra del mese;
+	\item ogni carattere D si riferisce a una e una sola cifra del giorno.
+\end{itemize}
+La rappresentazione degli orari deve seguire il formato hh:mm, in cui esattamente due cifre sono utilizzate per indicare l'ora (compresa tra 0 e 23) ed esattamente due cifre sono utilizzate per indicare il minuto. L'ora è da intendersi secondo il fuso orario dell'Europa Centrale, ossia con un offset positivo di 1 ora rispetto all'orario UTC durante il periodo di ora solare e un offset positivo di 2 ore durante il periodo di ora legale.
+\subparagraph{Elenchi puntati e numerati}
+Ogni voce di un elenco ordinato o numerato che non definisce dei termini comincia con la lettera minuscola e termina con un carattere punto e virgola (';'), tranne per l'ultimo elemento dell'elenco che termina con un punto fermo ('.').
+Ogni voce di un elenco che definisce dei termini deve iniziare con il termine da definire, in grassetto.
+
+\subparagraph{Stile del testo}
+\begin{itemize}
+	\item \textbf{grassetto}: viene applicato se necessario alle voci di un elenco di definizioni o a termini sui quali si vuol far ricadere l'attenzione del lettore;
+	\item \textbf{corsivo}: vengono scritti in corsivo il nome del \glo{proponente}, il nome del gruppo, il nome del progetto e i nomi dei documenti. Per quanto riguarda i nomi dei documenti se si fa riferimento ad un documento di \textit{QuaranTeam} si aggiunge la versione del documento (ad es. \AdRv{v\versionAdR{}}), altrimenti il nome viene riportato in corsivo senza la versione;
+	\item \textbf{punteggiatura}: deve essere utilizzata per isolare frasi coese e coerenti. Inoltre:
+	\begin{itemize}
+		\item le parentesi aperte e nessun altro segno di punteggiatura devono essere precedute da spazi;
+		\item gli apici singoli ' ' devono essere utilizzati per racchiudere tra di essi un singolo carattere o segno, gli apici doppi " " possono racchiudere una o più parole;
+		\item il simbolo '/' non può essere utilizzato in sostituzione di una congiunzione, ma può essere utilizzato nella disgiunzione non esclusiva "e/o".
+	\end{itemize}
+\end{itemize}
+
+\subparagraph{Elementi grafici}
+Deve essere riportata la didascalia numerata per tabelle, immagini e diagrammi \glo{UML}.\\
+Per una migliore leggibilità il colore di sfondo di una riga di una tabella è diverso da quello della riga inferiore e da quella superiore. Se la tabella si estende su più pagine deve essere riportata la didascalia in ogni pagina.\\
+
+\subparagraph{Stile redazionale}
+Deve essere privilegiato l'uso di verbi in modo attivo e personale, in modo tale da rendere sempre chiaro ed esplicito quale sia il soggetto dell'azione.\\
+La chiarezza espositiva deve essere privilegiata nei confronti della fluidità di lettura.
+
+\subsubsection{Metriche}
+\paragraph{QC-5: Comprensibilità}
+La comprensibilità rappresenta una delle sotto-caratteristiche principali dell'usabilità nel modello di qualità stabilito dallo standard di riferimento. Tale caratteristica viene sfruttata per garantire una certa comprensibilità nei documenti che il gruppo produce. Ogni documento deve essere chiaro, leggibile e comprensibile. Queste qualità sono largamente influenzate dalla correttezza ortografica, sintattica e semantica.
+\begin{tabmetriche2}{Metriche di prodotto per garantire comprensione relative al processo di documentazione}{Tabella delle metriche di prodotto per garantire comprensione per il processo di documentazione}
+	QM-PROD-9 & Indice di GULPEASE (IDG) & È un numero decimale positivo che rappresenta il grado di scolarizzazione necessario a comprendere il documento in analisi. & $\displaystyle\frac{300 \times frasi - 10 \times lettere}{parole}$ \T\\
+	\hline
+	QM-PROD-10 & Correttezza ortografica (CO) & È un numero intero positivo che indica il numero di errori ortografici presenti nel documento in analisi. & \\ \hline
+\end{tabmetriche2}
+
+\subsubsection{Strumenti}
+Di seguito sono descritti gli strumenti identificati per il processo di documentazione.
+\begin{itemize}
+	\item \textbf{\glo{\LaTeX}}: utilizzato per la stesura dei documenti. Permette il raggiungimento di un'elevata qualità tipografica e il \glo{versionamento} del sorgente della documentazione.
+	\item \textbf{\glo{MiKTeX}}: utilizzato per la compilazione dei sorgenti.
+	\item \textbf{Editor di testo}: vengono utilizzati principalmente \glo{TeXstudio} e \glo{Texmaker}. È accettato l'uso di qualsiasi editor di testo.
+	\item \textbf{StarUML}: utilizzato per la produzione dei diagrammi \glo{UML};
+	\item \textbf{\glo{diagrams.net}}: utilizzato per altri schemi o diagrammi da inserire nella documentazione. Tale strumento facilita la condivisione e la sincronizzazione del lavoro da parte dei membri del gruppo.
+\end{itemize}

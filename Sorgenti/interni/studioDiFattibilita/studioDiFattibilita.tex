@@ -1,0 +1,414 @@
+\input{../../Utility/general_commands.tex}
+\input{res/commands.tex}
+\documentclass{../../Utility/stdDocument}
+	
+\begin{document}
+\fullDocConfig{}
+
+\section{Introduzione}
+\normalsize\subsection{Scopo del documento}
+Lo scopo del documento è indicare le motivazioni che hanno portato alla decisione del gruppo di intraprendere il progetto esposto nel \glo{capitolato} C4, grazie ad un'accurata analisi dei vari \glo{capitolati}. Per ciascun \glo{capitolato} viene riportato lo studio di fattibilità e le valutazioni del gruppo a riguardo.\index{index}
+
+\subsection{Glossario}
+Alcuni termini utilizzati nei documenti potrebbero risultare di difficile comprensione. Per evitare eventuali ambiguità riguardo
+al loro significato viene riportata una definizione con annessa spiegazione nel \textit{Glossario v1.0.0}. Tali termini vengono contrassegnati da una G maiuscola finale a pedice della parola. 
+ \index{index}
+
+\subsection{Riferimenti}
+\subsubsection{Riferimenti normativi}
+\begin{itemize}
+	\item \textbf{\NdP:} \NdPv{v1.0.0};
+\end{itemize}
+\subsubsection{Riferimenti informativi}
+\begin{description}
+	\item[• \glo{Capitolato} C1:] \url{https://www.math.unipd.it/~tullio/IS-1/2020/Progetto/C1.pdf}
+	\item[• \glo{Capitolato} C2:] \url{https://www.math.unipd.it/~tullio/IS-1/2020/Progetto/C2.pdf}
+	\item[• \glo{Capitolato} C3:] \url{https://www.math.unipd.it/~tullio/IS-1/2020/Progetto/C3.pdf}
+	\item[• \glo{Capitolato} C4:] \url{https://www.math.unipd.it/~tullio/IS-1/2020/Progetto/C4.pdf}
+	\item[• \glo{Capitolato} C5:] \url{https://www.math.unipd.it/~tullio/IS-1/2020/Progetto/C5.pdf}
+	\item[• \glo{Capitolato} C6:] \url{https://sesaspa-my.sharepoint.com/:b:/g/personal/s_dindo_vargroup_it/EThvay0f6KVCoXydYOce2lkBt-MYcnW1yafRXFXVIOIsHg?e=2emZZI}
+	\item[• \glo{Capitolato} C7:] \url{https://www.math.unipd.it/~tullio/IS-1/2020/Progetto/C7.pdf}
+	\index{index}
+\end{description}
+
+
+\newpage
+\section{\glo{Capitolato} scelto C4 - HD Viz}
+\subsection{Informazioni generali}
+Il \glo{capitolato} C4 è stato presentato dalla \textit{\Proponente}, una delle prime software house italiane di rilevanza internazionale che, da 41 anni, realizza programmi per la gestione delle aziende, delle risorse umane e altre attività in campo informatico e non solo. 
+\begin{itemize} 
+  	\item \textbf{nome:} HD Viz;
+  	\item \textbf{\glo{proponente}:} \textit{\Proponente};
+	\item \textbf{\glo{committente}:} Prof. Tullio Vardanega e Prof. Riccardo Cardin.
+\index{index}
+\end{itemize}
+
+\subsection{Descrizione}
+La società \textit{\Proponente} fornisce \glo{software} gestionale a migliaia di imprese in Italia e all'estero. Queste possono aver bisogno di impiegare tecniche di \glo{Data Mining} per rilevare anomalie di inserimento ed errori in documenti contabili e fiscali emessi da programmi forniti da \textit{\Proponente} Tale processo consta di quattro fasi: data collecting, data cleaning, data analysis e data interpretation. La fase di analisi si può suddividere a sua volta in due sottofasi: quella chiamata EDA e la modellazione dei fenomeni individuati.
+Il \glo{capitolato} propone di sviluppare un'applicazione per la visualizzazione di dati multidimensionali che faciliti il compito dell'analista nella fase EDA, ovvero il riconoscimento di associazioni, sequenze ripetute nascoste o pattern; i quali sono difficilmente individuabili in rappresentazioni con più di tre dimensioni.
+
+\subsection{Obiettivi}
+È richiesto lo sviluppo di un'applicazione per la visualizzazione di dati fino a 15 dimensioni, a supporto della fase esplorativa dell'analisi dei dati.
+Il sistema può prevedere una parte \glo{server} per il supporto alla presentazione e alle \glo{query} verso un \glo{database} \glo{SQL} o \glo{NoSQL}. 
+I dati da visualizzare possono provenire da una \glo{query} verso il \glo{database} o da un file con estensione .\glo{csv}. Si devono poter visualizzare i seguenti grafici:
+\begin{itemize}
+	\item \textbf{\glo{Scatterplot Matrix}}: permette di visualizzare dati multidimensionali mostrando una griglia contenente un piano cartesiano per ogni coppia di assi;
+	\item \textbf{\glo{Force Field}}: mostra come le entità sono connesse tra loro tramite l'uso di nodi e di archi di collegamento per rappresentare le loro connessioni;
+	\item \textbf{\glo{Heat Map}}: permette di visualizzare i dati in una matrice in cui l'intensità del colore di ogni cella dipende dalla distanza tra il punto rappresentato dalla riga e quello rappresentato dalla colonna;
+	\item \textbf{\glo{Proiezione Lineare Multiasse}}: esegue una proiezione di uno spazio multidimensionale su due assi e permette all'utente di muovere gli assi, al fine di poter individuare se alcune proiezioni contengono pattern riconoscibili.
+\end{itemize}
+
+\subsection{Tecnologie utilizzate}
+\begin{itemize}
+	\item \textbf{\glo{HTML}}, \textbf{\glo{CSS}} e \textbf{\glo{JavaScript}} per il \glo{front-end} dell'applicazione;
+	\item \textbf{\glo{Java Servlet}}, \textbf{\glo{Apache Tomcat}} o \textbf{\glo{Node.js}} per la parte \glo{server};
+	\item la \glo{libreria} \textbf{\glo{D3.js}} per la rappresentazione dei grafici;
+	\item \textbf{\glo{SVG}}, perché gli attributi di un grafico realizzato con \glo{D3.js} si modificano con il linguaggio usato per produrre immagini in formato \glo{SVG}. 
+\end{itemize}
+
+\subsection{Vincoli del progetto}
+\subsubsection{Requisiti obbligatori}
+L'applicazione, oltre che essere sviluppata e implementata con le tecnologie indicate nel precedente paragrafo, dovrà presentare le visualizzazioni elencate negli obiettivi. Tra queste visualizzazioni nel grafico \textbf{\glo{Heat Map}} deve essere possibile ordinare i punti in modo da evidenziare i cluster presenti nei dati. Inoltre nel grafico \textbf{\glo{Scatterplot Matrix}} si devono poter visualizzare dati fino a 5 dimensioni. Per quanto riguarda le dimensioni i dati da visualizzare dovranno poter avere fino a 15 dimensioni, ma allo stesso tempo deve essere possibile visualizzare anche dati con meno dimensioni. I dati devono poter essere forniti sia con delle \glo{query} ad un \glo{database} sia attraverso un file in formato \glo{CSV}. Oltre l'applicazione dovrà essere fornito un manuale per l'utente che utilizza l'applicazione e un manuale per l'estensione dell'applicazione. 
+\subsubsection{Requisiti opzionali}
+Trattandosi di un tema molto ricco di spunti il \glo{proponente} elenca una serie di funzionalità opzionali che l'applicazione potrebbe prevedere:
+\begin{itemize}
+	\item altri grafici adatti alla visualizzazione dei dati con più di tre dimensioni;
+	\item utilizzo di funzioni diverse dalla distanza euclidea per calcolo della distanza nei grafici che dipendono dal concetto di distanza;
+	\item utilizzo di funzioni di forza diverse da quelle previste in automatico dal grafico \qm{force based} di \glo{D3.js};
+	\item analisi automatiche per evidenziare situazioni di interesse;
+	\item algoritmi di \glo{Machine Learning} per la riduzione della dimensionalità. In particolare l'azienda è disponibile a mettere a disposizione \glo{librerie} per gli algoritmi \glo{t-SNE}, \glo{UMAP}, \glo{Self Organizing Map} e \glo{Learning Vector Quantization}.
+\end{itemize}
+L'azienda si impegna a valutare ogni ulteriore proposta del \glo{fornitore} e a inserirla come requisito opzionale qualora venisse ritenuta valida per lo scopo di progetto.
+		
+\subsection{Valutazione finale}
+\subsubsection{Aspetti positivi}
+\begin{itemize}
+	\item parte delle tecnologie utilizzate sono già state trattate da alcuni insegnamenti obbligatori del nostro CdL;
+	\item la presentazione del \glo{capitolato} spiega in maniera molto chiara l'utilità del progetto nel contesto del \glo{Data Mining};
+	\item nel seminario di approfondimento sono stati mostrati esempi dei grafici richiesti;
+	\item l'azienda si è resa disponibile a valutare i requisiti opzionali proposti dal \glo{fornitore};
+	\item nella documentazione di \glo{D3.js} sono reperibili molti dei grafici richiesti.
+	\end{itemize}
+\subsubsection{Aspetti negativi}
+\begin{itemize}
+	\item l'esempio grafico per la Proiezione Lineare Multiasse non è reperibile tra gli esempi di \glo{D3.js}, ma è visibile nello strumento di visualizzazione \glo{GGobi} 2 e nel programma per \glo{Data Mining} Orange Canvas;
+	\item durante la presentazione ed il seminario di approfondimento si è fatto riferimento a concetti di Algebra Lineare che probabilmente necessiterebbero di essere ristudiati qualora venisse scelto il \glo{capitolato};
+\end{itemize}
+\subsubsection{Esito}
+Il \glo{capitolato} in questione ha attirato sin da subito l'interesse di parte dei membri del gruppo. Il \glo{proponente} si è mostrato disponibile a venire incontro ai \glo{fornitori} dando la possibilità di spaziare sui vincoli opzionali, in modo da fornire nuovi spunti di applicazione. Un altro fattore decisivo è stato dato dall'esplicita disponibilità del \glo{proponente} a fornire supporto per la comprensione del \glo{Machine Learning}, settore che attrae tutti i componenti del team, sia per l'importanza che ricopre attualmente l'ambito sia perché è un campo che non viene approfondito nei corsi della LT in Informatica. La presenza di un numero relativamente ristretto di tecnologie da imparare e utilizzare può essere visto come un incentivo ad apprenderle per poterle poi adottare con maggior consapevolezza. \\
+Nonostante altri \glo{capitolati} siano risultati interessanti e ambiziosi il gruppo ha eletto questo \glo{capitolato} come prima scelta, con l'impegno di rispettare i vincoli e i requisiti imposti dal \glo{proponente} e la determinazione a superare le difficoltà che potrebbero riscontrarsi nell'apprendimento delle tecniche predittive e delle strumentazioni richieste ai fini dello sviluppo dell'applicazione.
+
+
+\newpage
+\section{\glo{Capitolato} C1 - BlockCOVID}
+\subsection{Informazioni generali}
+\begin{itemize}
+	\item \textbf{nome:} BlockCOVID;
+	\item \textbf{\glo{proponente}:} Imola Informatica;
+	\item \textbf{\glo{committente}:} Prof. Tullio Vardanega e Prof. Riccardo Cardin.
+\index{index}
+\end{itemize}
+
+\subsection{Descrizione}
+In questo \glo{capitolato} lo scopo è di riuscire a gestire, attraverso tracciamenti immutabili e certificati, i lavoratori all'interno dell'azienda per tutelare la loro salute e la loro sicurezza.   
+\index{index}
+
+\subsection{Obiettivi}
+L'obiettivo del \glo{capitolato} è di sviluppare un'applicazione (iOS o Android) che permetta il tracciamento del personale e della pulizia delle postazioni attraverso i tag \glo{RFID}. La pulizia delle postazioni può essere effettuata sia dal singolo lavoratore oppure da una ditta esterna. Questa applicazione deve essere in grado di segnalare ad un \glo{server} dedicato la presenza su una determinata postazione. La comunicazione tra applicazione e \glo{server} avviene quando lo smartphone entra in contatto con i tag \glo{RFID}. La gestione attraverso questo \glo{server} deve permettere di:
+\begin{itemize}
+	\item conoscere in ogni momento se la postazione è occupata, prenotata oppure da pulire;
+	\item controllare quali postazioni sono prenotate e bloccare le prenotazioni per una determinata stanza;
+	\item tracciare tutti i cambiamenti e salvare tutte le informazioni relative alla pulizia delle postazioni.
+\end{itemize}
+L'amministratore del sistema crea le utenze ai dipendenti e agli addetti delle pulizie ed associa tutti i tag \glo{RFID} alle rispettive postazioni. Deve riuscire ad effettuare l'accesso all'interno del \glo{server} per poter gestire le postazioni e le credenziali degli utenti, per avere poi la possibilità di chiudere delle stanze e monitorare le presenze. Deve inoltre riuscire ad effettuare ricerche sulle attività svolte da uno specifico dipendente. L'applicazione cellulare deve permettere le seguenti operazioni: 
+\begin{itemize}
+	\item recupero lista postazioni libere;
+	\item prenotazione delle postazioni;
+	\item tracciamento in tempo reale tramite tag \glo{RFID};
+	\item segnalazione della pulizia di una postazione;
+	\item storicizzazione delle postazioni occupate;
+	\item storicizzazione delle postazioni igienizzate.
+\end{itemize}
+L'utente, dopo aver scaricato l'applicazione sullo smartphone, deve avere la possibilità di prenotare una determinata postazione e successivamente di scansionare il tag \glo{RFID} per avere informazioni sullo stato della stessa. Appoggiando il cellulare sul tag, deve essere in grado di segnalare in tempo reale la sua presenza e successivamente segnalare la pulizia autonoma con il kit aziendale. 
+L'addetto alle pulizie, proveniente da una ditta esterna, deve avere a disposizione, attraverso l'applicazione, un elenco delle stanze da igienizzare e avere la possibilità di marcare l'intera stanza come igienizzata. Gli obiettivi del progetto prevedono inoltre di:
+\begin{itemize}
+	\item avere una copertura di test $\geq$ 80\% correlata di report;
+	\item report di test effettuati per l'ottimizzazione della batteria dei cellulari;
+	\item documentazione su scelte implementative e progettuali con relative motivazioni ed eventuali soluzioni da esplorare.
+\end{itemize}
+
+\subsection{Tecnologie utilizzate}
+\begin{itemize}
+	\item \textbf{\glo{Java}} (versione 8 o superiori), \textbf{\glo{Python}} o \textbf{\glo{Node.js}} per lo sviluppo del \glo{server} \glo{back-end};
+	\item \textbf{\glo{protocolli asincroni}} per le comunicazioni app mobile-server;
+	\item un \textbf{sistema \glo{blockchain}} per salvare con opponibilità a terzi i dati di sanificazione;
+	\item \textbf{\glo{IaaS} \glo{Kubernetes}} o di un \textbf{\glo{PaaS}}, \textbf{\glo{Openshift}} o \textbf{\glo{Rancher}}, per il rilascio delle componenti del \glo{server} e la gestione della scalabilità orizzontale. 
+\end{itemize}
+Per raggiungere gli obiettivi minimi inoltre viene richiesto: 
+\begin{itemize}
+	\item il \glo{server} deve esporre delle \glo{API REST} o \glo{gRPC} attraverso le quali sia possibile utilizzare l'applicativo;
+	\item utilizzo del lettore \glo{RFID} per la scansione dei codici cercando di trovare un giusto bilanciamento con la batteria degli smartphone; 
+	\item le componenti applicative devono essere correlate da test unitari e d'integrazione. È richiesto che il sistema venga testato tramite test end-to-end. 
+\end{itemize}
+
+\subsection{Valutazione finale}
+\subsubsection{Aspetti positivi}
+\begin{itemize}
+	\item possibilità di ampliare il bagaglio di tecnologie conosciute per lo sviluppo di applicazioni mobile.
+	\item il \glo{proponente} non impone tecnologie specifiche per lo sviluppo del \glo{server} o della \glo{GUI}.
+\end{itemize}
+\subsubsection{Aspetti negativi}
+\begin{itemize}
+	\item documentazione \glo{GPS} complicata da interpretare.
+	\item tecnologie utilizzate poco conosciute dai membri del gruppo.
+	\item il gruppo non ha sviluppato particolare interesse.
+\end{itemize}
+\subsubsection{Esito}
+Il \glo{capitolato} è sembrato interessante per quanto riguarda l'utilità e le funzionalità dell'applicazione, tuttavia non ha suscitato particolare interesse nelle tecnologie utilizzate, anche per via della loro complessità.  
+
+
+\newpage
+\section{\glo{Capitolato} C2 - EmporioLambda}
+\subsection{Informazioni generali} 
+\begin{itemize}
+	\item \textbf{nome:} EmporioLambda;
+	\item \textbf{\glo{proponente}:} RedBabel;
+	\item \textbf{\glo{committente}:} Prof. Tullio Vardanega e Prof. Riccardo Cardin.
+\index{index}
+\end{itemize}
+
+\subsection{Descrizione} 
+Il \glo{capitolato} ha lo scopo di realizzare una \glo{piattaforma} \glo{e-commerce}, chiamata EmporioLambda, costruita utilizzando tecnologie \glo{serverless}.
+
+\subsection{Obiettivi}
+L'obiettivo del \glo{capitolato} è di realizzare una generica \glo{piattaforma} \glo{e-commerce} che può essere vista come un \glo{software} da vendere ai commercianti. Questa \glo{piattaforma} deve essere distribuita utilizzando l'account Commercianti di \glo{AWS}, insieme a un manuale di configurazione. La \glo{piattaforma} deve essere costruita utilizzando tecnologie \glo{serverless} e la sua architettura deve essere basata su un'architettura di microservizi.
+\subsection{Tecnologie utilizzate}
+Le tecnologie utilizzate variano a seconda del modulo ad alto livello che si va a sviluppare:
+\begin{itemize} 
+	\item \textbf{\glo{Next.js}} per lo sviluppo del modulo \glo{front-end} e anche per il modulo \qm{\glo{back-end} for \glo{front-end}} (BFF).
+	\item \textbf{\glo{Serverless}} per lo sviluppo del modulo \glo{back-end}. La sua configurazione avverrà attraverso \glo{AWS}, in particolare \glo{AWS Lambda} come calcolo unitario;
+	\item \textbf{\glo{Amazon CloudWatch}}, o in alternativa \textbf{\glo{Datadog}}, per lo sviluppo del modulo monitoring;
+	\item come linguaggio principale viene suggerito \textbf{\glo{TypeScript}}, ultima versione;
+	\item come sistema di versionamento e pubblicazione del codice sorgente viene suggerito \textbf{\glo{GitHub}}, o in alternativa \textbf{\glo{GitLab}}. 
+\end{itemize}
+\subsection{Valutazione finale}
+\subsubsection{Aspetti positivi}
+\begin{itemize}
+	\item il \glo{proponente} sembra essere molto disponibile e flessibile;
+	\item contesto del \glo{proponente} molto giovane e dinamico;
+\end{itemize}
+\subsubsection{Aspetti negativi}
+Non sono state rilevate grosse criticità riguardo il \glo{capitolato}.
+\subsubsection{Esito}
+Il progetto risulta essere ambizioso ed attuale, soprattutto per via dell'impatto che ha l'ambito \glo{e-commerce} nel mondo attuale. Nonostante il \glo{capitolato} abbia suscitato interesse in buona parte del gruppo si è scelto di scartarlo perché un altro \glo{capitolato} ha ottenuto maggiore riscontro positivo. 
+
+
+\newpage
+\section{\glo{Capitolato} C3 - GDP - Gathering Detection Platform}
+\subsection{Informazioni generali}
+\begin{itemize}
+	\item \textbf{nome:} GDP - Gathering Detection Platform;
+	\item \textbf{\glo{proponente}:} Sync Lab;
+	\item \textbf{\glo{committente}:} Prof. Tullio Vardanega e Prof. Riccardo Cardin.
+\index{index}
+\end{itemize}
+
+\subsection{Descrizione}
+L'obiettivo di questo \glo{capitolato} è creare una \glo{piattaforma} in grado di rappresentare mediante visualizzazione grafica o \glo{dashboard} delle zone potenzialmente a rischio assembramento e cercare di prevederle.
+
+\subsection{Obiettivi}
+Il progetto prevede la realizzazione di un prototipo \glo{software} in grado di acquisire e monitorare i dati e le informazioni generate dai sistemi e dispositivi installati in specifiche zone, con l'intento di identificare i possibili eventi che concorrono all'insorgere di variazioni di flussi di persone e alla generazione di assembramenti, sfruttando modelli di \glo{Machine Learning}. 
+Gli utilizzatori della \glo{piattaforma} potranno interagirvi tramite un'applicazione web \glo{dashboard} che rappresenti la situazione globale dei flussi tramite \glo{heat map}.
+I flussi di persone devono essere:
+\begin{itemize}
+	\item valutati in tempo reale, con bassa latenza;
+	\item previsti in intervalli temporali futuri;
+	\item raccolti e storicizzati nel tempo.
+\end{itemize}
+In dettaglio le caratteristiche principali e gli obiettivi tecnologici di base che si intende raggiungere sono: 
+\begin{itemize}
+	\item realizzazione (usando \glo{librerie} \glo{open-source}) di motori \glo{software} contapersone per immagini o stream di videocamere;
+	\item realizzazione di simulatori di altre sorgenti dati, sia storici che previsionali;
+	\item capacità di acquisizione continuativa nel tempo a bassa latenza delle informazioni raccolte da dispositivi e sistemi come flussi di dati;
+	\item elaborazione in tempo reale dei dati acquisiti, per poter:
+\begin{itemize}
+	\item rappresentare le variazioni nel tempo dei dati monitorati;
+	\item generare informazioni a valore aggiunto dai dati che si stanno osservando;
+	\item confrontare e correlare tra loro dati provenienti da flussi diversi;
+	\item archiviare tutti i dati acquisiti ed i risultati delle loro elaborazioni.
+\end{itemize}
+	\item identificazione di eventi che hanno concorso all'insorgere di alterazioni significative del flusso di persone; 
+	\item previsione dell'insorgenza futura di variazioni significative di flussi di persone.
+\end{itemize}
+Gli obiettivi del progetto prevedono inoltre:
+\begin{itemize}
+	\item una copertura di test $\geq$ 80\% correlata di report;
+	\item le componenti applicative devono essere correlate da test unitari e d'integrazione, il sistema deve essere testato nella sua interezza tramite test end-to-end;
+	\item documentazione su scelte implementative e progettuali effettuate con relative motivazioni;
+	\item documentazione su problemi aperti ed eventuali soluzioni da esplorare.
+\end{itemize}
+
+\subsection{Tecnologie utilizzate}
+\begin{itemize}
+	\item \textbf{\glo{Python}} per lo sviluppo delle componenti di \glo{Machine Learning};
+	\item \textbf{\glo{TensorFlow}} e \textbf{\glo{Keras}} per l'utilizzo di tecniche di \glo{Machine} e \glo{Deep Learning};
+	\item \textbf{\glo{SciKit-learn}}, \textbf{\glo{Pandas}} e \textbf{\glo{NumPy}} per il pre-processing dei dati;
+	\item \textbf{\glo{Apache Kafka}}, \glo{piattaforma} di stream processing dei dati;
+	\item \textbf{\glo{Java}} e \textbf{\glo{Angular}} per lo sviluppo delle parti di \glo{back-end} e di \glo{front-end} della componente Web Application del sistema;
+	\item \textbf{\glo{framework} \glo{Leaflet}} per la gestione delle mappe (\glo{heat map});
+	\item utilizzo di \textbf{\glo{protocolli asincroni}} per le comunicazioni tra le diverse componenti;
+	\item utilizzo del pattern publish-subscribe e adozione del protocollo \textbf{\glo{MQTT}} (Message Queue Telemetry Transport);
+\end{itemize}
+
+\subsection{Valutazione finale}
+\subsubsection{Aspetti positivi}
+Il progetto risulta molto interessante in riferimento alle tecnologie da impiegare nella sua realizzazione e al tema di forte attualità affrontato.
+\subsubsection{Aspetti negativi}
+L'apprendimento delle tecnologie coinvolte, dato il loro numero e la loro complessità, richiederebbe molto tempo e la maggioranza dei membri del gruppo ritiene difficile realizzare un prodotto veramente efficace.
+\subsubsection{Esito}
+Nonostante l'interesse mostrato nei confronti di un progetto che impieghi tecniche di \glo{Machine Learning}, si è deciso di scartare il \glo{capitolato} in quanto la sua realizzazione richiede una conoscenza di uno spettro troppo ampio di tecnologie, valutate come eccessivamente onerose in termini di formazione.
+
+
+\newpage
+\section{\glo{Capitolato} C5 - PORTACS}
+\subsection{Informazioni generali}
+\begin{itemize}
+	\item \textbf{nome:} PORTACS;
+	\item \textbf{\glo{proponente}:} SanMarco Informatica;
+	\item \textbf{\glo{committente}:} Prof. Tullio Vardanega e Prof. Riccardo Cardin.
+\index{index}
+\end{itemize}
+
+\subsection{Descrizione} 
+In questo \glo{capitolato} lo scopo è sviluppare un motore di elaborazione in tempo reale, capace di gestire più unità connesse per rispondere a determinate situazioni, guidando le unità allo svolgimento dei loro compiti, avendo un sistema \glo{POI}-oriented, \glo{anti-collision system} e \glo{real-time}.
+
+\subsection{Obiettivi}
+Sarà necessario sviluppare un motore di elaborazione in tempo reale capace di ricevere informazioni di stato dalle unità connesse e conseguentemente di poterle pilotare senza causare incidenti ed ingorghi.
+Sebbene gli ambiti siano diversi si evidenziano molti punti in comune. Ognuna delle unità descritte ha un punto di partenza in una griglia che rappresenta lo spazio in cui si può muovere, una velocità massima e di crociera, e deve ricevere dal sistema:
+\begin{itemize}
+	\item il prossimo \glo{POI} da raggiungere;
+	\item la posizione delle altre unità: in modo da evitare collisioni e rispettare i vincoli dimensionali (come i limiti sulle corsie);
+	\item (opzionale) la posizione dei pedoni, con cui vanno evitate le collisioni in maniera particolare.
+\end{itemize}
+Sarà necessario sviluppare una \textbf{\glo{GUI}} composta di quattro frecce direzionali, una delle quali dovrà accendersi in risposta alla miglior direzione calcolata dal sistema, un pulsante stop/start e un indicatore di velocità. Il sistema dovrà essere corredato da una visualizzazione in \glo{real-time} della mappa con la relativa posizione delle singole unità.
+Non è invece richiesta l'implementazione di algoritmi di ricerca operativa per l'ottimizzazione dei percorsi, che verrà considerata positivamente qualora presente, così come non è richiesto nemmeno di gestire la geolocalizzazione, la quale dovrà almeno essere simulata.
+
+\subsection{Tecnologie utilizzate}
+Le principali tecnologie da utilizzare sono:
+\begin{itemize}
+	\item \textbf{\glo{Docker}}, per la gestione di container delle varie componenti applicative, tramite l'implementazione di particolari \glo{API};
+	\item sistemi di versionamento quali \textbf{\glo{GitHub}} o \textbf{\glo{Bitbucket}}, per la gestione del codice sorgente;
+\end{itemize}
+
+\subsection{Valutazione finale}
+\subsubsection{Aspetti positivi}
+Tra gli aspetti positivi rientrano le competenze che si acquisiscono lavorando ad un progetto di questo tipo, che sono:
+\begin{itemize}
+	\item competenze in ambito real-time monitoring \& analysis;
+	\item competenze in ambito predictivity e real-time decision making;
+	\item introduzione alle problematiche del mondo logistica.
+\end{itemize}
+\subsubsection{Aspetti negativi}
+Gli aspetti negativi riguardano quelle che sono le conoscenze dei membri del gruppo, abbastanza limitate per quanto riguarda le tecnologie necessarie, che potrebbe quindi tramutarsi in notevoli rallentamenti e difficoltà nel rispettare le scadenze preposte.
+\subsubsection{Esito}
+Il \glo{capitolato} proposto è risultato interessante ad una buona parte dei membri del gruppo, ma a seguito dell'elevata complessità percepita per lo sviluppo del software si è scelto di optare per altri \glo{capitolati}.
+
+\newpage
+\section{\glo{Capitolato} C6 - Realtime Gaming Platform}
+\subsection{Informazioni generali}
+\begin{itemize}
+	\item \textbf{nome}: Realtime Gaming Platform;
+	\item \textbf{\glo{proponente}}: Zero12;
+	\item \textbf{\glo{committente}}: Prof. Tullio Vardanega e Prof. Riccardo Cardin.
+\index{index} 
+\end{itemize}
+
+\subsection{Descrizione}
+Lo scopo del \glo{capitolato} è quello di realizzare un videogioco in modalità single-player e multi-player basandosi su un'architettura server \glo{cloud-based} su tecnologia Amazon Web Services (\glo{AWS}).
+
+\subsection{Obiettivi}
+Il \glo{capitolato} si pone come obiettivo, lo sviluppo di un videogioco in modalità single-player e multi-player. Esso dovrà essere a scorrimento verticale e utilizzabile da dispositivi mobili. La sfida principale è incentrata particolarmente sulla realizzazione di un'architettura server \glo{cloud-based}, gestita da una tecnologia Amazon Web Services(\glo{AWS}), la quale permette a più dispositivi di sfidarsi in contemporanea. \\
+La modalità single-player deve presentare un numero infinito di livelli, dove il giocatore avrà sempre più difficoltà ogni qualvolta salga di livello. L'utente terminerà la partita se non avrà raccolto i \glo{power-up} necessari per il proseguimento del gioco oppure terminando le vite della partita. \\
+La modalità multi-player dovrà permettere all'utente di sfidare gli avversari in contemporanea permettendo di visualizzare le mosse dell'avversario ed eliminarlo. L'ultimo giocatore che rimarrà in vita, vincerà. \\
+Lo sviluppo del videogioco potrà essere sviluppato in ambiente iOS oppure in Android.
+Inoltre dovrà essere fornita:
+\begin{itemize}
+	\item una motivata scelta dei servizi \glo{AWS} che verranno utilizzati nel progetto;
+	\item uno schema dell'architettura \glo{cloud};
+	\item una documentazione dettagliata delle \glo{API};
+	\item un piano di test di unità.
+\end{itemize}
+
+\subsection{Tecnologie utilizzate}
+\begin{itemize}
+	\item \textbf{\glo{AWS GameLift}} che distribuisce, gestisce e dimensiona i \glo{server} \glo{cloud} per giochi multi-player.
+	\item \textbf{\glo{AWS AppSync}} e \glo{GraphQL}.
+	\item \textbf{Architetture \glo{serverless}} che non richiedono la gestione di un'infrastruttura. Il videogioco sarà comunque eseguito su un \glo{server} a carico di \glo{AWS}.
+	\item \textbf{\glo{Node.js}} per lo sviluppo di codice in un servizio \glo{AWS}.
+	\item \textbf{\glo{Kotlin}} per lo sviluppo dell'applicazione in ambiente Android (minimo Android 8).
+	\item \textbf{\glo{Swift}/\glo{SwiftUI} (con engine 	\glo{SceneKit}/\glo{SpriteKit})} per lo sviluppo in ambiente iOS (minimo iOS 13).
+\end{itemize}
+
+\subsection{Valutazione finale}
+\subsubsection{Aspetti positivi}
+Il progetto ha avuto un buon feedback per quanto riguarda l'impiego dei servizi \glo{AWS}, visto che vengono ampiamente adoperati nel mondo del lavoro.
+\subsubsection{Aspetti negativi}
+Il \glo{capitolato} si prefigge di utilizzare tecnologie che il team ha valutato troppo onerose in termini di apprendimento dei linguaggi di programmazione richiesti. Questo potrebbe portare ad eccessivi ritardi nello sviluppo del progetto.
+\subsubsection{Esito}
+Nonostante tale \glo{capitolato} abbia destato particolare interesse in termini di tecnologie utilizzate, il team di lavoro ha valutato la complessità di tale progetto come molto elevata e ha preferito orientarsi verso un'altra alternativa altrettanto stimolante.
+
+
+\newpage
+\section{\glo{Capitolato} C7 - SSD - Soluzioni di sincronizzazione Desktop}
+\subsection{Informazioni generali}
+\begin{itemize}
+	\item \textbf{nome:} SSD - Soluzioni di sincronizzazione Desktop;
+	\item \textbf{\glo{proponente}:} Zextras;
+	\item \textbf{\glo{committente}:} Prof. Tullio Vardanega e Prof. Riccardo Cardin.
+\index{index}
+\end{itemize}
+
+\subsection{Descrizione} 
+Scopo di questo \glo{capitolato} è la creazione di un algoritmo di sincronizzazione di file tra \glo{cloud} e desktop personale, indirizzato ad utenti professionali. Questa tipologia di utenti solitamente è in possesso di un dispositivo desktop principale dove vengono creati e modificati i contenuti, mentre vengono utilizzati altri dispositivi (soprattutto mobili) per gestire e condividere tali contenuti. L'obiettivo è quello di creare un sistema che permetta di fare ciò, ovvero lavorare contemporaneamente sulla copia locale e remota.
+
+\subsection{Obiettivi}
+Il \glo{capitolato} pone come obiettivo lo sviluppo di un algoritmo solido ed efficiente in grado di garantire il salvataggio del lavoro e contemporaneamente la sincronizzazione dei cambiamenti su \glo{cloud}. Il \glo{proponente} richiede che tale algoritmo possa interfacciarsi con il suo servizio \glo{cloud}, Zextras Drive. Si vuole inoltre rendere disponibile agli utenti un'interfaccia multipiattaforma per tutti i maggiori sistemi operativi desktop (Windows, MacOS X, Linux).
+È essenziale che la soluzione sviluppata non dipenda dall'installazione di \glo{framework} terzi per funzionare, in quanto gli utenti professionali spesso possiedono dispositivi chiusi forniti dall'azienda, su cui non è possibilie installare ulteriori \glo{framework}. Inoltre spesso non sono utenti esperti e non ci si può aspettare che riescano ad installare \glo{framework} di supporto.
+Per far fronte alla concorrenza, è necessario implementare funzionalità presenti anche sui loro prodotti, ovvero:
+\begin{itemize}
+	\item configurazione e autenticazione dell'utente;
+	\item gestione di cosa sincronizzare e cosa ignorare, sia nelle cartelle \glo{cloud} che quelle locali;
+	\item sincronizzazione costante dei cambiamenti, sia locali che remoti;
+	\item modifica delle preferenze in qualsiasi momento;
+	\item sistema di notifica agli utenti per i cambiamenti sui contenuti condivisi;
+	\item gestione delle condivisioni.
+\end{itemize}
+Mentre sono consigliate le seguenti funzionalità avanzate:
+\begin{itemize}
+	\item integrazione con il protocollo \glo{MAPI};
+	\item integrazione con il prodotto web.
+\end{itemize}
+
+\subsection{Tecnologie utilizzate}
+\begin{itemize}
+	\item \textbf{Architettura \glo{MVC}}: architettura consigliata per permettere di cambiare rapidamente e facilmente la \glo{business logic} (algoritmo di sincronizzazione) o l'interfaccia;
+	\item \textbf{\glo{Qt}}: \glo{framework} consigliato per lo sviluppo di un interfaccia grafica e del controller dell'architettura; basato su C++ con supporto a molti linguaggi per la \glo{business logic}, è fortemente supportato e documentato;
+	\item \textbf{\glo{Python}}: linguaggio consigliato per la \glo{business logic}, poiché possiede una bassa curva di apprendimento e una \glo{libreria} standard estesa e robusta che permetterebbe di non avere bisogno di integrazioni esterne;
+	\item \textbf{\glo{API} Zextras Drive}: \glo{API} contenente gli endpoint per l'integrazione con il \glo{cloud} Zextras Drive;
+	\item eventuali tecnologie per l'integrazione con il prodotto web.
+\end{itemize}
+
+\subsection{Valutazione finale}
+\subsubsection{Aspetti positivi}
+\begin{itemize}
+	\item Alcune delle tecnologie da utilizzare sono già conosciute dai membri del gruppo (\glo{Qt} e architettura \glo{MVC});
+	\item L'esperienza permetterebbe di apprendere il linguaggio \glo{Python} e la comunicazione con \glo{API} esterne.
+\end{itemize}
+\subsubsection{Aspetti negativi}
+\begin{itemize}
+	\item Non sono state rilevate particolari criticità o aspetti negativi riguardo il \glo{capitolato}. 
+\end{itemize}
+\subsubsection{Esito}
+Il progetto contiene spunti che sono sembrati interessanti ad alcuni membri del team e la familiarità con alcune tecnologie hanno portato questo \glo{capitolato} tra quelli più considerati. Tuttavia un altro \glo{capitolato} ha suscitato un maggiore interesse nella maggioranza dei membri del gruppo, portando come conseguenza la scelta di scartare il \glo{capitolato}. 
+
+\end{document}

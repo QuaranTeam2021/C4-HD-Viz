@@ -1,0 +1,72 @@
+\newcommand{\Data}{2021-04-23}
+\newcommand{\TitoloDoc}{V.I. del \Data}
+\newcommand{\Redattori}{\VEL}
+\newcommand{\Verificatori}{\GIA}
+\newcommand{\Approvatore}{\CHF}
+\newcommand{\Distribuzione}{\Committente{} \\& \Gruppo{}}
+\newcommand{\Uso}{Interno}
+\newcommand{\Stato}{Approvato}
+\newcommand{\DescrizioneDoc}{Riassunto della riunione del gruppo \textit{\Gruppo} tenutasi il \Data.}
+\newcommand{\pathimg}{../../immagini}
+\newcommand{\VersioneDoc}{1.0.0}
+
+\input{../../Utility/general_commands.tex}
+\documentclass{../../Utility/stdDocument}
+
+\begin{document}
+\verbaleFronte
+\section*{Registro delle modifiche} 
+\begin{RegistroModifiche}
+	1.0.0 & 2021-04-24 & Approvazione del documento. & \CHF & \\
+	\hline
+	0.1.0 & 2021-04-23 & Stesura del documento. & \VEL & \GIA \\
+\end{RegistroModifiche}
+
+\verbaleIndice
+
+\section{Informazioni generali}
+\begin{itemize}
+	\item[•] \textbf{Luogo:} \glo{Zoom};
+	\item[•] \textbf{Data:} 2021-04-23;
+	\item[•] \textbf{Ora di inizio:} 18:30;
+	\item[•] \textbf{Ora di fine:} 20:00;
+	\item[•] \textbf{Partecipanti del gruppo:}
+	\begin{enumerate}
+		\item [-] Alice Gibellato;
+		\item [-] Elia Rech;
+		\item [-] Federico Consalvo; 
+		\item [-] Federico Chiarello; 
+		\item [-] Matteo Sinigaglia;
+		\item [-] Luca Veronese;
+		\item [-] Damiano Mason.
+	\end{enumerate}
+	\item[•] \textbf{Segretario:} \VEL. 
+\end{itemize}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Candidatura Revisione di Qualifica;
+	\item Suddivisione dei compiti.
+\end{itemize}
+
+\section{Resoconto}
+Successivamente al secondo colloquio per la \glo{Product Baseline}, avvenuto in data 2021-04-22 il gruppo si è riunito per discutere della data per la candidatura alla Revisione di Qualifica.
+\subsection{Candidatura Revisione di Qualifica}
+Dopo un breve confronto il gruppo ha fissato al 2021-05-12 la data di consegna per il materiale necessario alla candidatura per la Revisione di Qualifica. 
+\subsection{Suddivisione dei compiti}
+In seguito all'esito positivo del secondo colloquio per la \glo{Product Baseline} si è deciso che:
+\begin{itemize}
+	\item \SIM{}  e \CHF{} si occuperanno dello sviluppo del controller e dello \textit{Store};
+	\item il gruppo di sviluppo della \textit{View}, ovvero \GIA, \MAD{} e \COF{} si occuperà di sviluppare le componenti rimanenti;
+	\item \VEL{} e \REL{} si occuperanno di ultimare le modifiche ai grafici;
+	\item \VEL{} e \REL{} si occuperanno della revisione del \textit{Piano di Progetto};
+	\item \SIM, \CHF, \GIA, \COF{} e \MAD{} si occuperanno della stesura e verifica del \textit{Manuale Utente} e del \textit{Manuale del Manutentore}.
+\end{itemize}
+Ogni componente del gruppo comunicherà a \SIM{}, \MAD{}, \COF{} il resoconto dei test effettuati, i quali provvederanno a inserire questi ultimi in §4 - Test - \textit{Piano di Qualifica} e ad aggiornare §3 e §A dello stesso documento, relative alle metriche adottate e al resoconto delle attività di verifica.
+
+\section{Riepilogo delle decisioni}
+\begin{RiepilogoDecisioni}
+	VI\_2021-04-23.1 & Candidatura alla Revisione di Qualifica per il 2021-05-12. \\ \hline
+	VI\_2021-04-23.2 & Suddivisione dei compiti secondo quanto indicato in §3.2 - Suddivisione dei compiti. \\
+\end{RiepilogoDecisioni}
+\end{document}

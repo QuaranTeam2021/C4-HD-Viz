@@ -1,0 +1,91 @@
+\subsection{Gestione della configurazione}
+\subsubsection{Descrizione}
+Lo scopo del processo di gestione della configurazione è creare ordine tra \glo{software} e documenti. Tutto ciò che è configurato si trova in un posto preciso, ha uno stato identificativo, è modificato secondo procedure e posto sotto \glo{versionamento}.
+
+\subsubsection{Attività}
+\paragraph{\glo{Versionamento}}
+\subparagraph{Codice di versione del documento}
+Per ogni documento deve essere possibile ricostruire lo storico delle modifiche che ha subito. Per questo ogni modifica provoca la creazione di una nuova versione del documento, che viene tracciata nella tabella delle modifiche, identificabile dal suo numero di versione. Nella descrizione di ogni modifica viene indicato il relativo verificatore. Ogni numero di versione è composto da tre cifre:
+\begin{center}\textbf{X.Y.Z}\end{center}
+\begin{itemize}
+	\item \textbf{X}: rappresenta una versione del documento con tutte le caratteristiche desiderabili per un rilascio; il numero: 
+	\begin{itemize}
+		\item inizia da 0;
+		\item viene incrementato all'approvazione del documento dal responsabile di progetto, quando è pronto per il rilascio.
+	\end{itemize}
+	\item \textbf{Y}: rappresenta una versione che ha modificato la struttura del documento; il numero:
+	\begin{itemize}
+		\item inizia da 0;
+		\item viene incrementato all'aggiunta, spostamento o rimozione di una qualche sezione dall'autore della modifica;
+		\item viene riportato a 0 all'incremento di X.
+	\end{itemize}
+	\item \textbf{Z}: rappresenta una versione ancora in fase di lavorazione, e quindi soggetta a modifiche, del documento; il numero:
+	\begin{itemize}
+		\item inizia da 0;
+		\item viene incrementato dal redattore della modifica del corpo del documento; rientrano in questo caso anche le modifiche apportate durante una revisione o verifica del documento;
+		\item viene riportato a 0 all'incremento di Y.
+		\end{itemize}
+\end{itemize}
+
+\subparagraph{Organizzazione dei \glo{repository}}
+I membri del \glo{team} possono interagire con il VCS (\glo{Version Control System}) sia da linea di comando, sia attraverso \glo{software} che ne migliorano l'usabilità. La versione comune e ufficiale del progetto è ospitata in un \glo{repository} remoto disponibile all'indirizzo:
+\begin{center}
+	\url{https://github.com/QuaranTeam2021/HD-Viz}
+\end{center}
+Ci sono due tipi di \glo{repository}:
+\begin{itemize}
+	\item \textbf{locale}: ogni membro del gruppo lavora sui file clonati dal \glo{repository} remoto nel proprio computer;
+	\item \textbf{remoto}: pubblicato su \glo{GitHub}, contiene il lavoro svolto da ogni componente e che viene condiviso con il \glo{team}.
+\end{itemize} 
+La struttura è la stessa per entrambe le copie. \\
+Il \glo{repository} dei documenti è così organizzato:
+\begin{itemize}
+	\item \textbf{Utility}: contiene tutti i file utili a tutti i comandi di implementazione, tra cui i comandi \glo{\LaTeX} personalizzati e il template dei documenti;
+	\item \textbf{interni}: contiene tutti i documenti destinati ad uso interno del \glo{team};
+	\item \textbf{esterni}: contiene la documentazione destinata ad uso esterno;
+	\item \textbf{immagini}: contiene le immagini comuni a tutti i documenti;
+	\item una cartella per ogni documento, che contiene tutte le risorse necessarie alla sua costruzione.
+\end{itemize}
+La suddivisione dei file per revisione aiuta ad evidenziare il lavoro svolto per ogni consegna e migliora la tracciabilità dei file all'interno di ognuna di esse.
+
+\subparagraph{Organizzazione dei branch}
+Per fare in modo che ogni modifica fatta non sia distruttiva, ognuna verrà effettuata su un determinato branch. La scelta del branch su cui lavorare dovrà essere effettuata seguendo queste direttive:
+\begin{itemize}
+	\item il branch master verrà modificato solo ad ogni avanzamento significativo per il prodotto (baseline);
+	\item il branch develop è quello principale: verrà modificato ogni volta che una qualche funzionalità è stata completata e testata;
+	\item a partire dal ramo develop verranno creati i nuovi rami per le nuove funzionalità; se una funzionalità esiste già, è necessario lavorare sul ramo dedicato ad essa;
+	\item è possibile creare un sottoramo per correggere problemi riscontrati in una funzionalità; le correzioni saranno poi integrate al ramo principale della funzionalità.
+\end{itemize}
+	
+\subparagraph{Tipi di file e \textit{.gitignore}}
+I file utilizzati per la documentazione del progetto sono: 
+\begin{itemize}
+	\item file con estensione \textbf{.tex} di \glo{\LaTeX};
+	\item file con estensione \textbf{.pdf} che sono oggetto di consegna;
+	\item alcuni file testuali e immagini di supporto ai precedenti.
+\end{itemize}
+Il file "\textit{.gitignore}" è presente al livello più esterno del \glo{repository} ed elenca tutti i file da escludere dal \glo{versionamento}. È possibile aggiungere il file stesso al suo contenuto, in modo da storicizzare solo i file cui si è interessati.
+
+\subparagraph{Utilizzo di \glo{Git}}
+Il \glo{repository} di \glo{Git} è composto da vari branch, per lavorare in modo modulare e collaborativo. La \glo{procedura} consigliata è illustrata di seguito.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/Procedura_utilizzo_Git_3.2.2.1.png} \\
+		\caption{Procedura per l'utilizzo di Git}
+	\end{center}
+\end{figure} 
+
+\paragraph{Gestione delle modifiche}
+Tutti i membri del \glo{team} possono modificare i file in ogni branch, ad eccezione del branch master, per il quale occorre fare una pull request e ottenere l'approvazione di un altro membro. Per effettuare modifiche maggiori sui contenuti o sulla struttura dei file è previsto di:
+\begin{itemize}
+	\item contattare il responsabile del file da modificare;
+	\item suggerire la modifica da effettuare;
+	\item se il responsabile valuta positivamente la modifica, allora la applica.
+\end{itemize}
+Per modifiche minori, come correzioni grammaticali o miglioramenti sintattici, si consiglia di modificare indipendentemente. In ambo i casi è opportuno commentare i propri \glo{commit} con chiarezza per risalire facilmente alle modifiche.
+
+\subsubsection{Metriche}
+Non sono state attualmente individuate metriche specifiche al processo di gestione della configurazione.
+
+\subsubsection{Strumenti}
+Per le parti del progetto da versionare si è scelto di usare il sistema di \glo{versionamento} distribuito \glo{Git}, usando il servizio di \glo{GitHub} per ospitare il \glo{repository} remoto. Vengono utilizzati i \glo{software} GitFlow, GitKraken e \glo{GitHub} desktop per la clonazione del repository in locale.

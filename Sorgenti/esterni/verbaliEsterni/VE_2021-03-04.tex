@@ -1,0 +1,80 @@
+\newcommand{\Data}{2021-03-04}
+\newcommand{\TitoloDoc}{V.E. del \Data}
+\newcommand{\Redattori}{\MAD}
+\newcommand{\Verificatori}{\SIM}
+\newcommand{\Approvatore}{\COF}
+\newcommand{\Distribuzione}{\Committente{} \\& \Proponente{} \\& \Gruppo{}}
+\newcommand{\Uso}{Esterno}
+\newcommand{\Stato}{Approvato}
+\newcommand{\DescrizioneDoc}{Riassunto della riunione tra il gruppo \textit{QuaranTeam} ed il \glo{proponente} tenutosi il 2021-03-04.}
+\newcommand{\pathimg}{../../immagini}
+\newcommand{\VersioneDoc}{1.0.0}
+
+\input{../../Utility/general_commands.tex}
+\documentclass{../../Utility/stdDocument}
+
+\begin{document}
+\verbaleFronte
+		
+\section*{Registro delle modifiche}
+\begin{RegistroModifiche}
+ 1.0.0 & 2021-03-06 & Approvazione del documento. & \COF & Responsabile \\
+\hline
+ 0.1.0 & 2021-03-04 & Stesura del documento. \newline Verificatore: \SIM & \MAD &  Analista \\
+\end{RegistroModifiche}
+
+\verbaleIndice
+
+\section{Informazioni generali}
+A causa delle circostanze poco favorevoli dovute alla pandemia \glo{COVID-19} le riunioni esterne verranno esclusivamente svolte online via \glo{Skype}.
+\begin{itemize}
+	\item[•] \textbf{Luogo:} \glo{Skype};
+	\item[•] \textbf{Data:} 2021-03-04;
+	\item[•] \textbf{Ora di inizio:} 14:30;
+	\item[•] \textbf{Ora di fine:} 15:00;
+	\item[•] \textbf{Partecipanti del gruppo:}
+	\begin{enumerate}
+		\item [-] Elia Rech.
+		\item [-] Federico Consalvo; 
+		\item [-] Federico Chiarello; 
+		\item [-] Matteo Sinigaglia;
+		\item [-] Luca Veronese;
+		\item [-] Damiano Mason.
+	\end{enumerate} 
+	\item[•] \textbf{Assenti:}
+	\begin{enumerate}
+		\item [-] Alice Gibellato.
+	\end{enumerate}
+	\item[•] \textbf{Segretario:} Mason Damiano.
+\end{itemize}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item [•] Breve presentazione del \glo{Proof of Concept};
+	\item [•] Chiarimento su diversi ambiti dei \glo{database};
+	\item [•] Chiarimenti sulla gestione dei dataset.
+\end{itemize}
+
+\section{Resoconto}
+L'incontro è stato tenuto per chiarire alcuni dubbi sorti in seguito alla progettazione e codifica della \glo{Technology Baseline}. Il \glo{proponente}, rappresentato dalla figura del Dott. \PG, si è mostrato disponibile a chiarire tutti i dubbi che sono stati esposti. Tutti i dubbi sono stati chiariti in modo rapido.
+\subsection{Breve presentazione del \glo{Proof of Concept}}
+La presentazione del \glo{Proof of Concept} al \glo{proponente} è stata effettuata per misurare il gradimento del \glo{proponente} e per ottenere un feedback su quanto sviluppato. Sebbene la demo si trovi ancora in una stato abbozzato non sono state sollevate critiche da parte del \glo{proponente}. 
+La demo è stata utilizzata anche per esporre al \glo{proponente} una rappresentazione visiva che permettesse di capire in concreto i problemi sorti nella gestione dei dati. Il \glo{proponente} non ha esposto preferenze o richieste per quanto riguarda l'interfaccia.
+\subsection{Chiarimento su diversi ambiti dei \glo{database}}
+Il \glo{team} ha voluto approfondire con il \glo{proponente} il tema della gestione del \glo{database}. Inizialmente si è discusso con il \glo{proponente} per capire quale preferenza avesse per la tipologia di \glo{database}. Il \glo{proponente} ha esposto diversi punti di vista sui \glo{database} non relazionali che non erano stati considerati dal \glo{team} data la poca esperienza con queste tecnologie. A seguito di questa discussione il \glo{team} ha rivalutato quale tipologia di \glo{database} utilizzare, riservandosi di sceglierne uno relazionale tra quelli che sono stati messi in evidenza dal \glo{proponente}.
+Il secondo dubbio che è stato chiarito riguardava il disaccoppiamento tra web app e \glo{database}. Questo dubbio è nato a causa nella correzione effettuata dal \VT{} in seguito alla consegna della Revisone dei Requisiti. È stato chiarito che deve esserci una completa separazione tra \glo{database}, che deve essere esterno, e web app, sviluppando un file di configurazione che permetta di stabilire la connessione quando essa è richiesta. Questo approfondimento ha confermato l'idea iniziale del \glo{team}.
+\subsection{Chiarimenti sulla gestione dei dataset}
+In seguito all'utilizzo della \glo{libreria} \glo{D3.js} sono nati diversi dubbi sulle assunzioni che è possibile effettuare sui set di dati. Il \glo{proponente} ha chiarito l'impossibilità di prevedere la struttura di un set di dati, per questo motivo ha fornito una possibile soluzione che consiste nel fornire all'utente la possibilità di scegliere quali dimensioni mantenere e visualizzare nei grafici, individuando eventualmente alcune dimensioni che rappresentano raggruppamenti da evidenziare visivamente nei grafici.
+È stato inoltre specificato che il \glo{proponente} non ha preferenze sulla scelta di \glo{librerie} esterne per l'implementazione di algoritmi di riduzione dimensionale.
+\section{Riepilogo delle decisioni}
+\begin{RiepilogoDecisioni}
+	VE\_2021-03-04.1 & Il riscontro ottenuto sul \glo{Proof of Concept} ha confermato che il \glo{team} ha capito l'obiettivo del capitolato C4. \\
+	\hline
+	VE\_2021-03-04.2 & Si è stabilito di utilizzare un \glo{database} relazionale. \\
+	\hline
+	VE\_2021-03-04.3 & Si è deciso come implementare la gestione dei dataset. \\
+	\hline
+	VE\_2021-03-04.4 & Si è deciso di utilizzare \glo{librerie} che implementano gli algoritmi di riduzione. \\
+	\hline
+\end{RiepilogoDecisioni}
+\end{document}

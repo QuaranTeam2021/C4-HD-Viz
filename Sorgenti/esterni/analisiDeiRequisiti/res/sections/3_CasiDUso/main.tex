@@ -1,0 +1,1263 @@
+\section{Casi d'uso}
+% UC1
+\subsection{UC1 - Visualizzazione manuale utente}
+\begin{itemize} 
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente visualizza le funzionalità di HD Viz;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente accede all'applicazione web;
+		\item L'utente legge la guida;
+	\end{enumerate}
+	\item \textbf{Precondizione:} L'utente accede all'applicazione web;
+	\item \textbf{Postcondizione:} L'utente ha acquisito una consapevolezza delle funzionalità del sito.
+\end{itemize}
+% UC2
+\subsection{UC2 - Importazione dati}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/png/Model1!UC2_3.png} \\
+		\caption{Diagramma UML dei casi d'uso per il caricamento dei dati di \textit{HD Viz}}
+	\end{center}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente seleziona la sorgente da cui vuole importare i dati;
+	\item \textbf{Scenario principale:} 
+	\begin{enumerate}
+		\item L'utente è nell'applicazione web e sceglie da dove importare i dati;
+	\end{enumerate}
+	\item \textbf{Precondizione:} L'utente deve possedere dei dati;
+	\item \textbf{Postcondizione:} L'utente ha scelto la fonte da cui importare i dati e li ha importati.
+\end{itemize}
+\subsubsection{UC2.1 - Importazione dati locali}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie da locale un file di un formato supportato;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente si trova nell'applicazione web e fornisce i dati tramite file scelto in locale tra i formati supportati.
+	\end{enumerate}
+	\item \textbf{Precondizione:} L'utente possiede un file contenente i dati in locale;
+	\item \textbf{Postcondizione:} I dati sono stati caricati nell'applicazione.
+	\item \textbf{Specializzazioni:}
+	\begin{enumerate}
+		\item Selezione file \glo{CSV} (UC2.2);
+		\item Selezione file \glo{JSON} (UC2.3);
+		\item Selezione file \glo{TSV} (UC2.4).
+	\end{enumerate}
+\end{itemize}
+\subsubsection{UC2.2 - Selezione file \glo{CSV}}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente carica un file \glo{CSV} contenente i dati;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente si trova nell'applicazione web e fornisce i dati tramite file \glo{CSV}.
+	\end{enumerate}
+	\item \textbf{Precondizione:} L'utente possiede un file \glo{CSV} contenente i dati;
+	\item \textbf{Postcondizione:} I dati sono stati caricati nell'applicazione.
+	\item \textbf{Estensioni:}
+	\begin{itemize}
+		\item[-] Visualizzazione errore file vuoto (UC9).
+	\end{itemize}
+\end{itemize}
+\subsubsection{UC2.3 - Selezione file \glo{JSON}}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente carica un file \glo{JSON} contenente i dati;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente si trova nell'applicazione web e fornisce i dati tramite file \glo{JSON}.
+	\end{enumerate}
+	\item \textbf{Precondizione:} L'utente possiede un file \glo{JSON} contenente i dati;
+	\item \textbf{Postcondizione:} I dati sono stati caricati nell'applicazione.
+	\item \textbf{Estensioni:}
+	\begin{itemize}
+		\item[-] Visualizzazione errore file vuoto (UC9).
+	\end{itemize}
+\end{itemize}
+\subsubsection{UC2.4 - Selezione file \glo{TSV}}
+\begin{itemize}
+	\item \textbf{Descrizione:} L'utente carica un file \glo{TSV} contenente i dati;
+	\begin{enumerate}
+		\item L'utente si trova nell'applicazione web e fornisce i dati tramite file \glo{TSV}.
+	\end{enumerate}
+	\item \textbf{Precondizione:} L'utente possiede un file \glo{TSV} contenente i dati;
+	\item \textbf{Postcondizione:} I dati sono stati caricati nell'applicazione.
+	\item \textbf{Estensioni:}
+	\begin{itemize}
+		\item[-] Visualizzazione errore file vuoto (UC9).
+	\end{itemize}
+\end{itemize}
+\subsubsection{UC2.5 - Importazione dati da \glo{database}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{images/png/Model1!UC2-6_24.png} \\
+		\caption{Diagramma UML dei casi d'uso per l'importazione dei dati da \glo{database}}
+	\end{center}
+\end{figure} 
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Attori secondari:} \glo{database};
+	\item \textbf{Descrizione:} L'utente interroga il \glo{database} e importa i dati ottenuti;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente si trova nell'applicazione web e importa i dati dal \glo{database};
+	\end{enumerate}
+	\item \textbf{Precondizione:} L'utente ha popolato il \glo{database};
+	\item \textbf{Postcondizione:} L'utente ha caricato i dati dal \glo{database}.
+	\item \textbf{Estensioni:}
+	\begin{itemize}
+		\item[-] Visualizzazione errore \glo{query} vuota (UC10).
+	\end{itemize}
+\end{itemize}
+\paragraph{UC2.5.1 - Esecuzione \glo{query} dataset disponibili}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Attori secondari:} \glo{database};
+	\item \textbf{Descrizione:} L'utente esegue una \glo{query} per visualizzare i dataset disponibili nel \glo{database}. Ogni tabella corrisponde ad un dataset;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente clicca il pulsante per importare i dati;
+		\item L'utente sceglie l'importazione da \glo{database};
+		\item L'utente visualizza l'elenco di dataset presenti nel \glo{database};
+	\end{enumerate}
+	\item \textbf{Precondizione:} L'utente ha popolato il \glo{database};
+	\item \textbf{Postcondizione:} L'utente ha visualizzato i dataset disponibili per l'importazione da \glo{database}.
+\end{itemize}
+\paragraph{UC2.5.2 - Scelta dataset da importare}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente seleziona uno dei dataset disponibili;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente seleziona uno dei dataset disponibili;
+		\item La \glo{query} viene automaticamente generata;
+	\end{enumerate}
+	\item \textbf{Precondizione:} L'utente conosce il nome del dataset presente nel \glo{database} che vuole importare;
+	\item \textbf{Postcondizione:} L'utente ha generato la \glo{query} per importare i dati dal \glo{database}.
+\end{itemize}
+\paragraph{UC2.5.3 - Conferma \glo{query} di importazione}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Attori secondari:} \glo{database};
+	\item \textbf{Descrizione:} L'utente conferma l'importazione del dataset scelto. Viene eseguita sul \glo{database} la \glo{query} generata;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente conferma il caricamento dei dati da \glo{database};
+		\item La \glo{query} viene eseguita sul \glo{database};
+		\item I dati vengono importati;
+	\end{enumerate}
+	\item \textbf{Precondizione:} L'utente ha generato la \glo{query};
+	\item \textbf{Postcondizione:} L'utente ha importato i dati dal \glo{database};
+	\item \textbf{Estensioni:}
+	\begin{itemize}
+		\item[-] Visualizzazione errore \glo{query} vuota (UC10).
+	\end{itemize}
+\end{itemize}
+\subsection{UC3 - Selezione tipo di grafico}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/png/Model1!UC3_4.png} \\
+		\caption{Diagramma UML dei casi d'uso per la selezione del tipo di grafico}
+	\end{center}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può scegliere un grafico per visualizzare i dati forniti;
+	\item \textbf{Scenario principale:} 
+	\begin{enumerate}
+		\item L'utente si trova nella pagina principale di HD Viz;
+		\item L'utente fornisce dei dati;
+		\item L'utente visualizza i grafici disponibili;
+		\item L'utente sceglie un grafico tra quelli disponibili;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha fornito i dati;
+	\item \textbf{Postcondizioni:} L'utente ha scelto un grafico da visualizzare.
+\end{itemize}
+\subsubsection{UC3.1 - Selezione \glo{Scatter plot Matrix}}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie il grafico \glo{Scatter plot Matrix};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza i grafici disponibili;
+		\item L'utente sceglie il grafico \glo{Scatter plot Matrix};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando i grafici disponibili;
+	\item \textbf{Postcondizioni:} L'utente ha scelto il grafico \glo{Scatter plot Matrix}.
+\end{itemize}
+\subsubsection{UC3.2 - Selezione \glo{Force Field}}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie il grafico \glo{Force Field};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza i grafici disponibili;
+		\item L'utente sceglie il grafico \glo{Force Field};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando i grafici disponibili;
+	\item \textbf{Postcondizioni:} L'utente ha scelto il grafico \glo{Force Field}.
+\end{itemize}
+\subsubsection{UC3.3 - Selezione \glo{Heat Map}}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie il grafico \glo{Heat Map};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza i grafici disponibili;
+		\item L'utente sceglie il grafico \glo{Heat Map};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando i grafici disponibili;
+	\item \textbf{Postcondizioni:} L'utente ha scelto il grafico \glo{Heat Map}.
+\end{itemize}
+\subsubsection{UC3.4 - Selezione \glo{Proiezione Lineare Multi Asse}}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie il grafico \glo{Proiezione Lineare Multi Asse};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza i grafici disponibili;
+		\item L'utente sceglie il grafico \glo{Proiezione Lineare Multi Asse};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando i grafici disponibili;
+	\item \textbf{Postcondizioni:} L'utente ha scelto il grafico \glo{Proiezione Lineare Multi Asse}.
+\end{itemize}
+
+\subsection{UC4 - Modifica grafico}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/png/Model1!UC4_6.png} \\
+		\caption{Diagramma UML dei casi d'uso per le modifiche dei grafici}
+	\end{center}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può scegliere quale grafico modificare e quale modifica effettuare;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie quale modifica effettuare.
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando uno o più grafici;
+	\item \textbf{Postcondizioni:} L'utente ha scelto il grafico da modificare, che tipo di modifica effettuare e la modifica è stata applicata al grafico scelto.
+\end{itemize}
+\subsubsection{UC4.1 - Modifica \glo{Scatter plot Matrix}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{images/png/Model1!UC4-1_7.png} \\
+		\caption{Diagramma UML dei casi d'uso per la modifica del grafico \glo{Scatter plot Matrix}}
+	\end{center}
+\end{figure} 
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie di modificare il grafico \glo{Scatter plot Matrix};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza quali grafici modificare;
+		\item L'utente sceglie di modificare il grafico  \glo{Scatter plot Matrix}.
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Scatter plot Matrix};
+	\item \textbf{Postcondizioni:} L'utente ha modificato il grafico \glo{Scatter plot Matrix}.
+\end{itemize}
+\paragraph{UC4.1.1 - Evidenziamento dati}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può evidenziare con il mouse un gruppo di punti e vedere, in tutti i piani cartesiani della griglia, il colore assegnato a tutti e soli i punti rappresentanti i dati evidenziati;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente evidenzia un dato/gruppo di dati;
+		\item L'utente visualizza in ogni piano cartesiano della griglia:
+		\begin{itemize}
+			\item i punti rappresentanti i dati evidenziati, nelle dimensioni e nei colori originari; 
+			\item i punti non rappresentanti i dati evidenziati, in dimensioni nettamente ridotte e in colore nero; 
+		\end{itemize}
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico;
+	\item \textbf{Postcondizioni:} L'utente riesce a distinguere visivamente in ogni piano cartesiano della griglia i punti relativi ai dati evidenziati.
+\end{itemize}
+\paragraph{UC4.1.2 - Modifica dimensioni visualizzate}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} Nel grafico \glo{Scatter plot Matrix} vengono visualizzati i dati delle dimensioni prese a coppie (fino a 5 dimensioni). È possibile scegliere quante e quali coppie visualizzare;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente modifica la selezione di dimensioni da visualizzare.
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Scatter plot Matrix};
+	\item \textbf{Postcondizioni:} L'utente visualizza uno \glo{Scatter plot Matrix} con le dimensioni impostate.
+\end{itemize}
+
+\subsubsection{UC4.2 - Modifica \glo{Force Field}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/png/Model1!UC4-2_8.png} \\
+		\caption{Diagramma UML dei casi d'uso per la modifica del grafico \glo{Force Field}}
+	\end{center}
+\end{figure} 
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie di modificare il grafico \glo{Force Field};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza quali grafici modificare;
+		\item L'utente sceglie di modificare il grafico  \glo{Force Field}.
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Force Field};
+	\item \textbf{Postcondizioni:} L'utente può modificare il grafico \glo{Force Field}.
+\end{itemize}
+\paragraph{UC4.2.1 - Modifica intensità forza}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può modificare l'intensità della forza che attrae i nodi;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Force Field};
+		\item L'utente modifica l'intensità della forza utilizzata dal grafico.
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Force Field};
+	\item \textbf{Postcondizioni:} L'utente sta visualizzando il grafico con una diversa forza attrattiva dei nodi.
+\end{itemize}
+\paragraph{UC4.2.2 - Trascinamento nodo}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può modificare la posizione dei nodi;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Force Field};
+		\item L'utente clicca su un nodo e lo fissa in un punto nel piano;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Force Field};
+	\item \textbf{Postcondizioni:} L'utente sta visualizzando il grafico con una nuova disposizione dei nodi.
+\end{itemize}
+\paragraph{UC4.2.3 - Modifica distanza tra nodi}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può modificare le distanze minime e massime tra nodi entro le quali applicare la simulazione di forza;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Force Field};
+		\item L'utente sceglie di impostare le distanze minime e massime tra nodi entro le quali applicare la forza;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Force Field};
+	\item \textbf{Postcondizioni:} L'utente visualizza un \glo{Force Field} nel quale la simulazione di forza viene applicata a tutte e sole le coppie di nodi con distanza entro l'intervallo da lui specificato.
+\end{itemize}
+\paragraph{UC4.2.4 - Modifica distanza minima}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può modificare la distanza tra coppie di nodi al di sopra della quale applicare la simulazione di forza;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Force Field};
+		\item L'utente modifica la distanza minima tramite uno slider;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Force Field};
+	\item \textbf{Postcondizioni:} L'utente sta visualizzando un \glo{Force Field} nel quale la simulazione di forza viene applicata solo alle coppie di nodi con distanza superiore a quella specificata.
+\end{itemize}
+\paragraph{UC4.2.5 - Modifica distanza massima}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può modificare la distanza tra coppie di nodi al di sotto della quale applicare la simulazione di forza;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Force Field};
+		\item L'utente modifica la distanza massima tramite uno slider;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Force Field};
+	\item \textbf{Postcondizioni:} L'utente sta visualizzando un \glo{Force Field} nel quale la simulazione di forza viene applicata solo alle coppie di nodi con distanza inferiore a quella specificata.
+\end{itemize}
+\paragraph{UC4.2.6 - Modifica intervallo di valori visualizzati}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può nascondere dalla visualizzazione i collegamenti tra nodi con valore inferiore a una certa soglia;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Force Field};
+		\item L'utente modifica la soglia minima tramite uno slider;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Force Field};
+	\item \textbf{Postcondizioni:} L'utente sta visualizzando un grafico \glo{Force Field} con tutti e soli i collegamenti tra nodi aventi un'intensità maggiore alla soglia impostata.
+\end{itemize}
+\subsubsection{UC4.3 - Modifica \glo{Heat Map}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/png/Model1!UC4-3_9.png} \\
+		\caption{Diagramma UML dei casi d'uso per la modifica del grafico \glo{Heat Map}}
+	\end{center}
+\end{figure} 
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie di modificare il grafico \glo{Heat Map};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza quali grafici modificare;
+		\item L'utente sceglie di modificare il grafico  \glo{Heat Map}.
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Heat Map};
+	\item \textbf{Postcondizioni:} L'utente può modificare il grafico \glo{Heat Map}.
+\end{itemize}
+\paragraph{UC4.3.1 - Selezione ordinamento}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può selezionare un tipo di ordinamento dei dati nel grafico \glo{Heat Map};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Heat Map};
+		\item L'utente apre la tendina per visualizzare gli ordinamenti disponibili;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Heat Map};
+	\item \textbf{Postcondizioni:} L'utente ha scelto il tipo di ordinamento da applicare.
+\end{itemize}
+\paragraph{UC4.3.2 - Selezione ordinamento per cluster}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può ordinare i dati nel grafico \glo{Heat Map} per cluster di appartenenza;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Heat Map};
+		\item L'utente apre la tendina per visualizzare gli ordinamenti disponibili;
+		\item L'utente seleziona l'opzione relativa all'ordinamento per cluster;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Heat Map};
+	\item \textbf{Postcondizioni:} L'utente sta visualizzando un grafico \glo{Heat Map} con i dati ordinati per cluster.
+\end{itemize}
+\paragraph{UC4.3.3 - Selezione ordinamento originale}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può selezionare un tipo di ordinamento dei dati nel grafico \glo{Heat Map};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Heat Map};
+		\item L'utente apre la tendina per visualizzare gli ordinamenti disponibili;
+		\item L'utente seleziona l'opzione relativa all'ordinamento originale;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Heat Map};
+	\item \textbf{Postcondizioni:} L'utente sta visualizzando un grafico \glo{Heat Map} con i dati ordinati secondo l'ordinamento originale.
+\end{itemize}
+\paragraph{UC4.3.4 - Modifica intervallo di valori visualizzati}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può nascondere dalla visualizzazione i rettangoli relativi a collegamenti con valore inferiore a una certa soglia;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Heat Map};
+		\item L'utente modifica la soglia minima tramite uno slider;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Heat Map};
+	\item \textbf{Postcondizioni:} L'utente sta visualizzando un grafico \glo{Heat Map} con tutti e soli i rettangoli relativi a collegamenti con valore maggiore della soglia impostata.
+\end{itemize}
+\subsubsection{UC4.4 - Modifica \glo{Proiezione Lineare Multi Asse}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{images/png/Model1!UC4-4_10.png} \\
+		\caption{Diagramma UML dei casi d'uso per la modifica del grafico \glo{Proiezione Lineare Multi Asse}}
+	\end{center}
+\end{figure} 
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie di modificare il grafico \glo{Proiezione Lineare Multi Asse};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza quali grafici modificare;
+		\item L'utente sceglie di modificare il grafico  \glo{Proiezione Lineare Multi Asse};
+\end{enumerate}
+\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Proiezione Lineare Multi Asse};
+\item \textbf{Postcondizioni:} L'utente può modificare il grafico \glo{Proiezione Lineare Multi Asse}.
+\end{itemize}
+\paragraph{UC4.4.1 - Rotazione degli assi}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può ruotare gli assi del grafico per visualizzare una proiezione diversa;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Proiezione Lineare Multi Asse};
+		\item L'utente muove gli assi nel piano;
+		\item L'utente visualizza il grafico aggiornato;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Proiezione Lineare Multi Asse};
+	\item \textbf{Postcondizioni:} L'utente sta visualizzando il grafico con gli assi ruotati;
+\end{itemize}
+\paragraph{UC4.4.2 - Aggiunta asse}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} In questo grafico ogni asse rappresenta una dimensione. L'utente ha quindi la possibilità di aggiungere un asse (relativo a una dimensione ancora presente nel grafico) alla visualizzazione;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Proiezione Lineare Multi Asse};
+		\item L'utente aggiunge un asse;
+		\item L'utente visualizza il grafico con una dimensione in più;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Proiezione Lineare Multi Asse} con $n$ assi, dove $n$ è strettamente minore del numero di dimensioni del dataset visualizzato;
+	\item \textbf{Postcondizioni:} L'utente sta visualizzando il grafico \glo{Proiezione Lineare Multi Asse} con $n+1$ assi.
+\end{itemize}
+\paragraph{UC4.4.3 - Rimozione asse}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente ha la possibilità di rimuovere un asse rappresentante una dimensione;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un grafico \glo{Proiezione Lineare Multi Asse};
+		\item L'utente rimuove un asse;
+		\item L'utente visualizza il grafico aggiornato;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Proiezione Lineare Multi Asse};
+	\item \textbf{Postcondizioni:} L'utente sta visualizzando il grafico \glo{Proiezione Lineare Multi Asse} con un numero inferiore di assi.
+\end{itemize}
+\subsubsection{UC4.5 - Modifica \glo{Scatter plot}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{images/png/Model1!UC4-5_15.png} \\
+		\caption{Diagramma UML dei casi d'uso per la modifica del grafico \glo{Scatter plot}}
+	\end{center}
+\end{figure} 
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie di modificare il grafico \glo{Scatter plot};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza quali grafici modificare;
+		\item L'utente sceglie di modificare il grafico  \glo{Scatter plot}.
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico \glo{Scatter plot};
+	\item \textbf{Postcondizioni:} L'utente può modificare il grafico \glo{Scatter plot}.
+\end{itemize}
+\subsubsection{UC4.6 - Modifica titolo}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può modificare il titolo di ogni grafico;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente modifica il titolo del grafico scelto.
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando almeno un grafico;
+	\item \textbf{Postcondizioni:} L'utente ha impostato il titolo.
+\end{itemize}
+\subsection{UC5 - Rimozione grafico}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può rimuovere i grafici visualizzati;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente rimuove un grafico dalla pagina web;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando almeno un grafico;
+	\item \textbf{Postcondizioni:} L'utente ha rimosso uno o più grafici.
+\end{itemize}
+\subsection{UC6 - Scaricamento grafico} 
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può scaricare i grafici visualizzati;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente scarica un grafico dalla pagina web;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando almeno un grafico;
+	\item \textbf{Postcondizioni:} L'utente ha scaricato uno o più grafici.
+\end{itemize}
+\subsection{UC7 - Popolamento database}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/png/Model1!UC7_5.png} \\
+		\caption{Diagramma UML dei casi d'uso per il popolamento del database}
+	\end{center}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Attori secondari:} \glo{database};
+	\item \textbf{Descrizione:} L'utente può gestire tramite la web app operazioni di inserimento e cancellazione nel \glo{database} tramite l'interfaccia di HD Viz;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie un'operazione da effettuare sul \glo{database}.
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando l'interfaccia di gestione del \glo{database};
+	\item \textbf{Postcondizioni:} L'utente ha scelto un'operazione da eseguire sul \glo{database};
+\end{itemize}
+\subsubsection{UC7.1 - Inserimento dati nel database}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/png/Model1!UC7-1_25.png} \\
+		\caption{Diagramma UML dei casi d'uso per l'inserimento di dati nel \glo{database}}
+	\end{center}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Attori secondari:} \glo{database};
+	\item \textbf{Descrizione:} L'utente può popolare il \glo{database} dall'interfaccia di gestione presente in HD Viz;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie un dataset da caricare nel \glo{database};
+		\item L'utente carica i dati nel \glo{database};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha cliccato il pulsante per popolare il \glo{database};
+	\item \textbf{Postcondizioni:} L'utente ha popolato il \glo{database}.
+\end{itemize}
+\paragraph{UC7.1.1 - Inserimento nome dataset}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente inserisce un nome per il dataset che permetterà di identificarlo nel \glo{database};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente clicca il pulsante per popolare il \glo{database};
+		\item L'utente inserisce il nome per il dataset da caricare nel \glo{database};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha cliccato il pulsante per popolare il \glo{database};
+	\item \textbf{Postcondizioni:} L'utente ha impostato il nome per il dataset.
+\end{itemize}
+\paragraph{UC7.1.2 - Confermare inserimento nel database}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Attori secondari:} \glo{database};
+	\item \textbf{Descrizione:} L'utente conferma l'esecuzione dell'inserimento nel \glo{database} e completa il popolamento;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente clicca il pulsante di conferma;
+		\item L'utente ha popolato il \glo{database};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha importato un file dati valido;
+	\item \textbf{Postcondizioni:} L'utente ha popolato correttamente il \glo{database}.
+\end{itemize}
+\subsubsection{UC7.2 - Rimozione dati dal database}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/png/Model1!UC7-2_26.png} \\
+		\caption{Diagramma UML dei casi d'uso per la rimozione di dati dal \glo{database}}
+	\end{center}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Attori secondari:} \glo{database};
+	\item \textbf{Descrizione:} L'utente può cancellare dataset dal \glo{database} tramite l'interfaccia di gestione presente in HD Viz;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie un dataset da cancellare;
+		\item L'utente ha cancellato un dataset presente .
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha cliccato il pulsante per eliminare dataset dal \glo{database};
+	\item \textbf{Postcondizioni:} L'utente ha cancellato un dataset dal \glo{database};
+\end{itemize}
+\paragraph{UC7.2.1 - Esecuzione query dataset presenti}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Attori secondari:} \glo{database};
+	\item \textbf{Descrizione:} L'utente interroga il \glo{database} per visualizzare i dataset contenuti;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente clicca il pulsate per visualizzare i dataset disponibili;
+		\item L'utente visualizza i dataset disponibili;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha cliccato il pulsante per cancellare un dataset dal \glo{database};
+	\item \textbf{Postcondizioni:} L'utente ha visualizzato i dataset eliminabili.
+\end{itemize}
+\paragraph{UC7.2.2 - Selezione dataset da eliminare}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente seleziona uno dei set di dati disponibili per eliminarlo;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza l'elenco di set di dati memorizzati;
+		\item L'utente seleziona il nome del set di dati da cancellare;
+		\item L'utente ha generato la richiesta di cancellazione dal \glo{database};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha un dataset da eliminare nel \glo{database};
+	\item \textbf{Postcondizioni:} L'utente ha creato la richiesta di cancellazione dal \glo{database}.
+\end{itemize}
+\paragraph{UC7.2.3 - Conferma operazione di cancellazione}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Attori secondari:} \glo{database};
+	\item \textbf{Descrizione:} L'utente conferma l'esecuzione dell'operazione di cancellazione nel \glo{database} e completa la cancellazione;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente clicca il pulsante di conferma;
+		\item L'utente ha cancellato i dati dal \glo{database};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha richiesto un'operazione di cancellazione valida;
+	\item \textbf{Postcondizioni:} L'utente ha eseguito correttamente un'operazione di cancellazione nel \glo{database}.
+\end{itemize}
+\subsection{UC8 - Manipolazione dati}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/png/Model1!UC8_11.png} \\
+		\caption{Diagramma UML dei casi d'uso per la trasformazione dei dati}
+	\end{center}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può interagire con i dati che vengono caricati ed elaborati da HD Viz;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente si trova nella web app;
+		\item L'utente sceglie un'operazione da effettuare;
+		\item L'utente ha effettuato l'operazione scelta.
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente si trova nella web app;
+	\item \textbf{Postcondizioni:} L'utente ha scelto l'operazione da compiere.
+\end{itemize}
+\subsubsection{UC8.1 - Applicazione algoritmo di riduzione}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può scegliere di ridurre i dati. Può scegliere tra diversi algoritmi di riduzione;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente fornisce dei dati;
+		\item L'utente seleziona il tipo di grafico a cui è possibile applicare una riduzione;
+		\item L'utente visualizza le riduzioni disponibili;
+		\item L'utente sceglie una riduzione da applicare tra quelle disponibili;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato dei dati (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato Scatter plot Matrix (UC3.1) oppure Proiezione Lineare Multi Asse (UC3.4) oppure Scatter plot (UC3.5);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} L'utente ha scelto la riduzione da applicare.
+\end{itemize}
+% \subsubsection{UC8.2 - Applicazione PCA}
+% \begin{itemize}
+% 	\item \textbf{Attori primari:} Utente;
+% 	\item \textbf{Descrizione:} L'utente può applicare l'algoritmo "Principal Components Analysis" per ridurre i dati forniti;
+% 	\item \textbf{Scenario principale:}
+% 	\begin{enumerate}
+% 		\item L'utente fornisce dei dati;
+% 		\item L'utente sceglie la riduzione \glo{PCA}.
+% 	\end{enumerate}
+% 	\item \textbf{Precondizioni:} L'utente:
+	% \begin{enumerate}
+	% 	\item ha caricato dei dati (UC2);
+	% 	\item ha selezionato le colonne da utilizzare (UC13);
+	% 	\item ha selezionato la colonna di raggruppamento (UC15);
+	% 	\item ha selezionato Scatter plot Matrix (UC3.1) oppure Proiezione Lineare Multi Asse (UC3.4) oppure Scatter plot (UC3.5);
+	% \end{enumerate}
+% 	\item \textbf{Postcondizioni:} L'utente ha scelto di ridurre i dati  con l'algoritmo \glo{PCA};
+% \end{itemize}
+\subsubsection{UC8.2 - Applicazione UMAP}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può applicare l'algoritmo \glo{UMAP} per ridurre i dati forniti;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente fornisce dei dati;
+		\item L'utente sceglie la riduzione \glo{UMAP};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato dei dati (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato Scatter plot Matrix (UC3.1) oppure Proiezione Lineare Multi Asse (UC3.4) oppure Scatter plot (UC3.5);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} L'utente ha scelto di ridurre i dati con l'algoritmo \glo{UMAP};
+\end{itemize}
+\subsubsection{UC8.3 - Applicazione \glo{t-SNE}}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può applicare l'algoritmo \glo{t-SNE} per ridurre i dati forniti;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente fornisce dei dati;
+		\item L'utente sceglie la riduzione \glo{t-SNE}.
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato dei dati (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato Scatter plot Matrix (UC3.1) oppure Proiezione Lineare Multi Asse (UC3.4) oppure Scatter plot (UC3.5);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} L'utente ha scelto di ridurre i dati con l'algoritmo \glo{t-SNE};
+\end{itemize}
+\subsubsection{UC8.4 - Applicazione \glo{FASTMAP}}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può applicare l'algoritmo \glo{FASTMAP} per ridurre i dati forniti;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente ha caricato dei dati (UC2) e ha selezionato Scatter plot Matrix (UC3.1) oppure Proiezione Lineare Multi Asse (UC3.4) oppure Scatter plot (UC3.5);
+		\item L'utente sceglie la riduzione \glo{FASTMAP};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha fornito dei dati;
+	\item \textbf{Postcondizioni:} L'utente ha scelto di ridurre i dati con l'algoritmo \glo{FASTMAP};
+\end{itemize}
+\subsubsection{UC8.5 - Applicazione \glo{LLE}}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può applicare l'algoritmo \glo{LLE} per ridurre i dati forniti;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente ha caricato dei dati (UC2) e ha selezionato Scatter plot Matrix (UC3.1) oppure Proiezione Lineare Multi Asse (UC3.4) oppure Scatter plot (UC3.5);
+		\item L'utente sceglie la riduzione \glo{LLE};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato dei dati (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato Scatter plot Matrix (UC3.1) oppure Proiezione Lineare Multi Asse (UC3.4) oppure Scatter plot (UC3.5);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} L'utente ha scelto di ridurre i dati con l'algoritmo \glo{LLE};
+\end{itemize}
+\subsubsection{UC8.6 - Applicazione \glo{ISOMAP}}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può applicare l'algoritmo \glo{ISOMAP} per ridurre i dati forniti;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente fornisce dei dati;
+		\item L'utente sceglie la riduzione \glo{ISOMAP};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato dei dati (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato Scatter plot Matrix (UC3.1) oppure Proiezione Lineare Multi Asse (UC3.4) oppure Scatter plot (UC3.5);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} L'utente ha scelto di ridurre i dati con l'algoritmo \glo{ISOMAP};
+\end{itemize}
+
+\subsection{UC9 - Visualizzazione errore file vuoto}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} Se l’utente prova a caricare un file vuoto allora visualizza un messaggio di errore esplicativo;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L’utente carica un file vuoto;
+		\item L’utente visualizza l’avviso "file vuoto";
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha selezionato la fonte locale da cui caricare dati(UC2.2) ma il file è vuoto;
+	\item \textbf{Postcondizioni:} L'utente visualizza un messaggio di errore esplicativo;
+\end{itemize}
+
+\subsection{UC10 - Visualizzazione errore query vuota}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} Se l'utente prova a importare dati con una \glo{query} dal \glo{database}, ma la \glo{query} restituisce 0 righe come risultato, allora visualizza un messaggio di errore esplicativo;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente prova a importare dati con una \glo{query} vuota;
+		\item L'utente visualizza l'avviso "query vuota";
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha interrogato il \glo{database} (UC2.5) ma nel \glo{database} non ci sono record che rispondono alle condizioni della \glo{query};
+	\item \textbf{Postcondizioni:} L'utente visualizza un messaggio di errore esplicativo;
+\end{itemize}
+
+\subsection{UC11 - Modifica legenda}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/png/Model1!UC11_22.png} \\
+		\caption{Diagramma UML dei casi d'uso per la modifica della legenda}
+	\end{center}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può impostare le opzioni di visualizzazione della legenda se presente;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza le opzioni disponibili per la legenda;
+		\item L'utente sceglie un'opzione;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico;
+	\item \textbf{Postcondizioni:} L'utente ha attivato o disattivato la visualizzazione della legenda.
+\end{itemize}
+\subsubsection{UC11.1 - Attivazione visualizzazione legenda}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può scegliere di visualizzare la legenda;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente attiva la visualizzazione della legenda;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico e la visualizzazione della legenda è disattivata;
+	\item \textbf{Postcondizioni:} L'utente visualizza la legenda sul grafico.
+\end{itemize}
+\subsubsection{UC11.2 - Disattivazione visualizzazione legenda}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente può scegliere di non visualizzare la legenda;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente disattiva la visualizzazione della legenda;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente sta visualizzando un grafico e la visualizzazione della legenda è attiva;
+	\item \textbf{Postcondizioni:} L'utente ha disattivato la visualizzazione della legenda sul grafico.
+\end{itemize}
+
+
+\subsection{UC12 - Calcolo della matrice delle distanze}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente calcola la matrice delle distanze di un dataset;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie la metrica per il calcolo delle distanze tra gli elementi del dataset;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato un dataset (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato la visualizzazione Force Field (UC3.2) o Heat Map (UC3.3);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} La matrice delle distanze è pronta per essere visualizzata nel grafico desiderato.
+\end{itemize}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/png/Model1!UC12_16.png} \\
+		\caption{Diagramma UML dei casi d'uso per calcolo della matrice delle distanze}
+	\end{center}
+\end{figure}
+\subsubsection{UC12.1 - Selezione metrica per il calcolo della distanza}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie la metrica per il calcolo delle distanze;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie la metrica per il calcolo delle distanze tra gli elementi del dataset;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato un dataset (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato la visualizzazione Force Field (UC3.2) o Heat Map (UC3.3);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} L'utente ha scelto la metrica per il calcolo della distanza.
+\end{itemize}
+\paragraph{UC12.1.1 - Selezione distanza Euclidea}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie la distanza Euclidea;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie la distanza Euclidea;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato un dataset (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato la visualizzazione Force Field (UC3.2) o Heat Map (UC3.3);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} L'utente ha scelto la distanza Euclidea.
+\end{itemize}
+\paragraph{UC12.1.2 - Selezione distanza di Manhattan}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie la distanza di Manhattan;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie la distanza di Manhattan;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato un dataset (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato la visualizzazione Force Field (UC3.2) o Heat Map (UC3.3);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} L'utente ha scelto la distanza di Manhattan.
+\end{itemize}
+\paragraph{UC12.1.3 - Selezione distanza Cosine}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie la distanza Cosine;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie la distanza Cosine;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato un dataset (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato la visualizzazione Force Field (UC3.2) o Heat Map (UC3.3);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} L'utente ha scelto la distanza Cosine.
+\end{itemize}
+\paragraph{UC12.1.4 - Selezione distanza Euclidea quadrata}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie la distanza Euclidea quadrata;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie la distanza Euclidea quadrata;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato un dataset (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato la visualizzazione Force Field (UC3.2) o Heat Map (UC3.3);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} L'utente ha scelto la distanza Euclidea quadrata.
+\end{itemize}
+\paragraph{UC12.1.5 - Selezione distanza di Canberra}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie la distanza di Canberra;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie la distanza di Canberra;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato un dataset (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato la visualizzazione Force Field (UC3.2) o Heat Map (UC3.3);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} L'utente ha scelto la distanza di Canberra.
+\end{itemize}
+\paragraph{UC12.1.6 - Selezione distanza di Chebyshev}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie la distanza di Chebyshev;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie la distanza di Chebyshev;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente:
+	\begin{enumerate}
+		\item ha caricato un dataset (UC2);
+		\item ha selezionato le colonne da utilizzare (UC13);
+		\item ha selezionato la colonna di raggruppamento (UC15);
+		\item ha selezionato la visualizzazione Force Field (UC3.2) o Heat Map (UC3.3);
+	\end{enumerate}
+	\item \textbf{Postcondizioni:} L'utente ha scelto la distanza di Chebyshev.
+\end{itemize}
+
+\subsection{UC13 - Selezione dimensioni da utilizzare}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie un insieme di dimensioni tra quelle presenti nel dataset selezionato;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie un insieme di dimensioni di interesse per la visualizzazione;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha caricato un dataset (UC2);
+	\item \textbf{Postcondizioni:} L'utente ha scelto un insieme di dimensioni da utilizzare per la manipolazione dei dati, per il calcolo della matrice delle distanze o per la visualizzazione.
+\end{itemize}
+
+
+
+\subsection{UC14 - Impostazione parametri per riduzione dimensionale}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{images/png/Model1!UC14_17.png} \\
+		\caption{Diagramma UML dei casi d'uso per l'impostazione di parametri nella riduzione dimensionale}
+	\end{center}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente imposta i parametri di configurazione per l'algoritmo di riduzione dimensionale scelto precedentemente;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie le opzioni di configurazione per l'algoritmo di riduzione dimensionale. Qualora queste non dovessero essere modificate, vengono applicati dei valori di default;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha selezionato un algoritmo di riduzione dimensionale (UC8);
+	\item \textbf{Postcondizioni:} L'utente ha impostato le opzioni dell'algoritmo di riduzione dimensionale selezionato;
+	\item \textbf{Specializzazioni:}
+	\begin{enumerate}
+		% \item Impostazione parametri per \glo{PCA} (UC 14.1);
+		\item Impostazione parametri per \glo{UMAP} (UC14.1);
+		\item Impostazione parametri per \glo{t-SNE} (UC14.2);
+		\item Impostazione parametri per \glo{FASTMAP} (UC14.3);
+		\item Impostazione parametri per \glo{LLE} (UC14.4);
+		\item Impostazione parametri per \glo{ISOMAP} (UC14.5).
+	\end{enumerate}
+\end{itemize}
+
+% \subsubsection{Impostazione parametri per \glo{PCA}}
+% 	\item \textbf{Attori primari:} Utente;
+% 	\item \textbf{Descrizione:} L'utente imposta i parametri di configurazione per l'algoritmo \glo{PCA};
+% 	\item \textbf{Scenario principale:}
+% 	\begin{enumerate}
+% 		\item L'utente sceglie se modificare il numero di dimensioni dell'output della riduzione;
+% 	\end{enumerate}
+% 	\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{PCA} (UC8.2);
+% 	\item \textbf{Postcondizioni:} L'utente ha impostato le opzioni dell'algoritmo \glo{PCA}.
+
+\subsubsection{UC14.1 - Impostazione numero di dimensioni per \glo{UMAP}}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie se modificare il numero di dimensioni dell'output della riduzione l'algoritmo \glo{UMAP};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie se modificare il numero di dimensioni dell'output della riduzione;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{UMAP} (UC8.2);
+	\item \textbf{Postcondizioni:} L'utente ha impostato le opzioni dell'algoritmo \glo{UMAP}.
+\end{itemize}
+
+\subsubsection{UC14.2 - Impostazione parametri per \glo{t-SNE}}
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=0.6\textwidth]{images/png/Model1!UC14-2_18.png} \\
+			\caption{Diagramma UML dei casi d'uso per l'impostazione di parametri in t-SNE}
+		\end{center}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente imposta i parametri di configurazione per l'algoritmo \glo{t-SNE};
+	\item \textbf{Scenario principale:} L'utente sceglie se modificare:
+	\begin{enumerate}
+		\item numero di dimensioni dell'output della riduzione;
+		\item valore del parametro \textit{neighbors};
+		\item valore del parametro \textit{perplexity};
+		\item valore del parametro \textit{epsilon};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{t-SNE} (UC8.3);
+	\item \textbf{Postcondizioni:} L'utente ha impostato le opzioni dell'algoritmo \glo{t-SNE}.
+\end{itemize}
+
+	\paragraph{UC14.2.1 - Impostazione numero di dimensioni per \glo{t-SNE}}
+	\end{figure}
+	\begin{itemize}
+		\item \textbf{Attori primari:} Utente;
+		\item \textbf{Descrizione:} L'utente imposta il numero di dimensioni in output per l'algoritmo \glo{t-SNE};
+		\item \textbf{Scenario principale:}
+		\begin{enumerate}
+			\item L'utente seleziona il numero di dimensioni in output per la riduzione con \glo{t-SNE}. Nel caso non modifichi il valore predefinito viene applicato il valore di default;
+		\end{enumerate}
+		\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{t-SNE} (UC8.3);
+		\item \textbf{Postcondizioni:} L’utente ha selezionato il numero di dimensioni in output per la riduzione \glo{t-SNE}.	
+	\end{itemize}
+	\paragraph{UC14.2.2 - Impostazione neighbors per \glo{t-SNE}}
+	\begin{itemize}
+		\item \textbf{Attori primari:} Utente;
+		\item \textbf{Descrizione:} L'utente imposta il parametro \textit{neighbors} per l'algoritmo \glo{t-SNE};
+		\item \textbf{Scenario principale:}
+		\begin{enumerate}
+			\item L'utente seleziona il parametro \textit{neighbors} per la riduzione con \glo{t-SNE}. Nel caso non modifichi il valore predefinito viene applicato il valore di default;
+		\end{enumerate}
+		\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{t-SNE} (UC8.3);
+		\item \textbf{Postcondizioni:} L'utente ha selezionato il parametro \textit{neighbors} per la riduzione \glo{t-SNE}.
+	\end{itemize}
+
+	\paragraph{UC14.2.3 - Impostazione perplexity per \glo{t-SNE}}
+	\begin{itemize}
+		\item \textbf{Attori primari:} Utente;
+		\item \textbf{Descrizione:} L'utente imposta il parametro \textit{perplexity} per l'algoritmo \glo{t-SNE};
+		\item \textbf{Scenario principale:}
+		\begin{enumerate}
+			\item L'utente seleziona il parametro \textit{perplexity} per la riduzione con \glo{t-SNE}. Nel caso non modifichi il valore predefinito, viene applicato il valore di default;
+		\end{enumerate}
+		\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{t-SNE} (UC8.3);
+		\item \textbf{Postcondizioni:} L'utente ha selezionato il parametro \textit{perplexity} per la riduzione \glo{t-SNE}.
+	\end{itemize}
+	\paragraph{UC14.2.4 - Impostazione epsilon per \glo{t-SNE}}
+	\begin{itemize}
+		\item \textbf{Attori primari:} Utente;
+		\item \textbf{Descrizione:} L'utente imposta il parametro \textit{epsilon} per l'algoritmo \glo{t-SNE};
+		\item \textbf{Scenario principale:}
+		\begin{enumerate}
+			\item L'utente seleziona il parametro \textit{epsilon} per la riduzione con \glo{t-SNE}. Nel caso non modifichi il valore predefinito, viene applicato il valore di default;
+		\end{enumerate}
+		\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{t-SNE} (UC8.3);
+		\item \textbf{Postcondizioni:} L'utente ha selezionato il parametro \textit{epsilon} per la riduzione \glo{t-SNE}.
+	\end{itemize}
+
+\subsubsection{UC14.3 - Impostazione parametri per \glo{FASTMAP}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{images/png/Model1!UC14-4_20.png} \\
+		\caption{Diagramma UML dei casi d'uso per l'impostazione di parametri per FASTMAP}
+	\end{center}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente imposta i parametri di configurazione per l'algoritmo \glo{FASTMAP};
+	\item \textbf{Scenario principale:} L'utente sceglie se modificare:
+	\begin{enumerate}
+		\item numero di dimensioni dell'output della riduzione;
+		\item valore del parametro \textit{neighbors};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{FASTMAP} (UC8.4);
+	\item \textbf{Postcondizioni:} L'utente ha impostato le opzioni dell'algoritmo \glo{FASTMAP}.
+\end{itemize}
+
+	\paragraph{UC14.3.1 - Impostazione numero di dimensioni per \glo{FASTMAP}}
+	\begin{itemize}
+		\item \textbf{Attori primari:} Utente;
+		\item \textbf{Descrizione:} L'utente imposta il numero di dimensioni in output per l'algoritmo \glo{FASTMAP};
+		\item \textbf{Scenario principale:}
+		\begin{enumerate}
+			\item L'utente seleziona il numero di dimensioni in output per la riduzione con \glo{FASTMAP}. Nel caso non modifichi il valore predefinito viene applicato il valore di default;
+		\end{enumerate}
+		\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{FASTMAP} (UC8.4);
+		\item \textbf{Postcondizioni:} L’utente ha selezionato il numero di dimensioni in output per la riduzione \glo{FASTMAP}.
+	\end{itemize}	
+	\paragraph{UC14.3.2 - Impostazione neighbors per \glo{FASTMAP}}
+	\begin{itemize}
+		\item \textbf{Attori primari:} Utente;
+		\item \textbf{Descrizione:} L'utente imposta il parametro \textit{neighbors} per l'algoritmo \glo{FASTMAP};
+		\item \textbf{Scenario principale:}
+		\begin{enumerate}
+			\item L'utente seleziona il numero di dimensioni dell'output della riduzione con \glo{FASTMAP}. Nel caso non modifichi il valore predefinito viene applicato il valore di default;
+		\end{enumerate}
+		\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{FASTMAP} (UC8.4);
+		\item \textbf{Postcondizioni:} L'utente ha selezionato il parametro \textit{neighbors} per la riduzione \glo{FASTMAP}.
+	\end{itemize}
+\subsubsection{UC14.4 - Impostazione parametri per \glo{LLE}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{images/png/Model1!UC14-5_19.png} \\
+		\caption{Diagramma UML dei casi d'uso per l'impostazione di parametri per LLE}
+	\end{center}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente imposta i parametri di configurazione per l'algoritmo \glo{LLE};
+	\item \textbf{Scenario principale:} L'utente seleziona:
+	\begin{enumerate}
+		\item numero di dimensioni dell'output della riduzione;
+		\item valore del parametro \textit{neighbors};
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{LLE} (UC8.5);
+	\item \textbf{Postcondizioni:} L'utente ha impostato le opzioni dell'algoritmo \glo{LLE}.
+\end{itemize}
+	\paragraph{UC14.4.1 - Impostazione numero di dimensioni per \glo{LLE}}
+	\begin{itemize}
+		\item \textbf{Attori primari:} Utente;
+		\item \textbf{Descrizione:} L'utente imposta il numero di dimensioni in output per l'algoritmo \glo{LLE};
+		\item \textbf{Scenario principale:}
+		\begin{enumerate}
+			\item L'utente seleziona il numero di dimensioni in output per la riduzione con \glo{LLE}. Nel caso non modifichi il valore predefinito viene applicato il valore di default;
+		\end{enumerate}
+		\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{LLE} (UC8.5);
+		\item \textbf{Postcondizioni:} L’utente ha selezionato il numero di dimensioni in output per la riduzione \glo{LLE}.
+	\end{itemize}
+	\paragraph{UC14.4.2 - Impostazione neighbors per \glo{LLE}}
+	\begin{itemize}
+		\item \textbf{Attori primari:} Utente;
+		\item \textbf{Descrizione:} L'utente imposta il parametro \textit{neighbors} per l'algoritmo \glo{LLE};
+		\item \textbf{Scenario principale:}
+		\begin{enumerate}
+			\item L'utente seleziona il numero di dimensioni dell'output della riduzione con \glo{LLE}. Nel caso non modifichi il valore predefinito viene applicato il valore di default;
+		\end{enumerate}
+		\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{LLE} (UC8.5);
+		\item \textbf{Postcondizioni:} L'utente ha selezionato il parametro \textit{neighbors} per la riduzione \glo{LLE}.
+\end{itemize}
+\subsubsection{UC14.5 - Impostazione numero di dimensioni per \glo{ISOMAP}}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie se modificare il numero di dimensioni dell'output della riduzione con l'algoritmo \glo{ISOMAP};
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie se modificare il numero di dimensioni dell'output della riduzione;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha scelto di ridurre le dimensioni con \glo{ISOMAP} (UC8.6);
+	\item \textbf{Postcondizioni:} L'utente ha impostato le opzioni dell'algoritmo \glo{ISOMAP}.
+\end{itemize}
+%Dimensioni tra quelle non selezionate?
+\subsection{UC15 - Selezione dimensione per il raggruppamento}
+\begin{itemize}
+	\item \textbf{Attori primari:} Utente;
+	\item \textbf{Descrizione:} L'utente sceglie la dimensione da usare per il raggruppamento, tra le dimensioni presenti nel dataset selezionato;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente sceglie un insieme di dimensioni di interesse per la visualizzazione;
+	\end{enumerate}
+	\item \textbf{Precondizioni:} L'utente ha caricato un dataset (UC2);
+	\item \textbf{Postcondizioni:} L'utente ha scelto la dimensione da utilizzare per il raggruppamento.
+\end{itemize}

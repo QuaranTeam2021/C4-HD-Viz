@@ -1,0 +1,109 @@
+	\subsection{Verifica}
+
+\subsubsection{Descrizione}
+L'obiettivo del processo di verifica è controllare la qualità delle attività svolte durante le diverse fasi dello sviluppo, per assicurare che il prodotto derivante da ogni attività sia completo e conforme alle aspettative. In questa fase si cerca di identificare eventuali \glo{difetti} nel \glo{software} e nei documenti per poterli correggere, assicurando che il prodotto sia realizzato correttamente.
+Per realizzare in modo corretto il processo di verifica il \glo{team} si impegna a:
+\begin{itemize}
+\item eseguire la verifica secondo \glo{procedure} definite;
+\item applicare la fase di verifica al termine di ogni attività, non solo a prodotto ultimato;
+\item seguire criteri tipici e sicuri della fase di verifica;
+\item eseguire un rapporto finale sui \glo{difetti} trovati, che verrà aggiunto alla documentazione.
+\end{itemize}
+
+\subsubsection{Attività}
+\paragraph{Analisi}
+\subparagraph{Analisi statica}
+L'analisi statica è basata sul controllo informale di documenti e codice, senza l'esecuzione del programma, per valutare l'adesione alle norme stabilite e la correttezza del contenuto. L'attività di analisi verrà svolta dal gruppo di \glo{revisione}, che è diverso dal gruppo di \glo{codifica} o gruppo di redazione nel caso dei documenti.
+Il controllo statico è tendenzialmente identificato come un'attività manuale, ma molti controlli statici possono essere eseguiti da \glo{analizzatori} automatici molto efficienti e rigorosi. Le tecniche più comuni per effettuare l'analisi statica sono il \glo{walkthrough} e l'\glo{inspection}. Queste due tecniche si differenziano per il tipo di errori che si prefissano di scoprire. Alcuni \glo{difetti} comuni nei documenti sono:
+\begin{itemize}
+\item il formato delle date, per le quali è necessario attenersi allo standard scelto;
+\item il formato degli elenchi puntati;
+\item i tempi verbali, è preferibile usare il presente;
+\item formato del documento non rispettato.
+\end{itemize}
+\subparagraph{Analisi dinamica}
+L'analisi dinamica richiede l'esecuzione del programma in un \glo{ambiente di sviluppo} e con dati di ingresso controllati, verificando che i risultati prodotti dall'esecuzione del codice siano conformi a quelli in ingresso.
+
+\paragraph{Test}
+Sono la costituente principale dell'analisi dinamica e hanno lo scopo di verificare il corretto funzionamento del codice. I test devono essere pensati per poter catturare il maggior numero di \glo{difetti} possibili, bilanciando il costo con i benefici. Quali e quante prove effettuare è stabilito dal \textit{\PdQ}. I test devono:
+\begin{itemize}
+\item specificare input e output attesi;
+\item specificare l'\glo{ambiente di sviluppo} di esecuzione;
+\item essere veloci da eseguire;
+\item essere indipendenti tra loro;
+\item essere ripetibili;
+\item essere indipendenti dall'ordine di esecuzione;
+\item essere automatici, ogni modifica del codice sorgente dovrebbe scatenare l'esecuzione dei test.
+\end{itemize}
+\subparagraph{Classificazione}
+La classificazione dei test avviene attraverso la seguente forma:
+\begin{center}
+	\textbf{T[Categoria][Tipologia]-[Importanza]-[Codice]}
+\end{center}     
+Dove:
+\begin{itemize}
+	\item \textbf{Categoria}: indica la categoria a cui appartiene il test tra quelle descritte nel seguito del paragrafo. Può assumere i seguenti valori:
+	\begin{itemize}
+		\item \textbf{U}: test di \glo{unità};
+		\item \textbf{I}: test di integrazione;
+		\item \textbf{S}: test di sistema;
+		\item \textbf{A}: test di accettazione.
+	\end{itemize}
+
+	\item{\textbf{Tipologia}: rappresenta la classe a cui appartiene il \glo{requisito} sotto test. Può assumere i valori:}
+	\begin{itemize}
+		\item\textbf{F}: funzionale;
+		\item\textbf{P}: prestazionale;
+		\item\textbf{Q}: qualitativo;
+		\item\textbf{V}: vincolo.
+	\end{itemize}
+
+	\item \textbf{Importanza}: indica il grado di importanza del \glo{requisito} preso in esame. Può assumere i seguenti valori:
+	\begin{itemize}
+		\item \textbf{O}: \glo{requisito} obbligatorio;
+		\item \textbf{D}: \glo{requisito} desiderabile;
+		\item \textbf{F}: \glo{requisito} facoltativo.
+	\end{itemize}
+	\item{\textbf{Codice}: identificativo numerico del \glo{requisito} preso in esame}.
+\end{itemize}
+Nel \PdQv{v\versionPdQ{}} sono elencati in forma tabellare tutti i test pianificati per il progetto. Per ogni test viene riportato il codice identificativo, la descrizione e lo stato, dove lo stato può essere:
+\begin{itemize}
+    \item \textbf{S}: il test è stato svolto;
+    \item \textbf{I}: il test è stato implementato;
+    \item \textbf{NI}: il test non è ancora stato implementato.     
+\end{itemize}
+I test del \glo{software} sono molteplici e si differenziano per oggetto in esame e scopo.
+\subparagraph{Test di \glo{unità}}
+Sono i test che verificano le singole \glo{unità}. Il controllo su un \glo{modulo} ha come obiettivo principale la correttezza funzionale delle operazioni esportate dal \glo{modulo}. Fare test sui \glo{moduli} significa dover effettuare controlli su sistemi che sono incompleti. È necessario che l'ambiente di test preveda dei componenti fittizi che simulino le parti mancanti del sistema. Bisogna testare tutti i possibili input e verificare che vengano prodotti i corretti output. Le singole \glo{unità} si possono testare con \glo{driver} e \glo{stub}. È responsabilità del singolo programmatore scrivere i test delle \glo{unità} da lui sviluppate. Nel caso di \glo{unità} complesse il test di \glo{unità} deve essere eseguito da un verificatore.
+\subparagraph{Test di integrazione}
+Gli obiettivi dei test di integrazione sono la minimizzazione del lavoro e delle risorse necessarie all'integrazione e la massimizzazione del numero di \glo{difetti} scoperti prima dei controlli sul sistema completo. Le \glo{unità} che passano il test vengono integrate formando una nuova \glo{unità}, si procede per passi incrementali fino ad arrivare al sistema completo.
+\subparagraph{Test di sistema}
+Il test di sistema valuta ogni caratteristica di qualità del prodotto \glo{software} nella sua completezza, avendo come riscontro i \glo{requisiti} dell'utente. In questa fase ci si assicura che siano rispettate tutte le specifiche definite nell'\textit{\AdR}. L'obiettivo è verificare che l'interazione tra tutte le componenti del sistema produca i risultati attesi.
+\subparagraph{Test di regressione}
+Il test di regressione si applica in seguito ad una modifica del sistema, per controllare che la sua funzionalità non sia stata compromessa. Prevede la ri-esecuzione dei test esistenti.
+\subparagraph{Test di accettazione}
+Descritto nel paragrafo §3.6.2.2 (Validazione - Test di accettazione).
+
+\subsubsection{Metriche}
+\paragraph{QP-3 Verifica}
+
+\begin{tabmetriche2}{Metriche di processo relative al processo di verifica}{Tabella delle metriche per il processo di verifica}
+	QM-PROC-4 & Code coverage (CC) & Percentuale di copertura del codice sorgente da parte dei test. & $\displaystyle\frac{\textit{linee percorse dai test}}{\textit{linee di codice totali}}\times100$ \T \\
+	\hline
+	QM-PROC-5 & Branch coverage (BC) & Percentuale di copertura da parte dei test delle possibili deviazioni di flusso del codice. & $\displaystyle\frac{\textit{deviazioni di flusso coperte}}{\textit{deviazioni di flusso totali}}\times100$ \T \\
+	\hline
+	QM-PROC-6 & Test superati (TS) & Percentuale di test effettuati sul codice superati. & $\displaystyle\frac{\textit{test superati}}{\textit{test effettuati}}\times100$ \T \\
+	\hline
+\end{tabmetriche2}
+
+\subsubsection{Strumenti}
+Di seguito sono descritti gli strumenti identificati per il processo di verifica.
+\begin{itemize}
+	\item \textbf{Verifica ortografica}: viene utilizzato l'editor \glo{TeXstudio}, che segnala in tempo reale gli errori ortografici e le ripetizioni di termini a breve distanza. Ciò garantisce una documentazione sempre corretta. Inoltre tutti i membri del \glo{team} sono tenuti a conoscere i documenti e prenderli sempre come punto di riferimento, pertanto è concesso a tutti, una volta letti i documenti, suggerire modifiche per quanto riguarda la struttura delle frasi o i termini da utilizzare;
+	\item \textbf{\glo{Validazione} codice}: viene utilizzato il \glo{validatore} ufficiale fornito da \glo{W3C} per la \glo{validazione} del codice scritto in \glo{HTML} e \glo{CSS};
+	\begin{itemize}
+		\item \glo{Validatore} \textbf{\glo{HTML}}: \url{http://validator.w3.org/};
+		\item \glo{Validatore} \textbf{\glo{CSS}}: \url{http://jigsaw.w3.org/css-validator/}.
+	\end{itemize}
+	\item \textbf{\glo{ESLint}}: utilizzato per trovare e risolvere errori presenti nel codice \glo{JavaScript}. Permette di definire degli standard da seguire e guida lo sviluppatore nella scrittura del codice, avvisandolo di eventuali deviazioni dagli standard stabiliti. 
+\end{itemize}

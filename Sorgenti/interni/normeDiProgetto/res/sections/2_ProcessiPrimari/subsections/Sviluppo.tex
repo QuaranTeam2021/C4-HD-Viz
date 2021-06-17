@@ -1,0 +1,218 @@
+\subsection{Sviluppo}
+
+\subsubsection{Descrizione}
+Il processo di sviluppo racchiude le attività da svolgere per la realizzazione del prodotto \glo{software} richiesto dal \glo{proponente}. L'obiettivo di questo processo è il soddisfacimento delle aspettative e delle richieste, rispettando i vincoli tecnici e di design. Il processo mira allo sviluppo di un prodotto \glo{software} che superi i test e soddisfi i \glo{requisiti} stabiliti con il \glo{proponente}.
+
+\subsubsection{Attività}
+
+\paragraph{Analisi dei Requisiti}
+\subparagraph{Scopo} 
+L'\textit{Analisi dei Requisiti} viene redatta dagli analisti con l'obiettivo di analizzare nello specifico il prodotto da sviluppare e ha i seguenti obiettivi:
+\begin{itemize}
+	\item definire lo scopo del lavoro;
+	\item fissare i requisiti concordati con il \glo{proponente};
+	\item fornire ai verificatori dei riferimenti per l'attività di controllo.
+\end{itemize}
+
+\subparagraph{Casi d'uso}
+Viene adottata la seguente rappresentazione per i casi d'uso:
+\begin{itemize}
+\item \textbf{Identificatore:}
+\begin{center} \textbf{UC[codice\_padre].[codice\_figlio]} \end{center}
+\item \textbf{codice\_padre:} indica il caso univoco;
+\item \textbf{codice\_figlio:} indica il sottocaso;
+\item \textbf{Attori primari:} tutti gli attori primari coinvolti;
+\item \textbf{Attori secondari:} tutti gli attori secondari, non obbligatori;
+\item \textbf{Precondizione:}  indica lo stato in cui si deve trovare il sistema prima del \glo{caso d'uso};
+\item \textbf{Postcondizione:} indica lo stato in cui si deve trovare il sistema dopo il \glo{caso d'uso};
+\item \textbf{Scenario principale:} vengono numerati tutti gli eventi che avvengono durante l'esecuzione dell'applicazione;
+\item \textbf{Estensioni:} opzionale, durante l'esecuzione dello scenario principale avviene una condizione cha fa deviare il flusso delle attività;
+\item \textbf{Inclusioni:} opzionale, il secondo \glo{caso d'uso} è incondizionatamente incluso nel primo.
+\end{itemize}
+
+\subparagraph{Classificazione dei requisiti}
+Viene adottata la seguente nomenclatura per i \glo{requisiti}: 
+\begin{center} \textbf{R[Tipologia][Importanza][Identificativo]} \end{center}
+Dove:
+	\begin{itemize}
+	\item \textbf{Tipologia}
+		\begin{itemize}
+		\item \textbf{F:} funzionale, definisce la funzione di un sistema; 
+		\item \textbf{Q:} qualitativo, definisce un \glo{requisito} per garantire la qualità; 
+		\item \textbf{P:} prestazionale, definisce un \glo{requisito} per garantire una buona efficienza del prodotto;
+		\item \textbf{V:} vincolo, definisce un \glo{requisito} per garantire il vincolo.
+		\end{itemize}
+	\item \textbf{Importanza:}
+		\begin{itemize} 
+		\item \textbf{O:} \glo{requisito} obbligatorio;
+		\item \textbf{D:} \glo{requisito} desiderabile; 
+		\item \textbf{F:} \glo{requisito} facoltativo.
+		\end{itemize}
+	\item \textbf{Identificativo:} l'identificativo è univoco e viene rappresentato da un numero separato da un punto: l'identificativo è in formato [padre.figlio].
+	\end{itemize}	
+La sezione §4 del documento \AdRv{v\versionAdR{}} è dedicata alla classificazione dei \glo{requisiti} e riporta per ogni \glo{requisito}:
+	\begin{itemize}
+	\item \textbf{Descrizione:} viene descritto in modo breve e conciso il \glo{requisito};
+	\end{itemize}
+	\begin{itemize}
+	\item \textbf{Fonti:} vengono suddivise le varie fonti in base alla provenienza dei \glo{requisiti}. \newline Queste si suddividono in: 
+		\begin{itemize}
+		\item \glo{Capitolato}: riporta un \glo{requisito} individuato nel \glo{capitolato}; 
+		\item Interno: l'aggiunta del \glo{requisito} ritenuta opportuna dagli analisti; 
+		\item \glo{Casi d'uso}: il \glo{requisito} viene individuato all'interno in uno o più casi d'uso. 
+		\item Verbale: dopo un chiarimento con il \glo{proponente} è possibile che venga individuato un nuovo \glo{requisito}, che verrà riportato nei verbali.
+		\end{itemize}
+	\end{itemize}
+
+\paragraph {Progettazione}
+\subparagraph{Scopo}
+La progettazione precede la \glo{codifica} perseguendo la correttezza per costruzione e serve a dominare la complessità del prodotto.
+
+\subparagraph{Descrizione}
+La progettazione definisce le caratteristiche del prodotto \glo{software} richiesto in funzione dei \glo{requisiti} specificati dall'\textit{Analisi dei Requisiti}. In questa fase i progettisti hanno il compito di definire una possibile soluzione del problema che sia soddisfacente per tutti gli \glo{stakeholder}.
+
+\subparagraph{Qualità dell'architettura}
+L'architettura logica del prodotto dovrà godere delle seguenti qualità:
+\begin{itemize}
+	\item \textbf{sufficienza:} capace di soddisfare tutti i \glo{requisiti};
+	%\item \textbf{comprensibilità:} comprensibile da tutti gli \glo{stakeholder};
+	\item \textbf{modularità:} suddivisa in parti chiare e ben distinte;
+	\item \textbf{robustezza:} capace di sopportare ingressi diversi da parte dell'utente e dell'ambiente, non facendo assunzioni ottimistiche;
+	%\item \textbf{flessibilità:} permette modifiche a costo contenuto al variare dei \glo{requisiti};
+	\item \textbf{efficienza:} in termini di tempo, di spazio e nelle comunicazioni;
+	\item \textbf{affidabilità:} garantisce di ottenere il risultato desiderato se utilizzata correttamente;
+	%\item \textbf{disponibilità:} la manutenzione richiede un tempo di indisponibilità limitato;
+	%\item \textbf{sicurezza:} non presenta vulnerabilità alle intrusioni ed è robusta rispetto a malfunzionamenti gravi;
+	\item \textbf{semplicità:} ogni parte che la compone contiene solamente il necessario e nulla di superfluo;
+	\item \textbf{incapsulamento:} l'interno delle componenti non è visibile dall'esterno, facendo ricorso al principio dell'\glo{information hiding}.
+	%\item \textbf{coesione:} composta da parti raggruppate per obiettivi comuni;
+	%\item \textbf{basso accoppiamento:} composta da parti distinte con bassa dipendenza tra loro.
+\end{itemize}
+
+\subparagraph{Qualità della progettazione}
+Per perseguire la qualità nella progettazione dell'architettura è necessario seguire le seguenti regole:
+\begin{itemize}
+	\item assegnare nomi significativi e parlanti a package, classi, metodi e variabili;
+	\item quando possibile, prediligere sempre l'utilizzo di opportuni \glo{design pattern};
+	\item evitare l'utilizzo dell'ereditarietà tra classi concrete, prediligendo sempre l'uso di classi astratte e/o interfacce;
+	\item perseguire sempre il principio dell'\glo{incapsulamento} e dell'\glo{information hiding};
+	\item evitare la definizione di dipendenze circolari tra classi.
+\end{itemize}
+
+\subparagraph{\glo{Technology Baseline}}
+La \glo{Technology Baseline} è redatta dai progettisti e deve includere:
+\begin{itemize}
+	\item \textbf{\glo{Proof of Concept}:} primo eseguibile del sistema con funzione dimostrativa;
+	\item \textbf{tecnologie utilizzate:} descrizione delle tecnologie impiegate nello sviluppo del progetto che include gli aspetti positivi o negativi riscontrati;
+	\item \textbf{test di integrazione:} definizione dei test eseguiti per verificare che le componenti del sistema, una volta integrate insieme, interagiscano in modo corretto;
+	%\item \textbf{tracciamento delle componenti:} ogni \glo{requisito} deve rifarsi al componente che lo soddisfa.
+\end{itemize}
+
+\subparagraph{\glo{Product Baseline}}
+La \glo{Product Baseline} è redatta dai progettisti e deve includere:
+\begin{itemize}
+	\item \textbf{diagrammi \glo{UML}:}
+	\begin{itemize}
+		\item diagrammi delle classi;
+		\item diagrammi dei package;
+		\item diagrammi di sequenza;
+	\end{itemize}
+	\item \textbf{definizione delle classi:} ogni classe deve essere descritta in modo da spiegarne in maniera esaustiva lo scopo e le funzionalità;
+	\item \textbf{\glo{design pattern}:} descrizione dei \glo{design pattern} utilizzati per realizzare l'architettura. Ogni \glo{design pattern} deve essere accompagnato da una descrizione e da un diagramma che ne mostri la struttura;
+	\item \textbf{test di \glo{unità}:} definizione dei test eseguiti per verificare il corretto funzionamento individuale delle classi e dei metodi che implementano il sistema \glo{software};
+	\item \textbf{tracciamento delle classi:} associazione tra \glo{requisiti} e classi che li soddisfano.
+\end{itemize}
+
+\paragraph{\glo{Codifica}}
+\subparagraph{Scopo}
+La fase di \glo{codifica} ha lo scopo di normare la realizzazione del prodotto \glo{software}. I programmatori devono attenersi alle norme elencate durante la fase di programmazione.
+L'uso di convenzioni e norme di programmazione permette di generare codice leggibile ed uniforme, andando ad agevolare le fasi di manutenzione, verifica e \glo{validazione} e porta ad un miglioramento della qualità del codice.
+
+\subparagraph{Descrizione}
+Il codice dovrà rispettare le norme stabilite in questo documento, con il fine di perseguire un buon livello di qualità.
+\subparagraph{Stile di \glo{codifica}}
+Per garantire uniformità nel codice del progetto è necessario rispettare le seguenti norme:
+\begin{itemize}
+	\item \textbf{parentesizzazione:} le parentesi graffe verranno utilizzate sempre, anche se il corpo del blocco è vuoto o presenta una sola istruzione;
+	\item \textbf{indentazione:} i blocchi del codice devono essere correttamente indentati. L'indentazione dei commenti non viene considerata;
+	\item \textbf{scrittura dei metodi:} è desiderabile mantenere i metodi brevi, limitando il numero di righe di codice;
+	\item \textbf{univocità dei nomi:} classi, metodi e variabili devono avere nomi univoci e significativi;
+	\item \textbf{classi:} i nomi delle classi devono iniziare sempre con la lettera maiuscola, attenendosi\\ all'\glo{UpperCamelCase};
+	\item \textbf{metodi e variabili:} i nomi di metodi e variabili devono iniziare sempre con la lettera minuscola, attenendosi al \glo{LowerCamelCase};
+	\item \textbf{costanti:} i nomi delle costanti devono essere scritti usando solo maiuscole;
+	\item \textbf{ricorsione:} l’uso della ricorsione va evitato quando possibile, in quanto aumenta la complessità computazionale del codice.
+\end{itemize}
+
+\subparagraph{\glo{JavaScript}}
+In questa sezione vengono riportate delle linee guida riguardanti il linguaggio \glo{JavaScript} a cui attenersi nella realizzazione del prodotto:
+\begin{itemize}
+	\item Prediligere l'utilizzo di \textbf{const} e \textbf{let} rispetto a \textbf{var} per la dichiarazione delle variabili;
+	\item Prediligere la notazione "a freccia" (=>) per le funzioni anonime;
+	\item Attenersi alle convenzioni stabilite da \glo{CommonJs};
+	\item Favorire il disaccoppiamento, sviluppando moduli che racchiudono funzionalità affini;
+	\item Limitare la dichiarazione di variabili nello scope globale.
+\end{itemize}
+
+\subsubsection{Metriche}
+
+\paragraph{QP-1 Sviluppo}
+
+\begin{tabmetriche2}{Metriche di processo relative al processo di sviluppo}{Tabella delle metriche di processo per il processo di sviluppo}
+	QM-PROC-1 & Copertura requisiti obbligatori (RO) & Indice che misura la percentuale di requisiti obbligatori soddisfatti. &  $\displaystyle\frac{\textit{\#RO coperti}}{\textit{\#totale RO}}\times100$ \T
+		\newline \newline Dove: \begin{itemize} \item[•] RO = requisiti obbligatori. \end{itemize} \\
+	\hline
+	QM-PROC-2 & Copertura requisiti non obbligatori (RNO) & Indice che misura la percentuale di requisiti desiderabili e facoltativi soddisfatti. &  $\displaystyle\frac{\textit{\#RD e RF coperti}}{\textit{\#totale RD e RF}}\times100$ \T 
+		\newline \newline Dove: \begin{itemize} \item[•] RD = requisiti desiderabili; \item[•] RF = requisiti facoltativi. \end{itemize} \\
+	\hline
+\end{tabmetriche2}
+
+\paragraph{QC-1 Manutenibilità}
+La manutenibilità rappresenta una delle caratteristiche principali del modello di qualità stabilito dallo standard di riferimento. Tale caratteristica vuole raccogliere l'insieme di attributi riguardanti lo sforzo richiesto per apportare modifiche specifiche al prodotto.
+
+\begin{tabmetriche2}{Metriche di prodotto per garantire manutenibilità relative al processo di sviluppo}{Tabella delle metriche di prodotto per garantire manutenibilità per il processo di sviluppo}
+	QM-PROD-1 & Complessità ciclomatica (CC) & Indice che stima la complessità di un programma attraverso l'analisi del codice sorgente. & $\displaystyle\textit{V(G) = E - N + P}$ \T 
+		\newline \newline Dove: \begin{itemize} \item[•] E = \# archi; \item[•] N = \# nodi; \item[•] P = \# componenti connesse. \end{itemize} \\
+	\hline
+	QM-PROD-2 & Densità di duplicazione (DD) & Percentuale di linee di codice ripetute nei file sorgenti. &  $\displaystyle\frac{\textit{\#linee di codice ripetute}}{\textit{\#linee totali di codice}}\times100$ \T \\
+	\hline
+	QM-PROD-3 & Numero di bug (NB) & Numero di bug rilevati nei file sorgenti. &  \\
+	\hline
+	QM-PROD-4 & Numero di code smell (NCS) & Numero di code smell rilevati nei file sorgenti. &  \\
+	\hline
+	QM-PROD-5 & Comprensione del codice (CDC) & Percentuale di comprensione del codice, calcolata tramite le linee di codice e linee di commenti & $\displaystyle\frac{\textit{\#linee di codice}}{\textit{\#linee di commenti}}\times100$ \T \\
+	\hline
+\end{tabmetriche2}
+
+\paragraph{QC-2 Usabilità}
+L'usabilità rappresenta una delle caratteristiche principali del modello di qualità stabilito dallo standard di riferimento. Tale caratteristica vuole raccogliere l'insieme di attributi riguardanti lo sforzo necessario all'utilizzo del prodotto e la valutazione individuale su tale uso da parte di un insieme di utenti.
+\begin{tabmetriche1}{Metriche di prodotto per garantire usabilità relative al processo di sviluppo}{Tabella delle metriche di prodotto per garantire usabilità per il processo di sviluppo}
+	QM-PROD-6 & Click necessari (CN) & Valore che indica i click necessari per raggiungere la funzionalità richiesta dall'utente. & \\
+	\hline
+\end{tabmetriche1}
+
+\paragraph{QC-3 Efficienza}
+L'efficienza rappresenta una delle caratteristiche principali del modello di qualità stabilito dallo standard di riferimento. Tale caratteristica vuole raccogliere l'insieme di attributi riguardanti il rapporto tra il livello delle prestazioni e la quantità di risorse usate durante la loro esecuzione, sotto condizioni prestabilite.
+\begin{tabmetriche1}{Metriche di prodotto per garantire efficienza relative al processo di sviluppo}{Tabella delle metriche di prodotto per garantire efficienza per il processo di sviluppo}
+	QM-PROD-7 & Tempo medio di risposta (TMR) & Tempo medio impiegato dal software per rispondere ad una certa richiesta dell'utente o svolgere un'attività di sistema. & \\
+	\hline
+\end{tabmetriche1}
+
+\paragraph{QC-4 Funzionalità}
+La funzionalità rappresenta una delle caratteristiche principali del modello di qualità stabilito dallo standard di riferimento. Tale caratteristica vuole raccogliere l'insieme di attributi riguardanti un insieme di funzioni e le loro proprietà. Tali funzioni mirano a soddisfare \glo{requisiti} stabiliti o implicitamente dedotti.
+\begin{tabmetriche1}{Metriche di prodotto per garantire funzionalità relative al processo di sviluppo}{Tabella delle metriche di prodotto per garantire funzionalità per il processo di sviluppo}
+	QM-PROD-8 & Errori di utilizzo (EDU) & Errori inaspettati nell'utilizzo del software non segnalati dal sistema. & \\
+	\hline
+\end{tabmetriche1}
+
+\subsubsection{Strumenti}
+Di seguito sono descritti gli strumenti identificati dal gruppo per il processo di sviluppo.
+\begin{itemize}
+	\item \textbf{StarUML:} software per la modellazione di diagrammi \glo{UML};
+	\item \textbf{Intellij IDEA:} IDE utilizzato per lo sviluppo di applicativi \glo{JavaScript};
+	\item \textbf{Visual Studio Code:} IDE utilizzato per lo sviluppo di codice \glo{JavaScript}, \glo{HTML} e \glo{CSS};
+	\item \textbf{\glo{Node.js}:} utilizzato per la parte server di supporto alla presentazione nel browser e al database e per l'esecuzione di codice JavaScript;
+	\item \textbf{\glo{Experss.js}:} \glo{framework} per applicazioni web \glo{Node.js};
+	\item \textbf{\glo{ESLint}:} strumento utilizzato per effettuare l'analisi statica del codice \glo{JavaScript};
+	\item \textbf{\glo{Mocha}:} \glo{framework} di test \glo{JavaScript} eseguito su \glo{Node.js} e su browser per lo svolgimento di test asincroni;
+	\item \textbf{\glo{SonarQube}:} piattaforma usata per effettuare analisi statica del codice. Utilizzata per la rilevazione delle metriche legate alla \glo{codifica}.
+\end{itemize}

@@ -1,0 +1,133 @@
+\subsection{Navigazione nel sito}
+All'apertura dell'applicazione viene visualizzata la schermata sottostante:
+\begin{figure}[htpb]
+	\includegraphics[width=\linewidth]{images/home.png}
+	\caption{Schermata principale}
+\label{fig:home}
+\end{figure}
+
+Ogni pulsante svolge la funzione brevemente descritta sopra di esso. Una volta selezionata una pagina i pulsanti appaiono in alto nella nuova pagina, come mostrato in figura \ref{fig:ins_gr}. È sempre possibile tornare alla pagina principale premendo il tasto "Home".
+
+%selezione files
+%selezione dati da DB
+%selezione grafico
+\subsection{Operazioni sui grafici}
+\subsubsection{Inserimento}
+%selezione files
+%selezione dati da DB
+%selezione grafico
+%selezione opzioni
+È possibile importare un dataset dalla memoria locale o dal \glo{database}, scegliendo tra i due pulsanti mostrati in figura \ref{fig:ins_gr}.
+\begin{itemize}
+	\item[\textbf{1.a)}] Cliccare sul pulsante "IMPORTA" e scegliere il file .\glo{csv} o .\glo{tsv} da cui prelevare i dati. 
+	Per ulteriori informazioni su caratteristiche obbligatorie dei file .\glo{csv} o .\glo{tsv} si rimanda a §\ref{sub:caricamento_dati}.
+\end{itemize}
+Oppure
+\begin{itemize}
+	\item[\textbf{1.b)}] Cliccare sul pulsante "DATABASE". Nella finestra che si aprirà saranno presenti i seguenti due menù a tendina:
+	\begin{itemize}
+		\item \textbf{Tabelle}: in cui è possibile selezionare uno dei dataset presenti nel \glo{database};
+		\item \textbf{Colonne}: in cui è possibile selezionare le dimensioni del dataset selezionato che si vogliono importare.
+	\end{itemize}
+	Per ulteriori dettagli sull'importazione di dataset dal \glo{database} si rimanda a §\ref{sub:importazione_db}.
+\end{itemize}
+
+Una volta importato un dataset, è possibile selezionare una visualizzazione ed eventualmente impostare le opzioni di manipolazione dati disponibili, attraverso l'interfaccia di figura \ref{fig:ins_gr}:
+\begin{itemize}
+	% \setlength\itemsep{1pt}
+	\item[\textbf{2)}] Selezionare una o più colonne da visualizzare;
+	\item[\textbf{3)}] Selezionare una o nessuna colonna per il raggruppamento;
+	\item[\textbf{4)}] Selezionare una tra le possibili visualizzazioni;
+	\item[\textbf{5)}] Scegliere se applicare o meno la normalizzazione ai dati (si veda §\ref{subsec:nrml} - Normalizzazione);
+	\item[\textbf{6)}] Selezionare le opzioni per la manipolazione dati. Tali opzioni dipendono dal grafico scelto al punto 4. La gamma di opzioni presenti per ogni grafico è riassunta nella tabella \ref{tab:manip_graf}.
+	\item[\textbf{7)}] Premere il pulsante "CONFERMA" per aggiungere il grafico alla pagina di visualizzazione ed essere rimandati a tale pagina.
+\end{itemize}
+\begin{figure}[htpb]
+	\begin{subfigure}[c]{\linewidth}
+	\includegraphics[width=\linewidth]{images/inserimento.png}
+	\end{subfigure}
+\caption{Inserimento di un grafico}
+\label{fig:ins_gr}
+\end{figure}
+\begin{floattable}{Manipolazioni possibili per ogni grafico}{manip_graf}{R{4cm}|P{2.5cm}|c|c|P{3,5cm}}
+\topline
+ & \textbf{Scatter plot Matrix} & \textbf{Force Field} & \textbf{Heat Map} & \textbf{Proiezione Lineare Multi Asse} \\ \capsep
+Normalizzazione di dati & Sì & Sì & Sì & Sì \\ \rowsep
+Visualizzazione di una riduzione dimensionale & Sì & No & No & Sì \\ \rowsep
+Visualizzazione di una matrice delle distanze & No & Sì & Sì & No \\ \rowsep
+Visualizzazione di dati non manipolati & Sì & No & No & Sì \\
+\end{floattable}
+
+\newpage
+\subsubsection{Modifiche al grafico}
+\paragraph{Modifica titolo}
+\begin{itemize}
+	\item[\textbf{1)}] Aprire il pannello delle opzioni di un grafico;
+	\item[\textbf{2)}] Cliccare sul pulsante con l'icona di modifica (figura \ref{fig:name_change}.a);
+	\item[\textbf{3)}] Inserire il nome desiderato per il grafico;
+	\item[\textbf{4)}] Premere l'icona di conferma (figura \ref{fig:name_change}.b).
+\end{itemize}
+A questo punto il nuovo titolo viene visualizzato. È possibile modificare nuovamente il titolo.
+\begin{figure}[htpb]
+	\begin{subfigure}[b]{.5\linewidth}
+	\includegraphics[width=\linewidth]{images/before_name.png}
+	\caption{Nome di un grafico}\label{fig:before_name}
+	\end{subfigure}
+	\begin{subfigure}[b]{.5\linewidth}
+	\includegraphics[width=\linewidth]{images/after_name.png}
+	\caption{Modifica del nome}\label{fig:after_name}
+	\end{subfigure}
+\caption{Modifica al nome di un grafico}
+\label{fig:name_change}
+\end{figure}
+
+\paragraph{Interazioni con il grafico}
+
+Uno dei punti di forza di \textit{HD Viz} è la presenza di grafici \textit{dinamici}, che rispondono alle interazioni con l'utente.
+Le opzioni dipendono dallo specifico tipo di grafico, pertanto si rimanda alla sezione §\ref{sub:grafici} che illustra in dettaglio le caratteristiche e le funzionalità presenti per ogni grafico. Un riassunto delle interazioni possibili è il seguente:
+\begin{floattable}{Interazioni possibili per ogni grafico}{Interazioni possibili per ogni grafico}{R{4cm}|P{2.5cm}|c|c|P{3,5cm}}
+\topline
+ & \textbf{Scatter plot Matrix} & \textbf{Force Field} & \textbf{Heat Map} & \textbf{Proiezione Lineare Multi Asse} \\ \capsep
+Evidenziamento di dati & Sì & No & No & No \\ \rowsep
+Aggiunta dimensione & Sì & No & No & Sì \\ \rowsep
+Rimozione dimensione & Sì & No & No & Sì \\ \rowsep
+Ordinamento elementi & No & No & Sì & No \\ \rowsep
+Trascinamento nodo & No & Sì & No & No \\ \rowsep
+Modifica intensità della forza applicata & No & Sì & No & No \\ \rowsep
+Modifica intervallo di distanze visualizzate & No & Sì & Sì & No \\
+\end{floattable}
+Il procedimento per l'applicazione di modifiche è identico per tutti i grafici:
+\begin{itemize}
+	\item[\textbf{1)}] Aprire il pannello delle opzioni di un grafico;
+	\item[\textbf{2)}] Modificare una o più opzioni tra quelle disponibili;
+	\item[\textbf{3)}] Premere il pulsante di conferma.
+\end{itemize}
+\subsubsection{Rimozione di un grafico}
+
+È possibile rimuovere un grafico dalla lista dei grafici visualizzati:
+\begin{itemize}
+	\item[\textbf{1)}] Aprire il pannello delle opzioni di un grafico;
+	\item[\textbf{2)}] Premere il pulsante "RIMUOVI".
+\end{itemize}
+
+\begin{figure}[htpb]
+	\includegraphics[width=\linewidth]{images/visualizations.png}
+	\caption{Modifiche ai grafici}
+\label{fig:modifiche}
+\end{figure}
+
+\subsection{Visualizzazione manuale e guida utente}
+
+Per visualizzare il \textit{Manuale Utente} (il presente documento) selezionare dal menù in alto la voce "Manuale Utente".\\
+\begin{figure}[htpb]
+	\includegraphics[width=\linewidth]{images/manuale.png}
+	\caption{Visualizzazione Manuale Utente}
+\label{fig:manutente}
+\end{figure}
+Per visualizzare la Guida Utente selezionare dal menù principale la voce "Guida".\\
+\begin{figure}[htpb]
+	\includegraphics[width=\linewidth]{images/guida.png}
+	\caption{Visualizzazione Guida Utente}
+\label{fig:guidautente}
+\end{figure}
+
